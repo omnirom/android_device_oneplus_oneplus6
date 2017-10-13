@@ -34,6 +34,11 @@
                 android:targetClass="org.omnirom.device.DozeSettingsActivity" />
     </Preference>
 
+    <SwitchPreference
+        android:key="otg_switch"
+        android:summary="@string/otg_switch_summary"
+        android:title="@string/otg_switch_title" />
+
     <PreferenceCategory
         android:title="@string/category_vibrator">
         <org.omnirom.device.VibratorStrengthPreference

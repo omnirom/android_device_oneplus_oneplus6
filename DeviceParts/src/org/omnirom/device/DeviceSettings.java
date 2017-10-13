@@ -55,6 +55,8 @@ public class DeviceSettings extends PreferenceFragment implements
     public static final String KEY_DCI_SWITCH = "dci";
     public static final String KEY_NIGHT_SWITCH = "night";
 
+    public static final String KEY_OTG_SWITCH = "otg_switch";
+
     public static final String SLIDER_DEFAULT_VALUE = "4,2,0";
 
     private VibratorStrengthPreference mVibratorStrength;
@@ -64,6 +66,7 @@ public class DeviceSettings extends PreferenceFragment implements
     private TwoStatePreference mSwapBackRecents;
     private static TwoStatePreference mHBMModeSwitch;
     private PreferenceCategory buttonCategory;
+    private static TwoStatePreference mOtgSwitch;
 
 
     @Override
@@ -111,6 +114,12 @@ public class DeviceSettings extends PreferenceFragment implements
         mHBMModeSwitch.setEnabled(HBMModeSwitch.isSupported());
         mHBMModeSwitch.setChecked(HBMModeSwitch.isCurrentlyEnabled(this.getContext()));
         mHBMModeSwitch.setOnPreferenceChangeListener(new HBMModeSwitch());
+
+        mOtgSwitch = (TwoStatePreference) findPreference(KEY_OTG_SWITCH);
+        mOtgSwitch.setEnabled(UsbOtgSwitch.isSupported());
+        mOtgSwitch.setChecked(UsbOtgSwitch.isCurrentlyEnabled(this.getContext()));
+        mOtgSwitch.setOnPreferenceChangeListener(new UsbOtgSwitch());
+
     }
 
     @Override
