@@ -3,3 +3,4 @@ com.fingerprints.extension.sensortest.IFingerprintSensorTest     u:object_r:fing
 com.fingerprints.extension.navigation.IFingerprintNavigation     u:object_r:fingerprint_extension_service:s0
 com.fingerprints.extension.engineering.IFingerprintEngineering   u:object_r:fingerprint_extension_service:s0
 
+ifaadaemon    u:object_r:ifaadaemon_service:s0

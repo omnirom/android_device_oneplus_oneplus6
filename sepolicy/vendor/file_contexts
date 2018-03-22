@@ -83,3 +83,4 @@
 
 /(vendor|system/vendor)/bin/wifi-mac-generator                  u:object_r:wifi_mac_generator_exec:s0
 
+/system/bin/ifaadaemon		u:object_r:ifaadaemon_exec:s0
