@@ -130,7 +130,7 @@ on boot
 
    # Load WLAN driver, to satisfy wificond
    setprop wifi.interface wlan0
-   insmod /system/vendor/lib/modules/wlan.ko
+   insmod /system/lib/modules/wlan.ko
    chown wifi wifi /sys/module/wlan/parameters/fwpath
    # will be set later
    #setprop wlan.driver.status "ok"

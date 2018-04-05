@@ -56,6 +56,7 @@ function configure_memory_parameters() {
     #
 
 ProductName=`getprop ro.product.name`
+low_ram=`getprop ro.config.low_ram`
 
 if [ "$ProductName" == "msm8996" ]; then
       # Enable Adaptive LMK
@@ -78,6 +79,7 @@ else
     # Normalized ADJ for HOME is 6. Hence multiply by 6
     # ADJ score represented as INT in LMK params, actual score can be in decimal
     # Hence add 6 considering a worst case of 0.9 conversion to INT (0.9*6).
+    # For uLMK + Memcg, this will be set as 6 since adj is zero.
     set_almk_ppr_adj=$(((set_almk_ppr_adj * 6) + 6))
     echo $set_almk_ppr_adj > /sys/module/lowmemorykiller/parameters/adj_max_shift
     echo $set_almk_ppr_adj > /sys/module/process_reclaim/parameters/min_score_adj
@@ -103,10 +105,18 @@ else
         echo "14746,18432,22118,25805,40000,55000" > /sys/module/lowmemorykiller/parameters/minfree
         echo 81250 > /sys/module/lowmemorykiller/parameters/vmpressure_file_min
     else
-        echo 50 > /sys/module/process_reclaim/parameters/pressure_min
-        echo 512 > /sys/module/process_reclaim/parameters/per_swap_size
-        echo "15360,19200,23040,26880,34415,43737" > /sys/module/lowmemorykiller/parameters/minfree
-        echo 53059 > /sys/module/lowmemorykiller/parameters/vmpressure_file_min
+        if [ $MemTotal -le 1048576 ] && [ "$low_ram" == "true" ]; then
+            # Disable KLMK, ALMK, PPR & Core Control for Go devices
+            echo 0 > /sys/module/lowmemorykiller/parameters/enable_lmk
+            echo 0 > /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk
+            echo 0 > /sys/module/process_reclaim/parameters/enable_process_reclaim
+            echo 1 > /sys/devices/system/cpu/cpu0/core_ctl/disable
+        else
+            echo 50 > /sys/module/process_reclaim/parameters/pressure_min
+            echo 512 > /sys/module/process_reclaim/parameters/per_swap_size
+            echo "15360,19200,23040,26880,34415,43737" > /sys/module/lowmemorykiller/parameters/minfree
+            echo 53059 > /sys/module/lowmemorykiller/parameters/vmpressure_file_min
+        fi
     fi
 
     configure_zram_parameters
@@ -2506,11 +2516,6 @@ case "$target" in
 	echo 1 > /sys/devices/system/cpu/cpu4/core_ctl/is_big_cluster
 	echo 4 > /sys/devices/system/cpu/cpu4/core_ctl/task_thres
 
-	# Enable Adaptive LMK
-        echo 1 > /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk
-        echo "18432,23040,27648,51256,150296,200640" > /sys/module/lowmemorykiller/parameters/minfree
-        echo 162500 > /sys/module/lowmemorykiller/parameters/vmpressure_file_min
-
 	# Setting b.L scheduler parameters
 	echo 1 > /proc/sys/kernel/sched_migration_fixup
 	echo 95 > /proc/sys/kernel/sched_upmigrate
@@ -2652,22 +2657,6 @@ case "$target" in
         echo 0-3 > /dev/cpuset/background/cpus
         echo 0-3 > /dev/cpuset/system-background/cpus
         echo 0 > /proc/sys/kernel/sched_boost
-	if [ -f "/defrag_aging.ko" ]; then
-		insmod /defrag_aging.ko
-	else
-		insmod /system/lib/modules/defrag.ko
-	fi
-#OPChain
-        if [ -f "/opchain_aging.ko" ]; then
-                insmod /opchain_aging.ko
-        else
-                insmod /system/lib/modules/opchain.ko
-        fi
-    sleep 1
-	lsmod | grep defrag
-	if [ $? != 0 ]; then
-		echo 1 > /sys/module/defrag_helper/parameters/disable
-	fi
     ;;
 esac
 

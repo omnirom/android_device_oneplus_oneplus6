@@ -153,6 +153,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     gps.conf \
     liblocation_api \
+    liblocation_api_headers \
+    libloc_net_iface \
     libgps.utils \
     libloc_core \
     libloc_stub \
@@ -283,7 +285,8 @@ PRODUCT_PACKAGES += \
     PresencePolling
 
 PRODUCT_BOOT_JARS += \
-    tcmiface
+    tcmiface \
+    WfdCommon
 
 # Sensors
 #PRODUCT_PACKAGES += \
@@ -303,10 +306,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     DeviceParts
-
-PRODUCT_PACKAGES += \
-    com.qualcomm.qti.camera \
-    com.qualcomm.qti.camera.xml
 
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_audio.xml \
