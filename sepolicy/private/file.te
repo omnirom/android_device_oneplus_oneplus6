@@ -1,0 +1,12 @@
+#type adsprpcd_file, file_type;
+type op1_file, file_type;
+type op2_file, file_type;
+type op1_block_device, dev_type;
+type op2_block_device, dev_type;
+
+type debugfs_wifi, fs_type, debugfs_type;
+type oem_data_file, file_type, data_file_type;
+
+type sysfs_graphics_omni, sysfs_type, fs_type;
+
+type oem_audio_device, dev_type;

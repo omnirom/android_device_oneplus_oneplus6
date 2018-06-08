@@ -29,11 +29,21 @@
             16 - App switch
          For example, a device with Home, Back and Menu keys would set this
          config to 7. -->
-    <integer name="config_deviceHardwareKeys">19</integer>
+    <integer name="config_deviceHardwareKeys">0</integer>
 
     <!-- Screen brightness used to dim the screen when the user activity
          timeout expires.  May be less than the minimum allowed brightness setting
          that can be set by the user. -->
     <integer name="config_screenBrightnessDim">6</integer>
+
+    <!-- Whether a software navigation bar should be shown. NOTE: in the future this may be
+         autodetected from the Configuration. -->
+    <bool name="config_showNavigationBar">true</bool>
+
+    <!-- Enable system navigation keys. -->
+    <bool name="config_supportSystemNavigationKeys">true</bool>
+
+    <!-- enable support for configure max aspect ratio per app -->
+    <bool name="config_haveHigherAspectRatioScreen">true</bool>
 
 </resources>

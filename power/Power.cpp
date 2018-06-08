@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "android.hardware.power@1.1-service.oneplus5"
+#define LOG_TAG "android.hardware.power@1.1-service.oneplus6"
 
 #include <android/log.h>
 #include <android-base/file.h>

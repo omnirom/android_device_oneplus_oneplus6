@@ -71,7 +71,7 @@ public class KeyHandler implements DeviceKeyHandler {
     private static final String KEY_CONTROL_PATH = "/proc/touchpanel/key_disable";
     private static final String FPC_CONTROL_PATH = "/sys/devices/soc/soc:fpc_fpc1020/proximity_state";
     private static final String FPC_KEY_CONTROL_PATH = "/sys/devices/soc/soc:fpc_fpc1020/key_disable";
-    private static final String GOODIX_CONTROL_PATH = "/sys/devices/soc/soc:goodix_fp/proximity_state";
+    private static final String GOODIX_CONTROL_PATH = "/sys/devices/platform/soc/soc:goodix_fp/proximity_state";
 
     private static final int GESTURE_CIRCLE_SCANCODE = 250;
     private static final int GESTURE_V_SCANCODE = 255;
@@ -101,7 +101,7 @@ public class KeyHandler implements DeviceKeyHandler {
     private static final int FP_GESTURE_SWIPE_LEFT = 105;
     private static final int FP_GESTURE_SWIPE_RIGHT = 106;
     private static final int FP_GESTURE_LONG_PRESS = 305;
-    private static final boolean sIsOnePlus5t = android.os.Build.DEVICE.equals("OnePlus5T");
+    private static final boolean sIsOnePlus6 = android.os.Build.DEVICE.equals("OnePlus6");
 
     private static final int[] sSupportedGestures = new int[]{
         GESTURE_II_SCANCODE,
@@ -175,7 +175,7 @@ public class KeyHandler implements DeviceKeyHandler {
             mProxyIsNear = event.values[0] == 1;
             if (DEBUG_SENSOR) Log.i(TAG, "mProxyIsNear = " + mProxyIsNear + " mProxyWasNear = " + mProxyWasNear);
             if (mUseProxiCheck) {
-                if (!sIsOnePlus5t) {
+                if (!sIsOnePlus6) {
                     if (Utils.fileWritable(FPC_CONTROL_PATH)) {
                         Utils.writeValue(FPC_CONTROL_PATH, mProxyIsNear ? "1" : "0");
                     }
@@ -286,8 +286,8 @@ public class KeyHandler implements DeviceKeyHandler {
         mNoMan = (NotificationManager) mContext.getSystemService(Context.NOTIFICATION_SERVICE);
         mAudioManager = (AudioManager) mContext.getSystemService(Context.AUDIO_SERVICE);
         mSensorManager = (SensorManager) mContext.getSystemService(Context.SENSOR_SERVICE);
-        mTiltSensor = getSensor(mSensorManager, "com.oneplus.sensor.pickup");
-        mPocketSensor = getSensor(mSensorManager, "com.oneplus.sensor.pocket");
+        mTiltSensor = getSensor(mSensorManager, "oneplus.sensor.pickup");
+        mPocketSensor = getSensor(mSensorManager, "oneplus.sensor.pocket");
         IntentFilter screenStateFilter = new IntentFilter(Intent.ACTION_SCREEN_ON);
         screenStateFilter.addAction(Intent.ACTION_SCREEN_OFF);
         mContext.registerReceiver(mScreenStateReceiver, screenStateFilter);
@@ -357,8 +357,8 @@ public class KeyHandler implements DeviceKeyHandler {
     }
 
     public static void setButtonDisable(Context context) {
-        // we should never come here on the 5t but just to be sure
-        if (!sIsOnePlus5t) {
+        // we should never come here on the 6 but just to be sure
+        if (!sIsOnePlus6) {
             mButtonDisabled = Settings.System.getIntForUser(
                     context.getContentResolver(), Settings.System.HARDWARE_KEYS_DISABLE, 0,
                     UserHandle.USER_CURRENT) == 1;
@@ -463,7 +463,7 @@ public class KeyHandler implements DeviceKeyHandler {
     }
 
     private void enableGoodix() {
-        if (sIsOnePlus5t) {
+        if (sIsOnePlus6) {
             if (Utils.fileWritable(GOODIX_CONTROL_PATH)) {
                 Utils.writeValue(GOODIX_CONTROL_PATH, "0");
             }
@@ -721,6 +721,6 @@ public class KeyHandler implements DeviceKeyHandler {
 
     @Override
     public String getCustomProxiSensor() {
-        return "com.oneplus.sensor.pocket";
+        return "oneplus.sensor.pocket";
     }
 }

@@ -73,7 +73,7 @@ public class AppSelectListPreference extends CustomDialogPreference {
     private CharSequence mTitle;
     private String mValue;
     private PackageManager mPm;
-    private static final boolean sIsOnePlus5t = android.os.Build.DEVICE.equals("OnePlus5T");
+    private static final boolean sIsOnePlus6 = android.os.Build.DEVICE.equals("OnePlus6");
     private List<PackageItem> mInstalledPackages = new LinkedList<PackageItem>();
 
     public static class PackageItem implements Comparable<PackageItem> {
@@ -231,7 +231,7 @@ public class AppSelectListPreference extends CustomDialogPreference {
                 R.drawable.ic_wakeup, WAKE_ENTRY);
         mInstalledPackages.add(0, wakeItem);
 
-        if (sIsOnePlus5t) {
+        if (sIsOnePlus6) {
             PackageItem volumeUpItem = new PackageItem(
                     getContext().getResources().getString(R.string.volume_up),
                     R.drawable.ic_settings_sound, VOLUME_UP_ENTRY);

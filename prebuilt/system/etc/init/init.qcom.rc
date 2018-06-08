@@ -1,0 +1,10 @@
+on init
+    stop power-hal-1-0
+
+    mount none /system/etc/media_profiles_vendor.xml /vendor/etc/media_profiles_vendor.xml bind
+    mount none /system/etc/audio_policy_configuration_omni.xml /vendor/etc/audio_policy_configuration.xml bind
+    #mount none /system/etc/init/android.hardware.power@1.1-service.oneplus6.rc /vendor/etc/init/android.hardware.power@1.0-service.rc bind
+
+on boot
+   # default country code
+   setprop ro.boot.wificountrycode 00

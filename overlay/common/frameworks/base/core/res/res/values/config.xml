@@ -99,7 +99,7 @@
     <integer translatable="false" name="config_brightness_ramp_rate_slow">60</integer>
 
     <!-- Boolean indicating whether we want button brightness support -->
-    <bool name="config_button_brightness_support">true</bool>
+    <bool name="config_button_brightness_support">false</bool>
 
     <!-- Minimum screen brightness setting allowed by the power manager.
          The user is forbidden from setting the brightness below this level. -->
@@ -321,7 +321,7 @@
          to maximize power savings but not all devices support it.
          Refer to power.h for details.
     -->
-    <bool name="config_powerDecoupleInteractiveModeFromDisplay">true</bool>
+    <bool name="config_powerDecoupleInteractiveModeFromDisplay">false</bool>
 
     <!-- enable doze powersaving mode -->
     <bool name="config_enableAutoPowerModes">true</bool>

@@ -1,0 +1,2 @@
+allow netd proc_net:dir { add_name write };
+allow netd proc_net:file create;

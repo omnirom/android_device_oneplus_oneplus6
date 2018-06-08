@@ -19,10 +19,10 @@
 set -e
 
 # Required!
-DEVICE=oneplus5
+DEVICE=oneplus6
 VENDOR=oneplus
 
-INITIAL_COPYRIGHT_YEAR=2017
+INITIAL_COPYRIGHT_YEAR=2018
 
 # Load extractutils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
@@ -41,7 +41,7 @@ fi
 setup_vendor "$DEVICE" "$VENDOR" "$CM_ROOT"
 
 # Copyright headers and guards
-write_headers "oneplus5 oneplus5t"
+write_headers "oneplus6"
 
 # The standard blobs
 write_makefiles "$MY_DIR"/proprietary-files.txt
@@ -76,8 +76,6 @@ cat << EOF >> "$ANDROIDMK"
 
 endif
 
-\$(shell mkdir -p \$(PRODUCT_OUT)/system/vendor/lib/egl && pushd \$(PRODUCT_OUT)/system/vendor/lib > /dev/null && ln -sf egl/libEGL_adreno.so libEGL_adreno.so && popd > /dev/null)
-\$(shell mkdir -p \$(PRODUCT_OUT)/system/vendor/lib64/egl && pushd \$(PRODUCT_OUT)/system/vendor/lib64 > /dev/null && ln -sf egl/libEGL_adreno.so libEGL_adreno.so && popd > /dev/null)
 EOF
 
 # We are done!

@@ -1,0 +1,27 @@
+/op1(/.*)?              u:object_r:op1_file:s0
+/op2(/.*)?              u:object_r:op2_file:s0
+/dev/block/platform/soc/1d84000.ufshc/by-name/op1               u:object_r:op1_block_device:s0
+/dev/block/platform/soc/1d84000.ufshc/by-name/op2               u:object_r:op2_block_device:s0
+
+
+/system/etc/media_profiles_vendor.xml    u:object_r:vendor_configs_file:s0
+/system/etc/audio_policy_configuration_omni.xml    u:object_r:vendor_configs_file:s0
+
+/system/bin/hw/android\.hardware\.power@1\.1-service\.oneplus6             u:object_r:hal_power_omni_exec:s0
+
+/sys/kernel/debug/wlan0/power_stats u:object_r:debugfs_wifi:s0
+
+/data/oemnvitems(/.*)?                u:object_r:oem_data_file:s0
+
+/sys/devices/platform/soc/ae00000\.qcom\,mdss_mdp/drm/card0/card0-DSI-1/SRGB u:object_r:sysfs_graphics_omni:s0
+/sys/devices/platform/soc/ae00000\.qcom\,mdss_mdp/drm/card0/card0-DSI-1/hbm u:object_r:sysfs_graphics_omni:s0
+/sys/devices/platform/soc/ae00000\.qcom\,mdss_mdp/drm/card0/card0-DSI-1/night_mode u:object_r:sysfs_graphics_omni:s0
+/sys/devices/platform/soc/ae00000\.qcom\,mdss_mdp/drm/card0/card0-DSI-1/DCI_P3 u:object_r:sysfs_graphics_omni:s0
+
+
+/dev/snd/hwC0D.*              u:object_r:oem_audio_device:s0
+/dev/snd/pcmC0D.*             u:object_r:oem_audio_device:s0
+/dev/snd/comprC0D.*           u:object_r:oem_audio_device:s0
+/dev/snd/timer                u:object_r:oem_audio_device:s0
+/dev/snd/controlC0            u:object_r:oem_audio_device:s0
+

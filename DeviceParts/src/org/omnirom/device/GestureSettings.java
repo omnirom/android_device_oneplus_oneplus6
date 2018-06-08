@@ -110,7 +110,7 @@ public class GestureSettings extends PreferenceFragment implements
     private AppSelectListPreference mFPLongPressApp;
     private PreferenceCategory fpGestures;
     private boolean mFpDownSwipe;
-    private static final boolean sIsOnePlus5t = android.os.Build.DEVICE.equals("OnePlus5T");
+    private static final boolean sIsOnePlus6 = android.os.Build.DEVICE.equals("OnePlus6");
     private List<AppSelectListPreference.PackageItem> mInstalledPackages = new LinkedList<AppSelectListPreference.PackageItem>();
     private PackageManager mPm;
 
@@ -187,7 +187,7 @@ public class GestureSettings extends PreferenceFragment implements
         mRightSwipeApp.setValue(value);
         mRightSwipeApp.setOnPreferenceChangeListener(this);
 
-        if (sIsOnePlus5t) {
+        if (sIsOnePlus6) {
             mFPDownSwipeApp = (AppSelectListPreference) findPreference(FP_GESTURE_SWIPE_DOWN_APP);
             mFPDownSwipeApp.setEnabled(!areSystemNavigationKeysEnabled());
             value = Settings.System.getString(getContext().getContentResolver(), DEVICE_GESTURE_MAPPING_10);
@@ -420,7 +420,7 @@ public class GestureSettings extends PreferenceFragment implements
             mUpSwipeApp.setPackageList(mInstalledPackages);
             mLeftSwipeApp.setPackageList(mInstalledPackages);
             mRightSwipeApp.setPackageList(mInstalledPackages);
-            if (sIsOnePlus5t) {
+            if (sIsOnePlus6) {
                 mFPDownSwipeApp.setPackageList(mInstalledPackages);
                 mFPUpSwipeApp.setPackageList(mInstalledPackages);
                 mFPRightSwipeApp.setPackageList(mInstalledPackages);

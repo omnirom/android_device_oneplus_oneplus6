@@ -17,12 +17,10 @@ LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
 LOCAL_MODULE_RELATIVE_PATH := hw
-LOCAL_PROPRIETARY_MODULE := true
-LOCAL_MODULE_OWNER := qcom
 LOCAL_MODULE_TAGS := optional
 
-LOCAL_MODULE := android.hardware.power@1.1-service.oneplus5
-LOCAL_INIT_RC := android.hardware.power@1.1-service.oneplus5.rc
+LOCAL_MODULE := android.hardware.power@1.1-service.oneplus6
+LOCAL_INIT_RC := android.hardware.power@1.1-service.oneplus6.rc
 LOCAL_SRC_FILES := service.cpp \
     Power.cpp \
     InteractionHandler.cpp \

@@ -41,7 +41,7 @@ public class VibratorStrengthPreference extends Preference implements
     private int mMaxValue;
     private Vibrator mVibrator;
 
-    private static final String FILE_LEVEL = "/sys/devices/virtual/timed_output/vibrator/vtg_level";
+    private static final String FILE_LEVEL = "/sys/class/leds/vibrator/vmax_mv_user";
     private static final long testVibrationPattern[] = {0,250};
 
     public VibratorStrengthPreference(Context context, AttributeSet attrs) {
@@ -50,7 +50,7 @@ public class VibratorStrengthPreference extends Preference implements
         // #define QPNP_HAP_VMAX_MIN_MV		116
         // #define QPNP_HAP_VMAX_MAX_MV		3596
         mMinValue = 116;
-        mMaxValue = 3596;
+        mMaxValue = 2088;
 
         mVibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
         setLayoutResource(R.layout.preference_seek_bar);
@@ -72,7 +72,7 @@ public class VibratorStrengthPreference extends Preference implements
     }
 
 	public static String getValue(Context context) {
-		return Utils.getFileValue(FILE_LEVEL, "2700");
+		return Utils.getFileValue(FILE_LEVEL, "2088");
 	}
 
 	private void setValue(String newValue, boolean withFeedback) {
@@ -90,7 +90,7 @@ public class VibratorStrengthPreference extends Preference implements
             return;
         }
 
-        String storedValue = PreferenceManager.getDefaultSharedPreferences(context).getString(DeviceSettings.KEY_VIBSTRENGTH, "2700"); 
+        String storedValue = PreferenceManager.getDefaultSharedPreferences(context).getString(DeviceSettings.KEY_VIBSTRENGTH, "2088"); 
         Utils.writeValue(FILE_LEVEL, storedValue);
     }
 
