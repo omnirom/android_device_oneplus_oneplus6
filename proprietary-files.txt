@@ -1,6 +1,5 @@
 lib64/libqti-perfd-client_system.so
 lib64/vendor.qti.hardware.perf@1.0.so
-lib64/vendor.qti.hardware.factory@1.0.so
 lib64/vendor.qti.hardware.iop@1.0.so
 lib64/com.qualcomm.qti.dpm.api@1.0.so
 lib64/vendor.qti.hardware.improvetouch.blobmanager@1.0.so
@@ -42,7 +41,6 @@ framework/com.qti.snapdragon.sdk.display.jar
 framework/com.qti.location.sdk.jar
 lib/libqti-perfd-client_system.so
 lib/vendor.qti.hardware.perf@1.0.so
-lib/vendor.qti.hardware.factory@1.0.so
 lib/vendor.qti.hardware.iop@1.0.so
 lib/com.qualcomm.qti.dpm.api@1.0.so
 lib/vendor.qti.hardware.improvetouch.blobmanager@1.0.so
