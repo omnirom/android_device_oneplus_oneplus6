@@ -310,3 +310,12 @@ ro.config.notification_sound=omni_notification1.ogg
 ro.config.alarm_alert=omni_alarm1.ogg
 ro.services.whitelist.packagelist=com.google.android.gms
 net.tethering.noprovisioning=true
+persist.sys.enable_rescue=0
+ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html
+ro.com.android.wifi-watchlist=GoogleGuest
+ro.setupwizard.enterprise_mode=1
+persist.sys.disable_rescue=true
+ro.com.google.clientidbase=android-google
+ro.services.whitelist.packagelist=com.google.android.gms
+
+
