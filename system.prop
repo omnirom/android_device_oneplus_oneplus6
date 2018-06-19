@@ -305,6 +305,7 @@ dalvik.vm.stack-trace-dir=/data/anr
 
 #omni
 ro.hardware.lights=oneplus6
+ro.hardware.power=oneplus6
 ro.config.ringtone=omni_ringtone1.ogg
 ro.config.notification_sound=omni_notification1.ogg
 ro.config.alarm_alert=omni_alarm1.ogg

@@ -1,5 +1,5 @@
 on init
-    stop power-hal-1-0
+    #stop power-hal-1-0
 
     mount none /system/etc/media_profiles_vendor.xml /vendor/etc/media_profiles_vendor.xml bind
     mount none /system/etc/audio_policy_configuration_omni.xml /vendor/etc/audio_policy_configuration.xml bind

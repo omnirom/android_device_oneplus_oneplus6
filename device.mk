@@ -178,8 +178,7 @@ PRODUCT_PACKAGES += \
 
 # power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.1-service.oneplus6 \
-    android.hardware.power@1.1-service.oneplus6.rc
+    power.oneplus6
 
 # ANT+
 PRODUCT_PACKAGES += \

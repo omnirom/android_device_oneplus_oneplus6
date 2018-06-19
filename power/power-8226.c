@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2012, 2013, 2015, 2017, The Linux Foundation. All rights reserved.
+ * Copyright (c) 2013, The Linux Foundation. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -26,37 +26,40 @@
  * OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
  * IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
+#define LOG_NIDEBUG 0
 
-/* Default use-case hint IDs */
-#define DEFAULT_VIDEO_ENCODE_HINT_ID    (0x0A00)
-#define DEFAULT_VIDEO_DECODE_HINT_ID    (0x0B00)
-#define DISPLAY_STATE_HINT_ID           (0x0C00)
-#define DISPLAY_STATE_HINT_ID_2         (0x0D00)
-#define CAM_PREVIEW_HINT_ID             (0x0E00)
-#define SUSTAINED_PERF_HINT_ID          (0x0F00)
-#define VR_MODE_HINT_ID                 (0x1000)
-#define VR_MODE_SUSTAINED_PERF_HINT_ID  (0x1001)
+#include <errno.h>
+#include <string.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <dlfcn.h>
+#include <stdlib.h>
 
-#define AOSP_DELTA                      (0x1200)
+#define LOG_TAG "QCOM PowerHAL"
+#include <utils/Log.h>
+#include <hardware/hardware.h>
+#include <hardware/power.h>
 
-#define VSYNC_HINT                      AOSP_DELTA + POWER_HINT_VSYNC
-#define INTERACTION_HINT                AOSP_DELTA + POWER_HINT_INTERACTION
-#define VIDEO_DECODE_HINT               AOSP_DELTA + POWER_HINT_VIDEO_DECODE
-#define VIDEO_ENCODE_HINT               AOSP_DELTA + POWER_HINT_VIDEO_ENCODE
-#define LOW_POWER_HINT                  AOSP_DELTA + POWER_HINT_LOW_POWER
-#define SUSTAINED_PERF_HINT             AOSP_DELTA + POWER_HINT_SUSTAINED_PERFORMANCE
-#define VR_MODE_HINT                    AOSP_DELTA + POWER_HINT_VR_MODE
-#define LAUNCH_HINT                     AOSP_DELTA + POWER_HINT_LAUNCH
-#define DISABLE_TOUCH_HINT              AOSP_DELTA + POWER_HINT_DISABLE_TOUCH
+#include "utils.h"
+#include "metadata-defs.h"
+#include "hint-data.h"
+#include "performance.h"
+#include "power-common.h"
 
-#define VR_MODE_SUSTAINED_PERF_HINT    (0x1301)
+static int display_hint_sent;
 
+int power_hint_override(struct power_module *module, power_hint_t hint, void *data)
+{
+    switch(hint) {
+        case POWER_HINT_INTERACTION:
+        {
+            int resources[] = {0x702, 0x20B, 0x30B};
+            int duration = 3000;
 
-struct hint_data {
-    unsigned long hint_id; /* This is our key. */
-    unsigned long perflock_handle;
-};
-
-int hint_compare(struct hint_data *first_hint,
-        struct hint_data *other_hint);
-void hint_dump(struct hint_data *hint);
+            interaction(duration, sizeof(resources)/sizeof(resources[0]), resources);
+            return HINT_HANDLED;
+        }
+    }
+    return HINT_NONE;
+}
