@@ -18,7 +18,7 @@
 # device-specific aspects (drivers) with a device-agnostic
 # product configuration (apps).
 #
-include build/make/target/board/generic_arm64_ab/BoardConfig.mk
+include build/make/target/board/treble_common_64.mk
 BOARD_PATH := device/oneplus/oneplus6
 
 PRODUCT_FULL_TREBLE := true
@@ -77,6 +77,7 @@ BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_TAGS_OFFSET := 0x01E00000
 BOARD_RAMDISK_OFFSET     := 0x02000000
 BOARD_ROOT_EXTRA_FOLDERS := firmware bt_firmware odm persist op1 op2
+BOARD_ROOT_EXTRA_SYMLINKS := /vendor/lib/dsp:/dsp
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
