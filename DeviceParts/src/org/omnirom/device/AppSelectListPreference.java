@@ -73,7 +73,7 @@ public class AppSelectListPreference extends CustomDialogPreference {
     private CharSequence mTitle;
     private String mValue;
     private PackageManager mPm;
-    private static final boolean sIsOnePlus6 = android.os.Build.DEVICE.equals("OnePlus6");
+    private static final boolean sIsOnePlus6 = android.os.Build.DEVICE.equals("disabled");
     private List<PackageItem> mInstalledPackages = new LinkedList<PackageItem>();
 
     public static class PackageItem implements Comparable<PackageItem> {
