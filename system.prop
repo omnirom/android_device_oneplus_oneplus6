@@ -182,10 +182,6 @@ sdm.debug.disable_inline_rotator=0
 sdm.debug.disable_inline_rotator_secure=0
 
 sdm.debug.prefersplit=1
-sdm.debug.disable_dest_scalar=0
-
-#enable IZat OptInApp overlay
-persist.vendor.overlay.izat.optin=rro
 
 # Property for backup NTP Server
 persist.backup.ntpServer="0.pool.ntp.org"
@@ -291,18 +287,6 @@ sdm.debug.disable_inline_rotator = 1
 sdm.debug.disable_inline_rotator_secure =1
 #endif VENDOR_EDIT
 
-#
-# ADDITIONAL_BUILD_PROPERTIES
-#
-ro.treble.enabled=true
-persist.sys.dalvik.vm.lib.2=libart.so
-dalvik.vm.isa.arm64.variant=kryo300
-dalvik.vm.isa.arm64.features=default
-dalvik.vm.isa.arm.variant=cortex-a9
-dalvik.vm.isa.arm.features=default
-net.bt.name=Android
-dalvik.vm.stack-trace-dir=/data/anr
-
 #omni
 ro.hardware.lights=oneplus6
 ro.hardware.power=oneplus6
@@ -319,4 +303,20 @@ persist.sys.disable_rescue=true
 ro.com.google.clientidbase=android-google
 ro.services.whitelist.packagelist=com.google.android.gms
 
-
+dalvik.vm.heapstartsize=16m
+dalvik.vm.heapgrowthlimit=256m
+dalvik.vm.heapsize=512m
+dalvik.vm.heaptargetutilization=0.75
+dalvik.vm.heapminfree=4m
+dalvik.vm.heapmaxfree=8m
+ro.hwui.texture_cache_size=88
+ro.hwui.layer_cache_size=58
+ro.hwui.path_cache_size=32
+ro.hwui.shape_cache_size=4
+ro.hwui.gradient_cache_size=2
+ro.hwui.drop_shadow_cache_size=8
+ro.hwui.r_buffer_cache_size=8
+ro.hwui.text_small_cache_width=2048
+ro.hwui.text_small_cache_height=2048
+ro.hwui.text_large_cache_width=4096
+ro.hwui.text_large_cache_height=4096

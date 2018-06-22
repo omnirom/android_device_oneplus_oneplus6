@@ -194,3 +194,9 @@ lib/libfastcvdsp_stub.so
 lib/libfastcvopt.so
 lib64/libOmxMux.so
 lib/libOmxMux.so
+lib/vendor.display.color@1.0.so
+lib64/vendor.display.color@1.0.so
+lib64/vendor.display.config@1.0.so
+lib64/vendor.display.config@1.1.so
+lib/vendor.display.config@1.0.so
+lib/vendor.display.config@1.1.so
