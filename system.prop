@@ -20,9 +20,6 @@ DEVICE_PROVISIONED=1
 # Set network mode to (T/L/G/W/1X/EVDO, T/G/W/L) for 7+5 mode device on DSDS mode
 ro.telephony.default_network=22,20
 
-# show selinux status in settings
-ro.build.selinux=1
-
 debug.sf.hw=0
 debug.egl.hw=0
 debug.sf.latch_unsignaled=1
@@ -293,18 +290,6 @@ sdm.debug.disable_inline_rotator_secure =1
 #omni
 ro.hardware.lights=oneplus6
 ro.hardware.power=oneplus6
-ro.config.ringtone=omni_ringtone1.ogg
-ro.config.notification_sound=omni_notification1.ogg
-ro.config.alarm_alert=omni_alarm1.ogg
-ro.services.whitelist.packagelist=com.google.android.gms
-net.tethering.noprovisioning=true
-persist.sys.enable_rescue=0
-ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html
-ro.com.android.wifi-watchlist=GoogleGuest
-ro.setupwizard.enterprise_mode=1
-persist.sys.disable_rescue=true
-ro.com.google.clientidbase=android-google
-ro.services.whitelist.packagelist=com.google.android.gms
 
 dalvik.vm.heapstartsize=16m
 dalvik.vm.heapgrowthlimit=256m
