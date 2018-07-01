@@ -213,4 +213,20 @@ lib/com.qualcomm.qti.dpm.api@1.0.so
 lib/libdpmctmgr.so
 lib/libdpmtcm.so
 lib/libdpmfdmgr.so
+lib64/libmmosal.so
+lib/libmmosal.so
+lib64/libmmrtpencoder.so
+lib64/libmmrtpdecoder.so
+lib64/libmmparser.so
+lib/libmmrtpencoder.so
+lib/libmmrtpdecoder.so
+lib/libmmparser.so
+lib/libmmparser_lite.so
+lib64/libmmparser_lite.so
+lib/libFileMux.so
+lib64/libFileMux.so
+lib/libOmxMux.so
+lib64/libOmxMux.so
 
+# DASH
+-sbin/dashd;rootfs
