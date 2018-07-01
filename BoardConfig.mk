@@ -18,11 +18,11 @@
 # device-specific aspects (drivers) with a device-agnostic
 # product configuration (apps).
 #
-include build/make/target/board/treble_common_64.mk
 BOARD_PATH := device/oneplus/oneplus6
 
 PRODUCT_FULL_TREBLE := true
 BOARD_VNDK_VERSION := current
+BOARD_VNDK_RUNTIME_DISABLE := true
 PRODUCT_SHIPPING_API_LEVEL := 27
 TARGET_NO_KERNEL := false
 BOARD_AVB_ENABLE := false
@@ -89,7 +89,7 @@ TARGET_KERNEL_CONFIG := omni_oneplus6_defconfig
 # partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
 #BOARD_CACHEIMAGE_PARTITION_SIZE := 268435456
-#BOARD_RECOVERYIMAGE_PARTITION_SIZE := 67108864
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 67108864
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2998927360
 BOARD_VENDORIMAGE_PARTITION_SIZE := 1073741824
 #BOARD_USERDATAIMAGE_PARTITION_SIZE := 10737418240
@@ -102,6 +102,21 @@ BOARD_USES_QCOM_HARDWARE := true
 TARGET_USES_QCOM_BSP := false
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := false
+TARGET_USERIMAGES_SPARSE_EXT_DISABLED := false
+TARGET_USES_MKE2FS := true
+
+# Generic AOSP image always requires separate vendor.img
+TARGET_COPY_OUT_VENDOR := vendor
+
+# Generic AOSP image does NOT support HWC1
+TARGET_USES_HWC2 := true
+# Set emulator framebuffer display device buffer count to 3
+NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
+
+# TODO(b/35790399): remove when b/35790399 is fixed.
+BOARD_NAND_SPARE_SIZE := 0
+BOARD_FLASH_BLOCK_SIZE := 512
+
 
 # Camera
 TARGET_USES_QTI_CAMERA2CLIENT := true
@@ -187,6 +202,7 @@ TARGET_KERNEL_HAVE_EXFAT := true
 BOARD_USES_QCNE := true
 
 TARGET_SYSTEM_PROP := $(BOARD_PATH)/system.prop
+BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 
 # selinux
 include device/qcom/sepolicy/sepolicy.mk
@@ -218,6 +234,3 @@ TW_MAX_BRIGHTNESS := 255
 TW_NO_USB_STORAGE := false
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_THEME := portrait_hdpi
-# Workaround for error copying vendor files to recovery ramdisk
-BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
-#TARGET_COPY_OUT_VENDOR := vendor
