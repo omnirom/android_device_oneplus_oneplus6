@@ -30,9 +30,6 @@ $(call inherit-product, vendor/omni/config/gsm.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
 # must be before including omni part
-#treble
-$(call inherit-product, build/make/target/product/treble_common_64.mk)
-
 TARGET_BOOTANIMATION_SIZE := 1080p
 
 # Inherit from our custom product configuration

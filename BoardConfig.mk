@@ -111,7 +111,10 @@ TARGET_COPY_OUT_VENDOR := vendor
 # Generic AOSP image does NOT support HWC1
 TARGET_USES_HWC2 := true
 # Set emulator framebuffer display device buffer count to 3
-NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
+#NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
+
+VSYNC_EVENT_PHASE_OFFSET_NS := 2000000
+SF_VSYNC_EVENT_PHASE_OFFSET_NS := 6000000
 
 # TODO(b/35790399): remove when b/35790399 is fixed.
 BOARD_NAND_SPARE_SIZE := 0

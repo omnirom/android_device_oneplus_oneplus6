@@ -26,6 +26,18 @@ $(call inherit-product, vendor/omni/config/phone-xxhdpi-2048-hwui-memory.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/oneplus/oneplus6/overlay/common
 
+#from build treble includes
+PRODUCT_COPY_FILES += \
+    system/core/rootdir/init.zygote64_32.rc:root/init.zygote64_32.rc \
+    system/core/rootdir/init.zygote32_64.rc:root/init.zygote32_64.rc
+
+TARGET_SUPPORTS_32_BIT_APPS := true
+TARGET_SUPPORTS_64_BIT_APPS := true
+
+# SP-NDK:
+PRODUCT_PACKAGES += \
+    libvulkan \
+
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.build.version.all_codenames=$(PLATFORM_VERSION_ALL_CODENAMES) \
     ro.build.version.codename=$(PLATFORM_VERSION_CODENAME) \
@@ -115,13 +127,19 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 PRODUCT_CHARACTERISTICS := nosdcard
 
 # audio
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     audio.a2dp.default \
 
-#PRODUCT_COPY_FILES += \
-    $(TOPDIR)frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/a2dp_audio_policy_configuration.xml \
-    $(TOPDIR)frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/r_submix_audio_policy_configuration.xml \
-    $(TOPDIR)frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/usb_audio_policy_configuration.xml
+# Audio:
+USE_XML_AUDIO_POLICY_CONF := 1
+# The following policy XML files are used as fallback for
+# vendors/devices not using XML to configure audio policy.
+PRODUCT_COPY_FILES += \
+    frameworks/av/services/audiopolicy/config/audio_policy_configuration_generic.xml:system/etc/audio_policy_configuration.xml \
+    frameworks/av/services/audiopolicy/config/primary_audio_policy_configuration.xml:system/etc/primary_audio_policy_configuration.xml \
+    frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:system/etc/r_submix_audio_policy_configuration.xml \
+    frameworks/av/services/audiopolicy/config/audio_policy_volumes.xml:system/etc/audio_policy_volumes.xml \
+    frameworks/av/services/audiopolicy/config/default_volume_tables.xml:system/etc/default_volume_tables.xml \
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
@@ -167,8 +185,7 @@ PRODUCT_PACKAGES += \
     wpa_supplicant \
     wpa_supplicant.conf
 
-#PRODUCT_PACKAGES += \
-    wcnss_service \
+PRODUCT_PACKAGES += \
     libcld80211 \
     lib_driver_cmd_qcwcn
 
@@ -191,7 +208,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     ims-ext-common
 
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     com.android.ims.rcsmanager \
     com.android.ims.rcsmanager.xml \
     RcsService \
@@ -214,8 +231,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     DeviceParts
 
-#PRODUCT_PACKAGES += \
-    vndk-sp
+PRODUCT_PACKAGES += \
+    vndk_package
 
 # Update engine
 PRODUCT_PACKAGES += \
@@ -233,6 +250,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libion \
     libtinyxml2
+
+PRODUCT_PACKAGES += \
+    libtinyalsa
+
 
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/media_codecs_google_audio.xml \
