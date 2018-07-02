@@ -42,6 +42,7 @@ import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.os.SystemClock;
 import android.os.SystemProperties;
+import android.os.UEventObserver;
 import android.os.UserHandle;
 import android.provider.Settings;
 import android.provider.Settings.Global;
@@ -123,12 +124,6 @@ public class KeyHandler implements DeviceKeyHandler {
         FP_GESTURE_SWIPE_LEFT,
         FP_GESTURE_SWIPE_RIGHT,
         FP_GESTURE_LONG_PRESS,
-    };
-
-    private static final int[] sHandledGestures = new int[]{
-        KEY_SLIDER_TOP,
-        KEY_SLIDER_CENTER,
-        KEY_SLIDER_BOTTOM
     };
 
     private static final int[] sProxiCheckedGestures = new int[]{
@@ -291,6 +286,27 @@ public class KeyHandler implements DeviceKeyHandler {
         IntentFilter screenStateFilter = new IntentFilter(Intent.ACTION_SCREEN_ON);
         screenStateFilter.addAction(Intent.ACTION_SCREEN_OFF);
         mContext.registerReceiver(mScreenStateReceiver, screenStateFilter);
+        (new UEventObserver() {
+            @Override
+            public void onUEvent(UEventObserver.UEvent event) {
+                try {
+                    String state = event.get("STATE");
+                    boolean ringing = state.contains("USB=0");
+                    boolean silent = state.contains("(null)=0");
+                    boolean vibrate = state.contains("USB_HOST=0");
+                    android.util.Log.v("DeviceParts", "Got ringing = " + ringing + ", silent = " + silent + ", vibrate = " + vibrate);
+                    if(ringing && !silent && !vibrate)
+                        doHandleSliderAction(2);
+                    if(silent && !ringing && !vibrate)
+                        doHandleSliderAction(1);
+                    if(vibrate && !silent && !ringing)
+                        doHandleSliderAction(0);
+                } catch(Exception e) {
+                    android.util.Log.d("DeviceParts", "Failed parsing uevent", e);
+                }
+
+            }
+	}).startObserving("DEVPATH=/devices/platform/soc/soc:tri_state_key");
     }
 
     private class EventHandler extends Handler {
@@ -304,25 +320,8 @@ public class KeyHandler implements DeviceKeyHandler {
         if (event.getAction() != KeyEvent.ACTION_UP) {
             return false;
         }
+
         isFpgesture = false;
-        boolean isKeySupported = ArrayUtils.contains(sHandledGestures, event.getScanCode());
-        if (isKeySupported) {
-            if (DEBUG) Log.i(TAG, "scanCode=" + event.getScanCode());
-            switch(event.getScanCode()) {
-                case KEY_SLIDER_TOP:
-                    if (DEBUG) Log.i(TAG, "KEY_SLIDER_TOP");
-                    doHandleSliderAction(0);
-                    return true;
-                case KEY_SLIDER_CENTER:
-                    if (DEBUG) Log.i(TAG, "KEY_SLIDER_CENTER");
-                    doHandleSliderAction(1);
-                    return true;
-                case KEY_SLIDER_BOTTOM:
-                    if (DEBUG) Log.i(TAG, "KEY_SLIDER_BOTTOM");
-                    doHandleSliderAction(2);
-                    return true;
-            }
-        }
 
         if (DEBUG) Log.i(TAG, "nav_code=" + event.getScanCode());
         int fpcode = event.getScanCode();
