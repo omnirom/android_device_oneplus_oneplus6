@@ -218,7 +218,7 @@ BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 # selinux
 include device/qcom/sepolicy/sepolicy.mk
 include vendor/omni/sepolicy/sepolicy.mk
-BOARD_SEPOLICY_DIRS += $(BOARD_PATH)/sepolicy
+BOARD_SEPOLICY_DIRS += $(BOARD_PATH)/sepolicy/qcom
 BOARD_PLAT_PUBLIC_SEPOLICY_DIR += $(BOARD_PATH)/sepolicy/public
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(BOARD_PATH)/sepolicy/private
 
