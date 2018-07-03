@@ -181,7 +181,7 @@ qemu.hw.mainkeys=0
 #ifdef VENDOR_EDIT
 #lifei@OnLineRD.MultiMediaService, 2015/12/23, Modify for support offload Is greater than 30s Audio source
 audio.offload.min.duration.secs=30
-sdm.debug.disable_inline_rotator=0
+sdm.debug.disable_inline_rotator=1
 sdm.debug.disable_inline_rotator_secure=0
 
 sdm.debug.prefersplit=1
@@ -312,3 +312,5 @@ dalvik.vm.heapsize=512m
 dalvik.vm.heaptargetutilization=0.75
 dalvik.vm.heapminfree=4m
 dalvik.vm.heapmaxfree=8m
+
+ro.netflix.bsp_rev=Q845-14477-1

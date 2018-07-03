@@ -36,6 +36,13 @@ TARGET_SUPPORTS_64_BIT_APPS := true
 PRODUCT_PACKAGES += \
     libvulkan \
 
+PRODUCT_PACKAGES += update_engine \
+    update_engine_client \
+    update_verifier \
+    brillo_update_payload \
+    android.hardware.boot@1.0-impl \
+    android.hardware.boot@1.0-service
+
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.build.version.all_codenames=$(PLATFORM_VERSION_ALL_CODENAMES) \
     ro.build.version.codename=$(PLATFORM_VERSION_CODENAME) \
@@ -47,13 +54,6 @@ AB_OTA_POSTINSTALL_CONFIG += \
     POSTINSTALL_PATH_system=system/bin/otapreopt_script \
     FILESYSTEM_TYPE_system=ext4 \
     POSTINSTALL_OPTIONAL_system=true
-
-PRODUCT_PACKAGES += \
-    otapreopt_script
-
-PRODUCT_PACKAGES += \
-    update_engine \
-    update_verifier
 
 PRODUCT_PACKAGES += \
     omni_charger_res_images
@@ -231,10 +231,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     vndk_package
-
-# Update engine
-PRODUCT_PACKAGES += \
-    brillo_update_payload
 
 PRODUCT_PACKAGES += \
     android.hidl.manager@1.0-java \

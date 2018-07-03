@@ -25,10 +25,10 @@ BOARD_VNDK_VERSION := current
 BOARD_VNDK_RUNTIME_DISABLE := true
 PRODUCT_SHIPPING_API_LEVEL := 27
 TARGET_NO_KERNEL := false
+TARGET_USES_UEFI := true
 BOARD_AVB_ENABLE := false
 BOARD_BUILD_DISABLED_VBMETAIMAGE := false
 BOARD_SEPOLICY_VERS := 30
-#BOARD_USES_VENDORIMAGE := true
 
 # Enable A/B update
 TARGET_NO_RECOVERY := true
@@ -36,6 +36,16 @@ BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 AB_OTA_PARTITIONS ?= boot system
 BOARD_USES_RECOVERY_AS_BOOT := true
 AB_OTA_UPDATER := true
+BOARD_AVB_RECOVERY_KEY_PATH := external/avb/test/data/testkey_rsa4096.pem
+BOARD_AVB_RECOVERY_ALGORITHM := SHA256_RSA4096
+BOARD_AVB_RECOVERY_ROLLBACK_INDEX := 1
+BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
+TARGET_RECOVERY_FSTAB := $(BOARD_PATH)/recovery.fstab
+
+ENABLE_VENDOR_IMAGE := true
+BOARD_VENDORIMAGE_PARTITION_SIZE := 1073741824
+BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
+TARGET_COPY_OUT_VENDOR := vendor
 
 TARGET_USE_SDCLANG := true
 TARGET_NO_BOOTLOADER := true
@@ -69,6 +79,7 @@ TARGET_COMPILE_WITH_MSM_KERNEL := true
 
 ENABLE_CPUSETS := true
 ENABLE_SCHEDBOOST := true
+
 
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom androidboot.console=ttyMSM0 video=vfb:640x400,bpp=32,memsize=3072000 msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 service_locator.enable=1 swiotlb=2048 androidboot.configfs=true androidboot.usbcontroller=a600000.dwc3
 #BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
@@ -111,10 +122,7 @@ TARGET_COPY_OUT_VENDOR := vendor
 # Generic AOSP image does NOT support HWC1
 TARGET_USES_HWC2 := true
 # Set emulator framebuffer display device buffer count to 3
-#NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
-
-VSYNC_EVENT_PHASE_OFFSET_NS := 2000000
-SF_VSYNC_EVENT_PHASE_OFFSET_NS := 6000000
+NUM_FRAMEBUFFER_SURFACE_BUFFERS := 2
 
 # TODO(b/35790399): remove when b/35790399 is fixed.
 BOARD_NAND_SPARE_SIZE := 0
@@ -237,3 +245,5 @@ TW_MAX_BRIGHTNESS := 255
 TW_NO_USB_STORAGE := false
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_THEME := portrait_hdpi
+
+BOARD_FRP_PARTITION_NAME := frp
