@@ -11,3 +11,7 @@ on init
 on boot
    # default country code
    setprop ro.boot.wificountrycode 00
+
+service factory-hal-1-0 /system/bin/true
+    disabled
+
