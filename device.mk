@@ -24,8 +24,6 @@ $(call inherit-product, vendor/oneplus/oneplus6/device-vendor.mk)
 $(call inherit-product, vendor/omni/config/phone-xxhdpi-4096-dalvik-heap.mk)
 $(call inherit-product, vendor/omni/config/phone-xxhdpi-2048-hwui-memory.mk)
 
-DEVICE_PACKAGE_OVERLAYS += device/oneplus/oneplus6/overlay/common
-
 #from build treble includes
 PRODUCT_COPY_FILES += \
     system/core/rootdir/init.zygote64_32.rc:root/init.zygote64_32.rc \
