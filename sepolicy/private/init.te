@@ -8,3 +8,5 @@ allow init sysfs:file create;
 allow init debugfs:dir mounton;
 
 allow init system_file:system module_load;
+allow init vendor_file:file mounton;
+ 
