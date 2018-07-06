@@ -230,3 +230,8 @@ lib64/libOmxMux.so
 
 # DASH
 -sbin/dashd;rootfs
+
+# google
+-priv-app/HotwordEnrollmentXGoogleWCD9340/HotwordEnrollmentXGoogleWCD9340.apk
+-priv-app/HotwordEnrollmentOKGoogleWCD9340/HotwordEnrollmentOKGoogleWCD9340.apk
+
