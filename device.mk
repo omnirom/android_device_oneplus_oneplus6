@@ -48,11 +48,17 @@ AB_OTA_POSTINSTALL_CONFIG += \
     FILESYSTEM_TYPE_system=ext4 \
     POSTINSTALL_OPTIONAL_system=true
 
+PRODUCT_STATIC_BOOT_CONTROL_HAL := \
+    bootctrl.sdm845 \
+    librecovery_updater_msm \
+    libsparse
+
 PRODUCT_PACKAGES += \
     otapreopt_script
 
 PRODUCT_PACKAGES += \
     update_engine \
+    update_engine_sideload \
     update_verifier
 
 PRODUCT_PACKAGES += \
