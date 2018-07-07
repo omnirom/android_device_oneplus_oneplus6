@@ -1,32 +1,8 @@
 [
   {
     "remote": "omnirom",
-    "repository": "android_hardware_qcom_display-caf-msm8998",
-    "target_path": "hardware/qcom/display-caf-msm8998",
-    "revision": "android-8.1"
-  },
-  {
-    "remote": "omnirom",
-    "repository": "android_hardware_qcom_audio-caf-msm8998",
-    "target_path": "hardware/qcom/audio-caf-msm8998",
-    "revision": "android-8.1"
-  },
-  {
-    "remote": "omnirom",
-    "repository": "android_hardware_qcom_media-caf-msm8998",
-    "target_path": "hardware/qcom/media-caf-msm8998",
-    "revision": "android-8.1"
-  },
-  {
-    "remote": "omnirom",
     "repository": "android_packages_apps_SnapdragonCamera2",
     "target_path": "packages/apps/SnapdragonCamera2",
-    "revision": "android-8.1"
-  },
-  {
-    "remote": "omnirom",
-    "repository": "vendor_qcom_opensource_dataservices",
-    "target_path": "vendor/qcom/opensource/dataservices",
     "revision": "android-8.1"
   },
   {
@@ -37,50 +13,8 @@
   },
   {
     "remote": "omnirom",
-    "repository": "android_vendor_nxp-nfc_interfaces_opensource_nfc",
-    "target_path": "vendor/nxp-nfc/interfaces/opensource/nfc",
-    "revision": "android-8.0"
-  },
-  {
-    "remote": "omnirom",
-    "repository": "android_vendor_nxp-nfc_opensource_frameworks",
-    "target_path": "vendor/nxp-nfc/opensource/frameworks",
-    "revision": "android-8.1"
-  },
-  {
-    "remote": "omnirom",
-    "repository": "android_vendor_nxp-nfc_opensource_libnfc-nci",
-    "target_path": "vendor/nxp-nfc/opensource/libnfc-nci",
-    "revision": "android-8.1"
-  },
-  {
-    "remote": "omnirom",
-    "repository": "android_vendor_nxp-nfc_opensource_Nfc",
-    "target_path": "vendor/nxp-nfc/opensource/Nfc",
-    "revision": "android-8.1"
-  },
-  {
-    "remote": "omnirom",
-    "repository": "android_kernel_oneplus_msm8998",
-    "target_path": "kernel/oneplus/msm8998",
-    "revision": "android-8.1"
-  },
-  {
-    "remote": "omnirom",
-    "repository": "android_vendor_qcom_opensource_interfaces",
-    "target_path": "vendor/qcom/opensource/interfaces",
-    "revision": "android-8.1"
-  },
-  {
-    "remote": "omnirom",
-    "repository": "android_vendor_qcom_opensource_dpm",
-    "target_path": "vendor/qcom/opensource/dpm",
-    "revision": "android-8.0"
-  },
-  {
-    "remote": "omnirom",
-    "repository": "android_vendor_qcom_opensource_bluetooth",
-    "target_path": "vendor/qcom/opensource/bluetooth",
+    "repository": "android_kernel_oneplus_sdm845",
+    "target_path": "kernel/oneplus/sdm845",
     "revision": "android-8.1"
   }
 ]
