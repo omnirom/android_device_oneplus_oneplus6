@@ -36,6 +36,7 @@ BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 AB_OTA_PARTITIONS ?= boot system
 BOARD_USES_RECOVERY_AS_BOOT := true
 AB_OTA_UPDATER := true
+BUILD_OEM_UPDATER := true
 
 TARGET_USE_SDCLANG := true
 TARGET_NO_BOOTLOADER := true
@@ -221,6 +222,8 @@ BOARD_SECCOMP_POLICY += $(BOARD_PATH)/seccomp_policy
 
 # for offmode charging
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
+
+TARGET_RECOVERY_FSTAB := $(BOARD_PATH)/recovery.fstab
 
 # Recovery:Start
 BOARD_HAS_LARGE_FILESYSTEM := true
