@@ -1,24 +1,6 @@
 [
   {
     "remote": "omnirom",
-    "repository": "android_hardware_qcom_display-caf-msm8998",
-    "target_path": "hardware/qcom/display-caf-msm8998",
-    "revision": "android-8.1"
-  },
-  {
-    "remote": "omnirom",
-    "repository": "android_hardware_qcom_audio-caf-msm8998",
-    "target_path": "hardware/qcom/audio-caf-msm8998",
-    "revision": "android-8.1"
-  },
-  {
-    "remote": "omnirom",
-    "repository": "android_hardware_qcom_media-caf-msm8998",
-    "target_path": "hardware/qcom/media-caf-msm8998",
-    "revision": "android-8.1"
-  },
-  {
-    "remote": "omnirom",
     "repository": "android_packages_apps_SnapdragonCamera2",
     "target_path": "packages/apps/SnapdragonCamera2",
     "revision": "android-8.1"
@@ -61,8 +43,8 @@
   },
   {
     "remote": "omnirom",
-    "repository": "android_kernel_oneplus_msm8998",
-    "target_path": "kernel/oneplus/msm8998",
+    "repository": "android_kernel_oneplus_sdm845",
+    "target_path": "kernel/oneplus/sdm845",
     "revision": "android-8.1"
   },
   {
