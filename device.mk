@@ -42,6 +42,11 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.build.version.release=$(PLATFORM_VERSION) \
     ro.build.version.sdk=$(PLATFORM_SDK_VERSION)
 
+AB_OTA_PARTITIONS += \
+    boot \
+    system \
+    vbmeta
+
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
     POSTINSTALL_PATH_system=system/bin/otapreopt_script \
@@ -49,11 +54,24 @@ AB_OTA_POSTINSTALL_CONFIG += \
     POSTINSTALL_OPTIONAL_system=true
 
 PRODUCT_PACKAGES += \
-    otapreopt_script
-
-PRODUCT_PACKAGES += \
+    otapreopt_script \
+    brillo_update_payload \
     update_engine \
+    update_engine_sideload \
     update_verifier
+
+# Boot control
+PRODUCT_PACKAGES_DEBUG += \
+    bootctl
+
+PRODUCT_STATIC_BOOT_CONTROL_HAL := \
+    bootctrl.sdm845 \
+    libcutils \
+    libgptutils \
+    libz \
+
+PRODUCT_PACKAGES_DEBUG += \
+    update_engine_client
 
 PRODUCT_PACKAGES += \
     omni_charger_res_images
@@ -231,10 +249,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     vndk_package
-
-# Update engine
-PRODUCT_PACKAGES += \
-    brillo_update_payload
 
 PRODUCT_PACKAGES += \
     android.hidl.manager@1.0-java \
