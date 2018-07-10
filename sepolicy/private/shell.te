@@ -6,4 +6,5 @@ allow shell uncrypt_exec:file getattr;
 allow shell update_verifier_exec:file getattr;
 allow shell vdc_exec:file getattr;
 allow shell webview_zygote_exec:file getattr;
+allow shell pstorefs:dir r_dir_perms;
 
