@@ -313,3 +313,7 @@ etc/sensors/proto/sns_diag_sensor.proto
 etc/sensors/proto/sns_oem1.proto
 etc/sensors/proto/sns_amd.proto
 etc/scve/facereco/gModel.dat
+
+#hw composer temp
+-lib64/hw/hwcomposer.qcom.so|112747a053fd3408eccae5748917a60b3a569668
+
