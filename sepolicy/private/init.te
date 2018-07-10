@@ -9,4 +9,8 @@ allow init debugfs:dir mounton;
 
 allow init system_file:system module_load;
 allow init vendor_file:file mounton;
- 
+
+allow init proc:dir rw_dir_perms;
+allow init proc:file rw_file_perms;
+allow init proc:file create;
+
