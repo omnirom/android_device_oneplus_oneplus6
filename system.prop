@@ -186,6 +186,9 @@ sdm.debug.disable_inline_rotator_secure=0
 
 sdm.debug.prefersplit=1
 
+#enable IZat OptInApp overlay
+persist.vendor.overlay.izat.optin=rro
+
 # Property for backup NTP Server
 persist.backup.ntpServer="0.pool.ntp.org"
 
