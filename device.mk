@@ -237,7 +237,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
     tcmiface \
     android.hardware.light-V2.0-java \
-    WfdCommon
+    WfdCommon \
+    telephony-ext
 
 # Netutils
 PRODUCT_PACKAGES += \
