@@ -1,2 +1,5 @@
 rcs                                                  u:object_r:radio_service:s0
-#wfdservice                                     u:object_r:wfdservice_service:s0
+wfdservice                                     u:object_r:wfdservice_service:s0
+wigigp2p                                       u:object_r:wigigp2p_service:s0
+wigig                                          u:object_r:wigig_service:s0
+
