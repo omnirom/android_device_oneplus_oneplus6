@@ -97,10 +97,6 @@ public class KeyHandler implements DeviceKeyHandler {
     private static final String DOZE_INTENT = "com.android.systemui.doze.pulse";
     private static final int HANDWAVE_MAX_DELTA_MS = 1000;
     private static final int POCKET_MIN_DELTA_MS = 5000;
-    private static final int FP_GESTURE_SWIPE_DOWN = 108;
-    private static final int FP_GESTURE_SWIPE_UP = 103;
-    private static final int FP_GESTURE_SWIPE_LEFT = 105;
-    private static final int FP_GESTURE_SWIPE_RIGHT = 106;
     private static final int FP_GESTURE_LONG_PRESS = 305;
     private static final boolean sIsOnePlus6 = android.os.Build.DEVICE.equals("OnePlus6");
 
@@ -119,10 +115,6 @@ public class KeyHandler implements DeviceKeyHandler {
         KEY_SLIDER_TOP,
         KEY_SLIDER_CENTER,
         KEY_SLIDER_BOTTOM,
-        FP_GESTURE_SWIPE_DOWN,
-        FP_GESTURE_SWIPE_UP,
-        FP_GESTURE_SWIPE_LEFT,
-        FP_GESTURE_SWIPE_RIGHT,
         FP_GESTURE_LONG_PRESS,
     };
 
@@ -306,7 +298,7 @@ public class KeyHandler implements DeviceKeyHandler {
                 }
 
             }
-	}).startObserving("DEVPATH=/devices/platform/soc/soc:tri_state_key");
+    }).startObserving("DEVPATH=/devices/platform/soc/soc:tri_state_key");
     }
 
     private class EventHandler extends Handler {
@@ -323,7 +315,7 @@ public class KeyHandler implements DeviceKeyHandler {
 
         isFpgesture = false;
 
-        if (DEBUG) Log.i(TAG, "nav_code=" + event.getScanCode());
+        if (DEBUG) Log.i(TAG, "nav_code= " + event.getScanCode());
         int fpcode = event.getScanCode();
         mFPcheck = canHandleKeyEvent(event);
         String value = getGestureValueForFPScanCode(fpcode);
@@ -630,28 +622,9 @@ public class KeyHandler implements DeviceKeyHandler {
     }
 
     private String getGestureValueForFPScanCode(int scanCode) {
-        switch(scanCode) {
-            case FP_GESTURE_SWIPE_DOWN:
-                if (areSystemNavigationKeysEnabled() == false){
-                    return Settings.System.getStringForUser(mContext.getContentResolver(),
-                       GestureSettings.DEVICE_GESTURE_MAPPING_10, UserHandle.USER_CURRENT);
-                }
-                break;
-            case FP_GESTURE_SWIPE_UP:
-                if (areSystemNavigationKeysEnabled() == false){
-                    return Settings.System.getStringForUser(mContext.getContentResolver(),
-                       GestureSettings.DEVICE_GESTURE_MAPPING_11, UserHandle.USER_CURRENT);
-                }
-                break;
-            case FP_GESTURE_SWIPE_LEFT:
-                return Settings.System.getStringForUser(mContext.getContentResolver(),
-                    GestureSettings.DEVICE_GESTURE_MAPPING_12, UserHandle.USER_CURRENT);
-            case FP_GESTURE_SWIPE_RIGHT:
-                return Settings.System.getStringForUser(mContext.getContentResolver(),
-                    GestureSettings.DEVICE_GESTURE_MAPPING_13, UserHandle.USER_CURRENT);
-            case FP_GESTURE_LONG_PRESS:
-                return Settings.System.getStringForUser(mContext.getContentResolver(),
-                    GestureSettings.DEVICE_GESTURE_MAPPING_14, UserHandle.USER_CURRENT);
+        if (FP_GESTURE_LONG_PRESS == scanCode) {
+            return Settings.System.getStringForUser(mContext.getContentResolver(),
+                   GestureSettings.DEVICE_GESTURE_MAPPING_10, UserHandle.USER_CURRENT);
         }
         return null;
     }

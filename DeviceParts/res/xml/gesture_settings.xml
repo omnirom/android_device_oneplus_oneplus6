@@ -96,26 +96,6 @@
         android:key="key_fp_gesture_category" >
 
         <org.omnirom.device.AppSelectListPreference
-            android:key="fp_down_swipe_gesture_app"
-            android:title="@string/category_fp_down_swipe_gesture"
-            android:persistent="false"/>
-
-        <org.omnirom.device.AppSelectListPreference
-            android:key="fp_up_swipe_gesture_app"
-            android:title="@string/category_fp_up_swipe_gesture"
-            android:persistent="false"/>
-
-        <org.omnirom.device.AppSelectListPreference
-            android:key="fp_right_swipe_gesture_app"
-            android:title="@string/category_fp_right_swipe_gesture"
-            android:persistent="false"/>
-
-        <org.omnirom.device.AppSelectListPreference
-            android:key="fp_left_swipe_gesture_app"
-            android:title="@string/category_fp_left_swipe_gesture"
-            android:persistent="false"/>
-
-        <org.omnirom.device.AppSelectListPreference
             android:key="fp_long_press_gesture_app"
             android:title="@string/category_fp_long_press_gesture"
             android:persistent="false"/>
