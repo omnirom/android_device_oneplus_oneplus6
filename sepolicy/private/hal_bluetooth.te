@@ -1,0 +1,4 @@
+allow hal_bluetooth oem_data_file:file r_file_perms;
+allow hal_bluetooth oem_data_file:file getattr;
+
+
