@@ -232,6 +232,8 @@ lib/libFileMux.so
 lib64/libFileMux.so
 lib/libOmxMux.so
 lib64/libOmxMux.so
+lib64/libtzcom.so
+lib/libtzcom.so
 
 # DASH
 -sbin/dashd;rootfs
