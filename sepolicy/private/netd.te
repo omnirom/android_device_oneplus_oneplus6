@@ -1,0 +1,7 @@
+allow netd proc_net:dir rw_dir_perms;
+allow netd sysfs:dir rw_dir_perms;
+allow netd proc_net:file create;
+allow netd sysfs:file create;
+
+
+
