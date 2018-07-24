@@ -229,11 +229,9 @@ PRODUCT_PACKAGES += \
     PresencePolling
 
 PRODUCT_PACKAGES += \
-    tcmiface \
     WfdCommon
 
 PRODUCT_BOOT_JARS += \
-    tcmiface \
     android.hardware.light-V2.0-java \
     WfdCommon
 
