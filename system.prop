@@ -290,6 +290,8 @@ sdm.debug.disable_inline_rotator = 1
 sdm.debug.disable_inline_rotator_secure =1
 #endif VENDOR_EDIT
 
+ro.netflix.bsp_rev=Q845-14477-1
+
 #omni
 ro.hardware.lights=oneplus6
 ro.hardware.power=oneplus6
