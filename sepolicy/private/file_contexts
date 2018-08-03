@@ -30,3 +30,6 @@
 /dev/snd/controlC0            u:object_r:oem_audio_device:s0
 
 /vendor/firmware/libpn553_fw.so    u:object_r:firmware_file_nfc:s0
+
+
+/system/bin/client_pack.sh   u:object_r:omni_client_pack_exec:s0

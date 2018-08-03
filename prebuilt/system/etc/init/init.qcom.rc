@@ -157,3 +157,7 @@ on property:service.adb.tcp.port=-1
 
 service factory-hal-1-0 /system/bin/true
     disabled
+
+on property:sys.boot_completed=1
+    write /data/misc/camera/client_package_name "com.oneplus.camera"
+    start client_pack

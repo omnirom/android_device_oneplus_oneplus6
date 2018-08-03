@@ -14,3 +14,4 @@ allow init proc:dir rw_dir_perms;
 allow init proc:file rw_file_perms;
 allow init proc:file create;
 
+allow omni_client_pack omni_client_pack_exec:file {execute_no_trans getattr execute read open };

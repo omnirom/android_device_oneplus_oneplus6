@@ -1,0 +1,2 @@
+allow hal_camera camera_data_file:lnk_file read;
+

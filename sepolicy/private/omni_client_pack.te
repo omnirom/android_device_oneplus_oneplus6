@@ -1,0 +1,11 @@
+type omni_client_pack, domain, mlstrustedsubject, coredomain;
+
+init_daemon_domain(omni_client_pack)
+
+allow omni_client_pack shell_exec:file { execute read getattr };
+
+allow omni_client_pack toolbox_exec:file { execute read getattr open };
+allow omni_client_pack vendor_toolbox_exec:file { read getattr };
+
+allow omni_client_pack vendor_shell_exec:file { read getattr open};
+

@@ -11,3 +11,5 @@ type sysfs_graphics_omni, sysfs_type, fs_type;
 
 type oem_audio_device, dev_type;
 type firmware_file_nfc, file_type;
+
+type omni_client_pack_exec, exec_type, mlstrustedobject, file_type;
