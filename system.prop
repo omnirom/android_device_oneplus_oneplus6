@@ -306,6 +306,8 @@ persist.sys.disable_rescue=true
 ro.com.google.clientidbase=android-google
 ro.services.whitelist.packagelist=com.google.android.gms
 
+persist.sys.camera.preview.size=1920x1080
+
 dalvik.vm.heapstartsize=16m
 dalvik.vm.heapgrowthlimit=256m
 dalvik.vm.heapsize=512m
