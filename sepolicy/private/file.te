@@ -11,3 +11,5 @@ type sysfs_graphics_omni, sysfs_type, fs_type;
 
 type oem_audio_device, dev_type;
 type firmware_file_nfc, file_type;
+
+type oneplus6_init_exec, exec_type, file_type;
