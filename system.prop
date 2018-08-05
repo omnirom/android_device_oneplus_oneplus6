@@ -308,6 +308,10 @@ ro.services.whitelist.packagelist=com.google.android.gms
 
 persist.sys.camera.preview.size=1920x1080
 
+persist.radio.aosp_usr_pref_sel=true
+persist.vendor.radio.add_power_save=true
+persist.rcs.supported=true
+
 dalvik.vm.heapstartsize=16m
 dalvik.vm.heapgrowthlimit=256m
 dalvik.vm.heapsize=512m
