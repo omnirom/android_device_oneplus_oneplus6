@@ -5,8 +5,8 @@ on init
     mount none /system/etc/audio_policy_configuration_omni.xml /vendor/etc/audio_policy_configuration.xml bind
     mount none /system/etc/audio_effects_omni.conf /vendor/etc/audio_effects.conf bind
     mount none /system/lib/modules/wlan.ko /vendor/lib/modules/qca_cld3_wlan.ko bind
+    mount none /system/lib/modules/wlan.ko /vendor/lib/modules-aging/qca_cld3_wlan.ko bind
     mount none /dev/null /vendor/overlay/SysuiDarkTheme/SysuiDarkThemeOverlay.apk bind
-    mount none /system/etc/camera/client_package_name /data/misc/camera/client_package_name bind
     #mount none /system/etc/init/android.hardware.power@1.1-service.oneplus6.rc /vendor/etc/init/android.hardware.power@1.0-service.rc bind
 
     # Set permissions for dsp partition
