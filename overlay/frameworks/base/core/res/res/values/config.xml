@@ -19,6 +19,46 @@
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+    <!-- default window inset isRound property -->
+    <bool name="config_windowIsRound">true</bool>
+
+    <!-- Corner radius of system dialogs -->
+    <dimen name="config_dialogCornerRadius">8dp</dimen>
+
+    <!-- The bounding path of the cutout region of the main built-in display.
+         Must either be empty if there is no cutout region, or a string that is parsable by
+         {@link android.util.PathParser}.
+
+         The path is assumed to be specified in display coordinates with pixel units and in
+         the display's native orientation, with the origin of the coordinate system at the
+         center top of the display.
+
+         To facilitate writing device-independent emulation overlays, the marker `@dp` can be
+         appended after the path string to interpret coordinates in dp instead of px units.
+         Note that a physical cutout should be configured in pixels for the best results.
+
+         Example for a 10px x 10px square top-center cutout:
+                <string ...>M -5,0 L -5,10 L 5,10 L 5,0 Z</string>
+         Example for a 10dp x 10dp square top-center cutout:
+                <string ...>M -5,0 L -5,10 L 5,10 L 5,0 Z @dp</string>
+
+         @see https://www.w3.org/TR/SVG/paths.html#PathData
+         -->
+    <string name="config_mainBuiltInDisplayCutout">M 0,0 L -183, 0 A 24.0, 24.0, 0, 0, 1, -159.0, 22.0 A 64.0, 64.0, 0, 0, 0, -95.0, 80.0 L 95.0, 80.0 A 64.0, 64.0, 0, 0, 0, 159.0, 22.0 A 24.0, 24.0, 0, 0, 1, 183.0, 0 Z</string>
+
+    <!-- Whether the display cutout region of the main built-in display should be forced to
+         black in software (to avoid aliasing or emulate a cutout that is not physically existent).
+         -->
+    <bool name="config_fillMainBuiltInDisplayCutout">true</bool>
+
+    <!-- Height of the status bar -->
+    <dimen name="status_bar_height_portrait">80px</dimen>
+    <dimen name="status_bar_height_landscape">48px</dimen>
+    <!-- Height of area above QQS where battery/time go (equal to status bar height if > 48dp) -->
+    <dimen name="quick_qs_offset_height">80px</dimen>
+    <!-- Total height of QQS (quick_qs_offset_height + 128) -->
+    <dimen name="quick_qs_total_height">460px</dimen>
+
     <!-- Default color for notification LED is blue. -->
     <color name="config_defaultNotificationColor">#ff0000ff</color>
 

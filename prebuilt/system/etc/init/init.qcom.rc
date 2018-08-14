@@ -1,13 +1,13 @@
 on init
-    #stop power-hal-1-0
-
     mount none /system/etc/media_profiles_vendor.xml /vendor/etc/media_profiles_vendor.xml bind
     mount none /system/etc/audio_policy_configuration_omni.xml /vendor/etc/audio_policy_configuration.xml bind
     mount none /system/etc/audio_effects_omni.conf /vendor/etc/audio_effects.conf bind
     mount none /system/lib/modules/wlan.ko /vendor/lib/modules/qca_cld3_wlan.ko bind
-    mount none /system/lib/modules/wlan.ko /vendor/lib/modules-aging/qca_cld3_wlan.ko bind
+    mount none /system/lib/hw/lights.oneplus6.so /vendor/lib/hw/lights.sdm845.so bind
+    mount none /system/lib64/hw/lights.oneplus6.so /vendor/lib64/hw/lights.sdm845.so bind
     mount none /dev/null /vendor/overlay/SysuiDarkTheme/SysuiDarkThemeOverlay.apk bind
-    #mount none /system/etc/init/android.hardware.power@1.1-service.oneplus6.rc /vendor/etc/init/android.hardware.power@1.0-service.rc bind
+    mount none /system/lib/hw/power.oneplus6.so /vendor/lib/hw/power.qcom.so bind
+    mount none /system/lib64/hw/power.oneplus6.so /vendor/lib64/hw/power.qcom.so bind
 
     # Set permissions for dsp partition
     mkdir /dsp 0771 media media
