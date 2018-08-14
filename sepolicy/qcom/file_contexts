@@ -11,4 +11,6 @@
 # files in firmware
 #/firmware(/.*)?         u:object_r:firmware_file:s0
 
-/data/oemnvitems/447 u:object_r:bluetooth_data_file:s0
+#/data/oemnvitems/447 u:object_r:bluetooth_data_file:s0
+
+#/bt_firmware               u:object_r:bt_firmware_file:s0

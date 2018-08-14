@@ -178,17 +178,10 @@ PRODUCT_COPY_FILES += \
 
 # NFC
 PRODUCT_PACKAGES += \
-    com.android.nfc_extras \
-    com.gsma.services.nfc \
-    com.nxp.nfc.nq \
-    com.nxp.nfc.nq.xml \
-    libnqnfc-nci \
-    nfc_nci.nqx.default \
-    libp61-jcop-kit \
-    NQNfcNci \
-    nqnfcee_access.xml \
-    nqnfcse_access.xml \
-    Tag
+    NfcNci \
+    libnfc_nci_jni \
+    Tag \
+    com.android.nfc_extras
 
 PRODUCT_PACKAGES += \
     libwifi-hal-qcom \
@@ -228,26 +221,24 @@ PRODUCT_PACKAGES += \
     RcsService \
     PresencePolling
 
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     WfdCommon
 
 PRODUCT_BOOT_JARS += \
-    android.hardware.light-V2.0-java \
-    WfdCommon
+#    WfdCommon
 
 # Netutils
 PRODUCT_PACKAGES += \
     netutils-wrapper-1.0 \
     libandroid_net
 
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     DeviceParts
 
 PRODUCT_PACKAGES += \
     vndk_package
 
-PRODUCT_PACKAGES += \
-    android.hidl.manager@1.0-java \
+#PRODUCT_PACKAGES += \
     android.hidl.base@1.0
 
 PRODUCT_PACKAGES += \
@@ -262,6 +253,19 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libtinyalsa
 
+PRODUCT_PACKAGES += \
+    ld.config.txt
+
+# Support for the O-MR1 devices
+#PRODUCT_COPY_FILES += \
+    build/make/target/product/vndk/init.gsi.rc:system/etc/init/init.gsi.rc \
+    build/make/target/product/vndk/init.vndk-27.rc:system/etc/init/gsi/init.vndk-27.rc
+
+#PRODUCT_EXTRA_VNDK_VERSIONS := 27
+
+# TODO(b/78308559): includes vr_hwc into GSI before vr_hwc move to vendor
+PRODUCT_PACKAGES += \
+    vr_hwc
 
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/media_codecs_google_audio.xml \
