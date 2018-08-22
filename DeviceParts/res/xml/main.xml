@@ -69,7 +69,7 @@
             android:persistent="false" />
     </PreferenceCategory>
 
-    <PreferenceCategory
+<!--    <PreferenceCategory
         android:title="@string/buttons_title"
         android:key="buttons_category">
         <SwitchPreference
@@ -78,7 +78,7 @@
             android:title="@string/swap_back_recents_title"
             android:persistent="false" />
     </PreferenceCategory>
-
+-->
     <PreferenceCategory
         android:key="graphics"
         android:title="@string/graphics_title">

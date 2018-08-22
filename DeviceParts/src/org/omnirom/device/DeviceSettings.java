@@ -45,8 +45,7 @@ public class DeviceSettings extends PreferenceFragment implements
     private static final String KEY_SLIDER_MODE_TOP = "slider_mode_top";
     private static final String KEY_SLIDER_MODE_CENTER = "slider_mode_center";
     private static final String KEY_SLIDER_MODE_BOTTOM = "slider_mode_bottom";
-    private static final String KEY_SWAP_BACK_RECENTS = "swap_back_recents";
-    private static final String KEY_BUTTON_CATEGORY = "buttons_category";
+    //private static final String KEY_BUTTON_CATEGORY = "buttons_category";
     private static final String KEY_CATEGORY_GRAPHICS = "graphics";
 
     public static final String KEY_SRGB_SWITCH = "srgb";
@@ -65,9 +64,8 @@ public class DeviceSettings extends PreferenceFragment implements
     private ListPreference mSliderModeTop;
     private ListPreference mSliderModeCenter;
     private ListPreference mSliderModeBottom;
-    private TwoStatePreference mSwapBackRecents;
     private static TwoStatePreference mHBMModeSwitch;
-    private PreferenceCategory buttonCategory;
+    //private PreferenceCategory buttonCategory;
     private static TwoStatePreference mOtgSwitch;
 
 
@@ -101,17 +99,6 @@ public class DeviceSettings extends PreferenceFragment implements
         mSliderModeBottom.setValueIndex(valueIndex);
         mSliderModeBottom.setSummary(mSliderModeBottom.getEntries()[valueIndex]);
 
-        PreferenceCategory buttonCategory = (PreferenceCategory) findPreference(KEY_BUTTON_CATEGORY);
-        mSwapBackRecents = (TwoStatePreference) findPreference(KEY_SWAP_BACK_RECENTS);
-        final boolean mSwapBackRecentsEnabled = getResources().getBoolean(R.bool.config_device_has_hw_nav_buttons);
-        if (!mSwapBackRecentsEnabled) {
-            getPreferenceScreen().removePreference(buttonCategory);
-        } else {
-             mSwapBackRecents = (TwoStatePreference) findPreference(KEY_SWAP_BACK_RECENTS);
-             mSwapBackRecents.setChecked(Settings.System.getInt(getContext().getContentResolver(),
-                    Settings.System.BUTTON_SWAP_BACK_RECENTS, 0) != 0);
-        }
-
         mHBMModeSwitch = (TwoStatePreference) findPreference(KEY_HBM_SWITCH);
         mHBMModeSwitch.setEnabled(HBMModeSwitch.isSupported());
         mHBMModeSwitch.setChecked(HBMModeSwitch.isCurrentlyEnabled(this.getContext()));
@@ -126,11 +113,6 @@ public class DeviceSettings extends PreferenceFragment implements
 
     @Override
     public boolean onPreferenceTreeClick(Preference preference) {
-        if (preference == mSwapBackRecents) {
-            Settings.System.putInt(getContext().getContentResolver(),
-                    Settings.System.BUTTON_SWAP_BACK_RECENTS, mSwapBackRecents.isChecked() ? 1 : 0);
-            return true;
-        }
         return super.onPreferenceTreeClick(preference);
     }
 
@@ -160,7 +142,7 @@ public class DeviceSettings extends PreferenceFragment implements
 
     private int getSliderAction(int position) {
         String value = Settings.System.getString(getContext().getContentResolver(),
-                    Settings.System.BUTTON_EXTRA_KEY_MAPPING);
+                    Settings.System.OMNI_BUTTON_EXTRA_KEY_MAPPING);
         final String defaultValue = SLIDER_DEFAULT_VALUE;
 
         if (value == null) {
@@ -178,7 +160,7 @@ public class DeviceSettings extends PreferenceFragment implements
 
     private void setSliderAction(int position, int action) {
         String value = Settings.System.getString(getContext().getContentResolver(),
-                    Settings.System.BUTTON_EXTRA_KEY_MAPPING);
+                    Settings.System.OMNI_BUTTON_EXTRA_KEY_MAPPING);
         final String defaultValue = SLIDER_DEFAULT_VALUE;
 
         if (value == null) {
@@ -191,7 +173,7 @@ public class DeviceSettings extends PreferenceFragment implements
             parts[position] = String.valueOf(action);
             String newValue = TextUtils.join(",", parts);
             Settings.System.putString(getContext().getContentResolver(),
-                    Settings.System.BUTTON_EXTRA_KEY_MAPPING, newValue);
+                    Settings.System.OMNI_BUTTON_EXTRA_KEY_MAPPING, newValue);
         } catch (Exception e) {
         }
     }
