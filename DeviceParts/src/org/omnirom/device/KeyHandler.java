@@ -17,6 +17,9 @@
 */
 package org.omnirom.device;
 
+import static android.provider.Settings.Global.ZEN_MODE_OFF;
+import static android.provider.Settings.Global.ZEN_MODE_IMPORTANT_INTERRUPTIONS;
+
 import android.app.ActivityManagerNative;
 import android.app.NotificationManager;
 import android.content.BroadcastReceiver;
@@ -54,9 +57,8 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.HapticFeedbackConstants;
 import android.view.WindowManagerGlobal;
-import android.view.WindowManagerPolicy;
 
-import com.android.internal.os.DeviceKeyHandler;
+import com.android.internal.util.omni.DeviceKeyHandler;
 import com.android.internal.util.ArrayUtils;
 import com.android.internal.util.omni.OmniUtils;
 import com.android.internal.statusbar.IStatusBarService;
@@ -149,7 +151,6 @@ public class KeyHandler implements DeviceKeyHandler {
     private boolean mUsePocketCheck;
     private boolean mFPcheck;
     private boolean mDispOn;
-    private WindowManagerPolicy mPolicy;
     private boolean isFpgesture;
 
     private SensorEventListener mProximitySensor = new SensorEventListener() {
@@ -203,10 +204,10 @@ public class KeyHandler implements DeviceKeyHandler {
 
         void observe() {
             mContext.getContentResolver().registerContentObserver(Settings.System.getUriFor(
-                    Settings.System.DEVICE_PROXI_CHECK_ENABLED),
+                    Settings.System.OMNI_DEVICE_PROXI_CHECK_ENABLED),
                     false, this);
             mContext.getContentResolver().registerContentObserver(Settings.System.getUriFor(
-                    Settings.System.DEVICE_FEATURE_SETTINGS),
+                    Settings.System.OMNI_DEVICE_FEATURE_SETTINGS),
                     false, this);
             update();
             updateDozeSettings();
@@ -220,7 +221,7 @@ public class KeyHandler implements DeviceKeyHandler {
         @Override
         public void onChange(boolean selfChange, Uri uri) {
             if (uri.equals(Settings.System.getUriFor(
-                    Settings.System.DEVICE_FEATURE_SETTINGS))){
+                    Settings.System.OMNI_DEVICE_FEATURE_SETTINGS))){
                 updateDozeSettings();
                 return;
             }
@@ -229,7 +230,7 @@ public class KeyHandler implements DeviceKeyHandler {
 
         public void update() {
             mUseProxiCheck = Settings.System.getIntForUser(
-                    mContext.getContentResolver(), Settings.System.DEVICE_PROXI_CHECK_ENABLED, 1,
+                    mContext.getContentResolver(), Settings.System.OMNI_DEVICE_PROXI_CHECK_ENABLED, 1,
                     UserHandle.USER_CURRENT) == 1;
         }
     }
@@ -308,7 +309,6 @@ public class KeyHandler implements DeviceKeyHandler {
         if (mFPcheck && mDispOn && !TextUtils.isEmpty(value) && !value.equals(AppSelectListPreference.DISABLED_ENTRY)){
             isFpgesture = true;
             if (!launchSpecialActions(value) && !isCameraLaunchEvent(event)) {
-                    vibe();
                     Intent intent = createIntent(value);
                     if (DEBUG) Log.i(TAG, "intent = " + intent);
                     mContext.startActivity(intent);
@@ -369,7 +369,6 @@ public class KeyHandler implements DeviceKeyHandler {
         if (!TextUtils.isEmpty(value) && !value.equals(AppSelectListPreference.DISABLED_ENTRY)) {
             if (DEBUG) Log.i(TAG, "isActivityLaunchEvent " + event.getScanCode() + value);
             if (!launchSpecialActions(value)) {
-                vibe();
                 Intent intent = createIntent(value);
                 return intent;
             }
@@ -443,7 +442,7 @@ public class KeyHandler implements DeviceKeyHandler {
 
     private int getSliderAction(int position) {
         String value = Settings.System.getStringForUser(mContext.getContentResolver(),
-                    Settings.System.BUTTON_EXTRA_KEY_MAPPING,
+                    Settings.System.OMNI_BUTTON_EXTRA_KEY_MAPPING,
                     UserHandle.USER_CURRENT);
         final String defaultValue = DeviceSettings.SLIDER_DEFAULT_VALUE;
 
@@ -463,17 +462,13 @@ public class KeyHandler implements DeviceKeyHandler {
     private void doHandleSliderAction(int position) {
         int action = getSliderAction(position);
         if ( action == 0) {
-            mNoMan.setZenMode(Global.ZEN_MODE_OFF_ONLY, null, TAG);
+            mNoMan.setZenMode(ZEN_MODE_OFF, null, TAG);
             mAudioManager.setRingerModeInternal(AudioManager.RINGER_MODE_NORMAL);
         } else if (action == 1) {
-            mNoMan.setZenMode(Global.ZEN_MODE_OFF_ONLY, null, TAG);
+            mNoMan.setZenMode(ZEN_MODE_OFF, null, TAG);
             mAudioManager.setRingerModeInternal(AudioManager.RINGER_MODE_VIBRATE);
         } else if (action == 2) {
-            mNoMan.setZenMode(Global.ZEN_MODE_IMPORTANT_INTERRUPTIONS, null, TAG);
-        } else if (action == 3) {
-            mNoMan.setZenMode(Global.ZEN_MODE_ALARMS, null, TAG);
-        } else if (action == 4) {
-            mNoMan.setZenMode(Global.ZEN_MODE_NO_INTERRUPTIONS, null, TAG);
+            mNoMan.setZenMode(ZEN_MODE_IMPORTANT_INTERRUPTIONS, null, TAG);
         }
     }
 
@@ -493,7 +488,6 @@ public class KeyHandler implements DeviceKeyHandler {
             IStatusBarService service = getStatusBarService();
             if (service != null) {
                 try {
-                    vibe();
                     service.toggleCameraFlash();
                 } catch (RemoteException e) {
                     // do nothing.
@@ -502,49 +496,39 @@ public class KeyHandler implements DeviceKeyHandler {
             return true;
         } else if (value.equals(AppSelectListPreference.MUSIC_PLAY_ENTRY)) {
             mGestureWakeLock.acquire(GESTURE_WAKELOCK_DURATION);
-            vibe();
             dispatchMediaKeyWithWakeLockToAudioService(KeyEvent.KEYCODE_MEDIA_PLAY_PAUSE);
             return true;
         } else if (value.equals(AppSelectListPreference.MUSIC_NEXT_ENTRY)) {
             if (isMusicActive()) {
                 mGestureWakeLock.acquire(GESTURE_WAKELOCK_DURATION);
-                vibe();
                 dispatchMediaKeyWithWakeLockToAudioService(KeyEvent.KEYCODE_MEDIA_NEXT);
             }
             return true;
         } else if (value.equals(AppSelectListPreference.MUSIC_PREV_ENTRY)) {
             if (isMusicActive()) {
                 mGestureWakeLock.acquire(GESTURE_WAKELOCK_DURATION);
-                vibe();
                 dispatchMediaKeyWithWakeLockToAudioService(KeyEvent.KEYCODE_MEDIA_PREVIOUS);
             }
             return true;
         } else if (value.equals(AppSelectListPreference.VOLUME_UP_ENTRY)) {
-            vibe();
             mAudioManager.adjustSuggestedStreamVolume(AudioManager.ADJUST_RAISE,AudioManager.USE_DEFAULT_STREAM_TYPE,AudioManager.FLAG_SHOW_UI);
             return true;
         } else if (value.equals(AppSelectListPreference.VOLUME_DOWN_ENTRY)) {
-            vibe();
             mAudioManager.adjustSuggestedStreamVolume(AudioManager.ADJUST_LOWER,AudioManager.USE_DEFAULT_STREAM_TYPE,AudioManager.FLAG_SHOW_UI);
             return true;
         } else if (value.equals(AppSelectListPreference.BROWSE_SCROLL_DOWN_ENTRY)) {
-            vibe();
             OmniUtils.sendKeycode(KeyEvent.KEYCODE_PAGE_DOWN);
             return true;
         } else if (value.equals(AppSelectListPreference.BROWSE_SCROLL_UP_ENTRY)) {
-            vibe();
             OmniUtils.sendKeycode(KeyEvent.KEYCODE_PAGE_UP);
             return true;
         } else if (value.equals(AppSelectListPreference.NAVIGATE_BACK_ENTRY)) {
-            vibe();
             OmniUtils.sendKeycode(KeyEvent.KEYCODE_BACK);
             return true;
         } else if (value.equals(AppSelectListPreference.NAVIGATE_HOME_ENTRY)) {
-            vibe();
             OmniUtils.sendKeycode(KeyEvent.KEYCODE_HOME);
             return true;
         } else if (value.equals(AppSelectListPreference.NAVIGATE_RECENT_ENTRY)) {
-            vibe();
             OmniUtils.sendKeycode(KeyEvent.KEYCODE_APP_SWITCH);
             return true;
         }
@@ -607,7 +591,7 @@ public class KeyHandler implements DeviceKeyHandler {
 
     private void updateDozeSettings() {
         String value = Settings.System.getStringForUser(mContext.getContentResolver(),
-                    Settings.System.DEVICE_FEATURE_SETTINGS,
+                    Settings.System.OMNI_DEVICE_FEATURE_SETTINGS,
                     UserHandle.USER_CURRENT);
         if (DEBUG) Log.i(TAG, "Doze settings = " + value);
         if (!TextUtils.isEmpty(value)) {
@@ -618,26 +602,6 @@ public class KeyHandler implements DeviceKeyHandler {
         }
     }
 
-    @Override
-    public void setWindowManagerPolicy(WindowManagerPolicy policy) {
-        mPolicy = policy;
-    }
-
-    private void vibe(){
-        boolean doVibrate = Settings.System.getIntForUser(mContext.getContentResolver(),
-                Settings.System.DEVICE_OFF_SCREEN_GESTURE_FEEDBACK_ENABLED, 0,
-                UserHandle.USER_CURRENT) == 1;
-        if (isFpgesture && mPolicy != null) {
-            mPolicy.performHapticFeedbackLw(null, HapticFeedbackConstants.LONG_PRESS, false);
-        } else if (doVibrate && mPolicy != null) {
-            mPolicy.performHapticFeedbackLw(null, HapticFeedbackConstants.LONG_PRESS, true);
-        }
-    }
-
-    IStatusBarService getStatusBarService() {
-        return IStatusBarService.Stub.asInterface(ServiceManager.getService("statusbar"));
-    }
-
     protected static Sensor getSensor(SensorManager sm, String type) {
         for (Sensor sensor : sm.getSensorList(Sensor.TYPE_ALL)) {
             if (type.equals(sensor.getStringType())) {
@@ -645,6 +609,10 @@ public class KeyHandler implements DeviceKeyHandler {
             }
         }
         return null;
+    }
+
+    IStatusBarService getStatusBarService() {
+        return IStatusBarService.Stub.asInterface(ServiceManager.getService("statusbar"));
     }
 
     @Override
