@@ -1,7 +1,7 @@
 #-app/WfdService/WfdService.apk
 #-framework/WfdCommon.jar
 framework/qcrilhook.jar
-framework/qti-telephony-common.jar|2eba987ae297a892e895ec1e9a302b41dbe0232e
+framework/qti-telephony-common.jar
 framework/qcnvitems.jar
 -priv-app/dpmserviceapp/dpmserviceapp.apk
 #-app/AntHalService/AntHalService.apk
@@ -9,10 +9,10 @@ framework/qcnvitems.jar
 #-priv-app/com.qualcomm.location/com.qualcomm.location.apk
 -app/QtiSystemService/QtiSystemService.apk
 -app/QtiTelephonyService/QtiTelephonyService.apk
-framework/QtiTelephonyServicelibrary.jar
+-framework/QtiTelephonyServicelibrary.jar
 #-app/embms/embms.apk
 -priv-app/CNEService/CNEService.apk
 #-app/imssettings/imssettings.apk
 #-app/ims/ims.apk
-framework/com.qti.dpmframework.jar
+-framework/com.qti.dpmframework.jar
 #-app/datastatusnotification/datastatusnotification.apk
