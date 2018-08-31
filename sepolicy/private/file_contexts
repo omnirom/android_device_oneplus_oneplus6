@@ -28,4 +28,3 @@
 /dev/snd/comprC0D.*           u:object_r:oem_audio_device:s0
 /dev/snd/timer                u:object_r:oem_audio_device:s0
 /dev/snd/controlC0            u:object_r:oem_audio_device:s0
-

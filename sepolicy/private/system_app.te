@@ -9,3 +9,5 @@ allow system_app wificond:binder call;
 
 allow system_app storaged:binder call;
 
+allow system_app fs_bpf:dir search;
+allow system_app proc_pagetypeinfo:file read;
