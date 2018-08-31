@@ -239,7 +239,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vndk_package
 
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     android.hidl.base@1.0
 
 PRODUCT_PACKAGES += \
