@@ -1,4 +1,2 @@
 #allow netd sysfs:file create;
-
-
-
+#allow netd system_file:dir write;
