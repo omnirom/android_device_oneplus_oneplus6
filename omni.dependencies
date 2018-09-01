@@ -13,6 +13,12 @@
   },
   {
     "remote": "omnirom",
+    "repository": "android_vendor_qcom_opensource_interfaces",
+    "target_path": "vendor/qcom/opensource/interfaces",
+    "revision": "android-9.0"
+  },
+  {
+    "remote": "omnirom",
     "repository": "android_kernel_oneplus_sdm845",
     "target_path": "kernel/oneplus/sdm845",
     "revision": "android-8.1"
