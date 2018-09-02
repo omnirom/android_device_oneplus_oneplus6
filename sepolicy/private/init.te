@@ -14,3 +14,5 @@ allow init vendor_file:file mounton;
 #allow init proc:file rw_file_perms;
 #allow init proc:file create;
 
+# Allow init to chown/chmod on pseudo files in /sys
+allow init sysfs_type:file { open read setattr };
