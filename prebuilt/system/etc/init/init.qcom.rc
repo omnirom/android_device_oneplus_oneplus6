@@ -8,6 +8,7 @@ on init
     mount none /dev/null /vendor/overlay/SysuiDarkTheme/SysuiDarkThemeOverlay.apk bind
     mount none /system/lib/hw/power.oneplus6.so /vendor/lib/hw/power.qcom.so bind
     mount none /system/lib64/hw/power.oneplus6.so /vendor/lib64/hw/power.qcom.so bind
+    mount none /dev/null /vendor/etc/init/android.hardware.health@2.0-service.rc bind
 
     # Set permissions for dsp partition
     mkdir /dsp 0771 media media
