@@ -25,4 +25,6 @@
     <integer name="config_fingerprintSensorLocation">0</integer>
 
     <bool name="config_enableManualSubProvisioning">true</bool>
+
+    <bool name="config_show_color_mode">false</bool>
 </resources>
