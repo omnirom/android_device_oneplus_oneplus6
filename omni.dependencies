@@ -21,6 +21,6 @@
     "remote": "omnirom",
     "repository": "android_kernel_oneplus_sdm845",
     "target_path": "kernel/oneplus/sdm845",
-    "revision": "android-8.1"
+    "revision": "android-9.0"
   }
 ]
