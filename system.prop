@@ -257,9 +257,6 @@ persist.rcs.supported=0
 #endif VENDOR_EDIT
 #VENDOR_EDIT BillZhang 2018/5/4 end
 
-#Expose aux camera for below packages
-vendor.camera.aux.packagelist=org.omnirom.snap,com.oneplus.camera
-
 #Property to enable touch optimizations
 persist.vendor.qti.inputopts.enable=true
 
