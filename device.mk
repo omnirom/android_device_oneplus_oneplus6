@@ -165,9 +165,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     lights.oneplus6
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.hardware.lights=oneplus6
-
 PRODUCT_PACKAGES += \
     android.hardware.light-V2.0-java \
     android.hardware.light@2.0-impl
