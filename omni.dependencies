@@ -3,7 +3,7 @@
     "remote": "omnirom",
     "repository": "android_packages_apps_SnapdragonCamera2",
     "target_path": "packages/apps/SnapdragonCamera2",
-    "revision": "android-8.1"
+    "revision": "android-9.0"
   },
   {
     "remote": "omnirom",
@@ -21,6 +21,6 @@
     "remote": "omnirom",
     "repository": "android_kernel_oneplus_sdm845",
     "target_path": "kernel/oneplus/sdm845",
-    "revision": "android-8.1"
+    "revision": "android-9.0"
   }
 ]
