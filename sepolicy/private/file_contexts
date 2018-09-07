@@ -29,3 +29,7 @@
 /dev/snd/comprC0D.*           u:object_r:oem_audio_device:s0
 /dev/snd/timer                u:object_r:oem_audio_device:s0
 /dev/snd/controlC0            u:object_r:oem_audio_device:s0
+
+#/data/misc/camera/client_package_name                u:object_r:camera_data_file:s0
+
+/sys/devices/platform/soc/soc:goodix_fp/proximity_state   u:object_r:sysfs_fp:s0
