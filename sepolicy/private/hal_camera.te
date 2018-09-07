@@ -1,0 +1,4 @@
+#allow hal_camera camera_data_file:file { read open getattr };
+#allow hal_camera camera_data_file:dir { search open };
+
+allow hal_camera sysfs:file read;

@@ -1,0 +1,4 @@
+#allow cameraserver camera_data_file:file w_file_perms;
+allow cameraserver mediacodec:binder call;
+
+
