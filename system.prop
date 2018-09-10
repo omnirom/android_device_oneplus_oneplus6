@@ -55,7 +55,7 @@ vendor.mm.enable.qcom_parser=16777215
 persist.mm.enable.prefetch=true
 
 #Netflix custom property
-ro.netflix.bsp_rev=Q845-05000-1
+ro.netflix.bsp_rev=Q845-14477-1
 
 #
 # system props for the data modules
@@ -101,6 +101,15 @@ persist.audio.fluence.voicecall=true
 persist.audio.fluence.voicerec=false
 persist.audio.fluence.speaker=true
 
+#enable offload audio video playback by default
+audio.offload.video=true
+
+#enable music through deep buffer
+audio.deep_buffer.media=true
+
+#set AudioFlinger client heap size
+ro.af.client_heap_size_kbyte=7168
+
 #system prop for RmNet Data
 persist.data.df.dev_name=rmnet_usb0
 
@@ -108,6 +117,9 @@ persist.data.df.dev_name=rmnet_usb0
 persist.debug.wfd.enable=1
 ##property to choose between virtual/external wfd display
 persist.sys.wfd.virtual=0
+
+#property to enable HWC for VDS
+debug.sf.enable_hwc_vds=1
 
 # enable tunnel encoding for amrwb
 tunnel.audio.encode = true
@@ -118,8 +130,6 @@ audio.offload.buffer.size.kb=32
 #ifdef VENDOR_EDIT
 #wangbuqing@Multimedia,enable audio offload in video pleayback
 audio.offload.video=true
-#Enable music through deep buffer
-audio.deep_buffer.media=true
 #endif
 
 #Enable offload audio video playback by default
@@ -172,8 +182,8 @@ persist.vendor.overlay.izat.optin=rro
 persist.backup.ntpServer="0.pool.ntp.org"
 
 #IOP properties
-vendor.iop.enable_uxe=1
-vendor.iop.enable_prefetch_ofr=1
+vendor.iop.enable_uxe=0
+vendor.iop.enable_prefetch_ofr=0
 
 # Property to enable app trigger
 ro.vendor.at_library=libqti-at.so
@@ -201,10 +211,13 @@ persist.vendor.radio.ignore_dom_time=10
 persist.vendor.radio.rat_on=combine
 persist.data.iwlan.enable=true
 persist.vendor.radio.data_ltd_sys_ind=1
-persist.vendor.radio.data_con_rprt=0
+# Modify by Rad for setting DATA_REGISTRATION_STATE radioTech by IMS registration tech @20180730 ++
+persist.vendor.radio.data_con_rprt=1
+# Modify by Rad for setting DATA_REGISTRATION_STATE radioTech by IMS registration tech @20180730 --
 persist.radio.efssync=true
 persist.vendor.radio.bar_fake_gcell=1
 persist.vendor.data.iwlan.enable=true
+persist.vendor.radio.arfcn_test_mode=3
 #end
 
 #for ecc call
@@ -243,7 +256,7 @@ persist.vendor.audio_hal.dsp_bit_width_enforce_mode=24
 #ifdef VENDOR_EDIT
 #yanweibo@MultiMediaService,20180322,reduce video swdev logs,default only print error logs
 vendor.vidc.debug.level=1
-swvdec.log.level=1
+vendor.swvdec.log.level=1
 #endif
 
 #ifdef VENDOR_EDIT
@@ -280,6 +293,10 @@ persist.vendor.radio.apm_sim_not_pwdn=1
 #liochen@oneplus.com Add property for quota feature
 persist.qua.op=0
 #endif
+# open the gesture boot liuhuisheng
+vendor.perf.gestureflingboost.enable=true
+#endif
+
 
 #omni
 ro.hardware.lights=oneplus6
