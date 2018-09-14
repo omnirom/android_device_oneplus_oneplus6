@@ -137,7 +137,6 @@ on boot
     chown system system /sys/class/power_supply/usb/otg_switch
     chmod 0660 /sys/class/power_supply/usb/otg_switch
 
-    setprop sys.usb.controller a600000.dwc3
     setprop vendor.camera.aux.packagelist org.omnirom.snap,com.oneplus.camera
 
 on post-fs
