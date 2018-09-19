@@ -45,6 +45,9 @@
          -->
     <bool name="config_fillMainBuiltInDisplayCutout">true</bool>
 
+    <!-- Height of the status bar -->
+    <dimen name="status_bar_height_portrait">80px</dimen>
+
     <!-- Default color for notification LED is blue. -->
     <color name="config_defaultNotificationColor">#ff0000ff</color>
 
