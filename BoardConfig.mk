@@ -114,6 +114,9 @@ TARGET_USES_MKE2FS := true
 # Generic AOSP image always requires separate vendor.img
 TARGET_COPY_OUT_VENDOR := vendor
 
+#Enable DRM plugins 64 bit compilation
+TARGET_ENABLE_MEDIADRM_64 := true
+
 # Generic AOSP image does NOT support HWC1
 TARGET_USES_HWC2 := true
 # Set emulator framebuffer display device buffer count to 3
