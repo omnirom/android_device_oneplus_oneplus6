@@ -210,11 +210,8 @@ PRODUCT_PACKAGES += \
     RcsService \
     PresencePolling
 
-#PRODUCT_PACKAGES += \
-    WfdCommon
-
 PRODUCT_BOOT_JARS += \
-#    WfdCommon
+    WfdCommon
 
 # Netutils
 PRODUCT_PACKAGES += \
