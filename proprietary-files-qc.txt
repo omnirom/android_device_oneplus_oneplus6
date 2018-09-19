@@ -1,10 +1,10 @@
-#-app/WfdService/WfdService.apk
-#-framework/WfdCommon.jar
+-priv-app/WfdService/WfdService.apk
+-framework/WfdCommon.jar
 -framework/qcrilhook.jar
 -framework/qti-telephony-common.jar
 -framework/qcnvitems.jar
 -priv-app/dpmserviceapp/dpmserviceapp.apk
-#-app/AntHalService/AntHalService.apk
+-app/AntHalService/AntHalService.apk
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 -priv-app/com.qualcomm.location/com.qualcomm.location.apk
 -app/QtiSystemService/QtiSystemService.apk
