@@ -511,3 +511,11 @@ lib/libwfdmmsrc.so
 lib64/libwfdclient.so
 lib64/libwfdnative.so
 
+etc/qvr/qvrservice_config.txt
+etc/qvr/qvrservice_6dof_config.xml
+etc/qvr/ov7251_640x480_cam_config.xml
+etc/qvr/ov9282_stereo_2560x800_cam_config.xml
+etc/qvr/ov9282_stereo_1280x400_cam_config.xml
+etc/qvr/qvrservice_6dof_config_stereo.xml
+etc/qvr/ov9282_640x400_cam_config.xml
+
