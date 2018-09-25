@@ -5,3 +5,7 @@ allow hal_bluetooth vendor_data_file:dir search;
 allow hal_bluetooth vendor_data_file:file r_file_perms;
 
 
+allow hal_bluetooth boottime_prop:file { open read getattr };
+allow hal_bluetooth boottime_prop:property_service set;
+allow hal_bluetooth vendor_data_file:dir search;
+
