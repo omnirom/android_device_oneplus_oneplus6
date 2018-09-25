@@ -270,10 +270,14 @@ persist.rcs.supported=0
 #endif VENDOR_EDIT
 #VENDOR_EDIT BillZhang 2018/5/4 end
 
-#Property to enable touch optimizations
-persist.vendor.qti.inputopts.enable=true
+#Expose aux camera for below packages
+#vendor.camera.aux.packagelist=org.codeaurora.snapcam
 
-persist.vendor.qti.inputopts.movetouchslop=0.6
+#Property to enable touch optimizations
+#liuhuisheng disable the inputopts feature
+#persist.vendor.qti.inputopts.enable=true
+
+#persist.vendor.qti.inputopts.movetouchslop=0.6
 
 
 
@@ -296,7 +300,6 @@ persist.qua.op=0
 # open the gesture boot liuhuisheng
 vendor.perf.gestureflingboost.enable=true
 #endif
-
 
 #omni
 ro.hardware.lights=oneplus6
