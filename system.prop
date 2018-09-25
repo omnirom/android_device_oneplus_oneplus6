@@ -270,6 +270,9 @@ persist.rcs.supported=0
 #endif VENDOR_EDIT
 #VENDOR_EDIT BillZhang 2018/5/4 end
 
+#Expose aux camera for below packages
+#vendor.camera.aux.packagelist=org.codeaurora.snapcam
+
 #Property to enable touch optimizations
 persist.vendor.qti.inputopts.enable=true
 
@@ -293,10 +296,6 @@ persist.vendor.radio.apm_sim_not_pwdn=1
 #liochen@oneplus.com Add property for quota feature
 persist.qua.op=0
 #endif
-# open the gesture boot liuhuisheng
-vendor.perf.gestureflingboost.enable=true
-#endif
-
 
 #omni
 ro.hardware.lights=oneplus6
