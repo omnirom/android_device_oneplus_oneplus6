@@ -1,0 +1,2 @@
+allow hal_sensors boottime_prop:file read;
+

@@ -33,3 +33,5 @@
 #/data/misc/camera/client_package_name                u:object_r:camera_data_file:s0
 
 /sys/devices/platform/soc/soc:goodix_fp/proximity_state   u:object_r:sysfs_fp:s0
+
+/sys/devices/platform/soc/c440000\.qcom,spmi/spmi-0/spmi0-02/c440000\.qcom,spmi:qcom,pmi8998@2:qcom,usb-pdphy@1700/usbpd/usbpd0/otg_default/power_role u:object_r:sysfs_batteryinfo:s0
