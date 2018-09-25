@@ -9,6 +9,7 @@
 /system/etc/media_profiles_vendor.xml    u:object_r:vendor_configs_file:s0
 /system/etc/audio_policy_configuration_omni.xml    u:object_r:vendor_configs_file:s0
 /system/etc/audio_effects_omni.xml    u:object_r:vendor_configs_file:s0
+/system/etc/WCNSS_qcom_cfg.ini    u:object_r:vendor_configs_file:s0
 /system/lib/modules/wlan.ko    u:object_r:vendor_file:s0
 /system/bin/hw/android.hardware.health@2.0-service.oneplus6 u:object_r:hal_health_omni_exec:s0
 
@@ -33,3 +34,6 @@
 #/data/misc/camera/client_package_name                u:object_r:camera_data_file:s0
 
 /sys/devices/platform/soc/soc:goodix_fp/proximity_state   u:object_r:sysfs_fp:s0
+
+/sys/devices/platform/soc/c440000\.qcom,spmi/spmi-0/spmi0-02/c440000\.qcom,spmi:qcom,pmi8998@2:qcom,usb-pdphy@1700/usbpd/usbpd0/otg_default/power_role u:object_r:sysfs_batteryinfo:s0
+/sys/devices/platform/soc/c440000\.qcom,spmi/spmi-0/spmi0-02/c440000\.qcom,spmi:qcom,pmi8998@2:qcom,usb-pdphy@1700/usbpd/usbpd0/otg_default/supported_modes u:object_r:sysfs_batteryinfo:s0
