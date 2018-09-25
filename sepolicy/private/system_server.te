@@ -7,4 +7,3 @@ allow system_server audioserver:file w_file_perms;
 allow system_server hal_audio:file write;
 
 allow system_server sysfs_fp:file { getattr open write };
-

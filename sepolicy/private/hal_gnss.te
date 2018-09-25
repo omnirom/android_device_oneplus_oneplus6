@@ -1,1 +1,2 @@
+allow hal_gnss boottime_prop:file { getattr open read };
 get_prop(hal_gnss, oem_prop);
