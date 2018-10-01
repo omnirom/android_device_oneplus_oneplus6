@@ -5,6 +5,8 @@ cc_binary {
     relative_install_path: "hw",
     srcs: [
         "HealthServiceDefault.cpp",
+        "CycleCountBackupRestore.cpp",
+        "LearnedCapacityBackupRestore.cpp",
     ],
 
     cflags: [
@@ -30,6 +32,9 @@ cc_binary {
         "libutils",
         "android.hardware.health@2.0",
     ],
+
+    header_libs: ["libhealthd_headers"],
+
     overrides: [
         "healthd",
     ],
