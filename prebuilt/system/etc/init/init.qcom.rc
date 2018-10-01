@@ -3,6 +3,7 @@ on init
     mount none /system/etc/audio_policy_configuration_omni.xml /vendor/etc/audio/audio_policy_configuration.xml bind
     mount none /system/etc/audio_effects_omni.conf /vendor/etc/audio_effects.conf bind
     mount none /system/lib/modules/wlan.ko /vendor/lib/modules/qca_cld3_wlan.ko bind
+    mount none /system/etc/WCNSS_qcom_cfg.ini /vendor/etc/wifi/WCNSS_qcom_cfg.ini bind
     mount none /system/lib/hw/lights.oneplus6.so /vendor/lib/hw/lights.sdm845.so bind
     mount none /system/lib64/hw/lights.oneplus6.so /vendor/lib64/hw/lights.sdm845.so bind
     mount none /dev/null /vendor/overlay/SysuiDarkTheme/SysuiDarkThemeOverlay.apk bind
