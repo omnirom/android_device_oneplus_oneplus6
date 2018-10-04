@@ -649,6 +649,7 @@
 
     <!-- Enable overlay for all location components. -->
     <bool name="config_enableNetworkLocationOverlay" translatable="false">false</bool>
+    <bool name="config_enableFusedLocationOverlay" translatable="false">false</bool>
 
     <!-- Enable overlay for all location components. -->
     <string name="config_networkLocationProviderPackageName" translatable="false">com.qualcomm.location</string>
