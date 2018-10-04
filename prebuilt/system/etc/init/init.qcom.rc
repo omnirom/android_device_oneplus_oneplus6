@@ -1,3 +1,5 @@
+import /init.omni.rc
+
 on init
     mount none /system/etc/media_profiles_vendor.xml /vendor/etc/media_profiles_vendor.xml bind
     mount none /system/etc/audio_policy_configuration_omni.xml /vendor/etc/audio/audio_policy_configuration.xml bind
@@ -156,14 +158,6 @@ service dashd /sbin/dashd
     critical
     seclabel u:r:dashd:s0
     group root system
-
-# adb over network
-on property:service.adb.tcp.port=5555
-    stop adbd
-    start adbd
-on property:service.adb.tcp.port=-1
-    stop adbd
-    start adbd
 
 service factory-hal-1-0 /system/bin/true
     disabled
