@@ -1,0 +1,9 @@
+on boot
+    symlink /system/etc/init/init.qcom.test.rc /vendor/etc/init/hw/init,qcom.test.rc
+
+service bugreport /system/bin/dumpstate -d -p -B -z -o /data/user_de/0/com.android.shell/files/bugreports/bugreport
+    class main
+    disabled
+    oneshot
+    override
+
