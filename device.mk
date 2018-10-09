@@ -187,7 +187,8 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    SnapdragonCamera2
+    SnapdragonCamera2 \
+    CameraPackage
 
 # power
 PRODUCT_PACKAGES += \
