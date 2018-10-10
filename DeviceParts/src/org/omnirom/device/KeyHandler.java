@@ -37,6 +37,7 @@ import android.media.AudioManager;
 import android.media.session.MediaSessionLegacyHelper;
 import android.net.Uri;
 import android.text.TextUtils;
+import android.os.FileObserver;
 import android.os.Handler;
 import android.os.Message;
 import android.os.PowerManager;
@@ -59,14 +60,17 @@ import android.view.HapticFeedbackConstants;
 import android.view.WindowManagerGlobal;
 
 import com.android.internal.util.omni.DeviceKeyHandler;
+import com.android.internal.util.omni.PackageUtils;
 import com.android.internal.util.ArrayUtils;
 import com.android.internal.util.omni.OmniUtils;
 import com.android.internal.statusbar.IStatusBarService;
 
+import vendor.oneplus.camera.CameraHIDL.V1_0.IOnePlusCameraProvider;
+
 public class KeyHandler implements DeviceKeyHandler {
 
     private static final String TAG = "KeyHandler";
-    private static final boolean DEBUG = false;
+    private static final boolean DEBUG = true;
     private static final boolean DEBUG_SENSOR = true;
 
     protected static final int GESTURE_REQUEST = 1;
@@ -97,6 +101,9 @@ public class KeyHandler implements DeviceKeyHandler {
     private static final int HANDWAVE_MAX_DELTA_MS = 1000;
     private static final int POCKET_MIN_DELTA_MS = 5000;
     private static final int FP_GESTURE_LONG_PRESS = 305;
+
+    public static final String CLIENT_PACKAGE_NAME = "com.oneplus.camera";
+    public static final String CLIENT_PACKAGE_PATH = "/data/vendor/omni/client_package_name";
 
     private static final int[] sSupportedGestures = new int[]{
         GESTURE_II_SCANCODE,
@@ -152,6 +159,9 @@ public class KeyHandler implements DeviceKeyHandler {
     private boolean mFPcheck;
     private boolean mDispOn;
     private boolean isFpgesture;
+    private ClientPackageNameObserver mClientObserver;
+    private IOnePlusCameraProvider mProvider;
+    private boolean isOPCameraAvail;
 
     private SensorEventListener mProximitySensor = new SensorEventListener() {
         @Override
@@ -285,7 +295,13 @@ public class KeyHandler implements DeviceKeyHandler {
                 }
 
             }
-    }).startObserving("DEVPATH=/devices/platform/soc/soc:tri_state_key");
+        }).startObserving("DEVPATH=/devices/platform/soc/soc:tri_state_key");
+
+        isOPCameraAvail = PackageUtils.isAvailableApp("com.oneplus.camera", context);
+        if (isOPCameraAvail) {
+            mClientObserver = new ClientPackageNameObserver(CLIENT_PACKAGE_PATH);
+            mClientObserver.startWatching();
+        }
     }
 
     private class EventHandler extends Handler {
@@ -418,6 +434,10 @@ public class KeyHandler implements DeviceKeyHandler {
         if (mUseTiltCheck) {
             mSensorManager.unregisterListener(mTiltSensorListener, mTiltSensor);
         }
+        if ((mClientObserver == null) && (isOPCameraAvail)) {
+            mClientObserver = new ClientPackageNameObserver(CLIENT_PACKAGE_PATH);
+            mClientObserver.startWatching();
+        }
     }
 
     private void enableGoodix() {
@@ -437,6 +457,10 @@ public class KeyHandler implements DeviceKeyHandler {
         if (mUseTiltCheck) {
             mSensorManager.registerListener(mTiltSensorListener, mTiltSensor,
                     SensorManager.SENSOR_DELAY_NORMAL);
+        }
+        if (mClientObserver != null) {
+            mClientObserver.stopWatching();
+            mClientObserver = null;
         }
     }
 
@@ -623,5 +647,26 @@ public class KeyHandler implements DeviceKeyHandler {
     @Override
     public String getCustomProxiSensor() {
         return "oneplus.sensor.pocket";
+    }
+
+    private class ClientPackageNameObserver extends FileObserver {
+
+        public ClientPackageNameObserver(String file) {
+            super(CLIENT_PACKAGE_PATH, MODIFY);
+        }
+
+        @Override
+        public void onEvent(int event, String file) {
+            String pkgName = Utils.getFileValue(CLIENT_PACKAGE_PATH, "0");
+            if (event == FileObserver.MODIFY) {
+                try {
+                    Log.d(TAG, "client_package" + file + " and " + pkgName);
+                    mProvider = new IOnePlusCameraProvider();
+                    mProvider.setPackageName(pkgName);
+                } catch (RemoteException e) {
+                    Log.e(TAG, "setPackageName error", e);
+                }
+            }
+        }
     }
 }
