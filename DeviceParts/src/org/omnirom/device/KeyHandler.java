@@ -37,6 +37,7 @@ import android.media.AudioManager;
 import android.media.session.MediaSessionLegacyHelper;
 import android.net.Uri;
 import android.text.TextUtils;
+import android.os.FileObserver;
 import android.os.Handler;
 import android.os.Message;
 import android.os.PowerManager;
@@ -63,10 +64,13 @@ import com.android.internal.util.ArrayUtils;
 import com.android.internal.util.omni.OmniUtils;
 import com.android.internal.statusbar.IStatusBarService;
 
+import java.io.File;
+import vendor.oneplus.camera.CameraHIDL.V1_0.IOnePlusCameraProvider;
+
 public class KeyHandler implements DeviceKeyHandler {
 
     private static final String TAG = "KeyHandler";
-    private static final boolean DEBUG = false;
+    private static final boolean DEBUG = true;
     private static final boolean DEBUG_SENSOR = true;
 
     protected static final int GESTURE_REQUEST = 1;
@@ -97,6 +101,9 @@ public class KeyHandler implements DeviceKeyHandler {
     private static final int HANDWAVE_MAX_DELTA_MS = 1000;
     private static final int POCKET_MIN_DELTA_MS = 5000;
     private static final int FP_GESTURE_LONG_PRESS = 305;
+
+    private static final String CLIENT_PACKAGE_NAME = "com.oneplus.camera";
+    private static final String CLIENT_PACKAGE_PATH = "/data/vendor/camera/client_package_name";
 
     private static final int[] sSupportedGestures = new int[]{
         GESTURE_II_SCANCODE,
@@ -152,6 +159,8 @@ public class KeyHandler implements DeviceKeyHandler {
     private boolean mFPcheck;
     private boolean mDispOn;
     private boolean isFpgesture;
+    private ClientPackageNameObserver mClientObserver;
+    private IOnePlusCameraProvider mProvider;
 
     private SensorEventListener mProximitySensor = new SensorEventListener() {
         @Override
@@ -285,7 +294,9 @@ public class KeyHandler implements DeviceKeyHandler {
                 }
 
             }
-    }).startObserving("DEVPATH=/devices/platform/soc/soc:tri_state_key");
+        }).startObserving("DEVPATH=/devices/platform/soc/soc:tri_state_key");
+        mClientObserver = new ClientPackageNameObserver(CLIENT_PACKAGE_PATH);
+        mClientObserver.startWatching();
     }
 
     private class EventHandler extends Handler {
@@ -418,6 +429,10 @@ public class KeyHandler implements DeviceKeyHandler {
         if (mUseTiltCheck) {
             mSensorManager.unregisterListener(mTiltSensorListener, mTiltSensor);
         }
+        if (mClientObserver == null) {
+            mClientObserver = new ClientPackageNameObserver(CLIENT_PACKAGE_PATH);
+            mClientObserver.startWatching();
+        }
     }
 
     private void enableGoodix() {
@@ -437,6 +452,10 @@ public class KeyHandler implements DeviceKeyHandler {
         if (mUseTiltCheck) {
             mSensorManager.registerListener(mTiltSensorListener, mTiltSensor,
                     SensorManager.SENSOR_DELAY_NORMAL);
+        }
+        if (mClientObserver != null) {
+            mClientObserver.stopWatching();
+            mClientObserver = null;
         }
     }
 
@@ -623,5 +642,22 @@ public class KeyHandler implements DeviceKeyHandler {
     @Override
     public String getCustomProxiSensor() {
         return "oneplus.sensor.pocket";
+    }
+
+    private class ClientPackageNameObserver extends FileObserver {
+
+        public ClientPackageNameObserver(String file) {    
+            super(file, MODIFY);
+        }
+
+        @Override
+        public void onEvent(int event, String file) {
+            if (event == FileObserver.CLOSE_WRITE && file.equals(CLIENT_PACKAGE_NAME)) {
+                Log.d(TAG, "client_package " + file);
+                mProvider.setPackageName(CLIENT_PACKAGE_NAME);
+            } else {
+                mProvider.setPackageName("0");
+            }
+        }
     }
 }

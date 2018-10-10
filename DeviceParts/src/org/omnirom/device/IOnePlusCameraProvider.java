@@ -27,7 +27,6 @@ public class IOnePlusCameraProvider {
 
     private static final String DESCRIPTOR =
             "vendor.oneplus.camera.CameraHIDL@1.0::IOnePlusCameraProvider";
-    private static final String PACKAGE_NAME = "com.oneplus.camera"; 
     private static final int TRANSACTION_setPackageName = 2;
 
     private static IHwBinder sIOnePlusCameraProvider;
@@ -36,7 +35,7 @@ public class IOnePlusCameraProvider {
         sIOnePlusCameraProvider = HwBinder.getService(DESCRIPTOR, "default");
     }
 
-    public boolean setPackageName() {
+    public boolean setPackageName(String pkgName) {
         if (sIOnePlusCameraProvider == null) {
             return false;
         }
@@ -46,7 +45,7 @@ public class IOnePlusCameraProvider {
 
         try {
             data.writeInterfaceToken(DESCRIPTOR);
-            data.writeString(PACKAGE_NAME);
+            data.writeString(pkgName);
 
             sIOnePlusCameraProvider.transact(TRANSACTION_setPackageName, data, reply, 0);
 
