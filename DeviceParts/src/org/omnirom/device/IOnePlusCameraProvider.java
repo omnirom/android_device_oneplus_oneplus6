@@ -36,7 +36,7 @@ public class IOnePlusCameraProvider {
         sIOnePlusCameraProvider = HwBinder.getService(DESCRIPTOR, "default");
     }
 
-    public boolean setPackageName() {
+    public boolean setPackageName(String pkgName) {
         if (sIOnePlusCameraProvider == null) {
             return false;
         }
@@ -46,7 +46,7 @@ public class IOnePlusCameraProvider {
 
         try {
             data.writeInterfaceToken(DESCRIPTOR);
-            data.writeString(PACKAGE_NAME);
+            data.writeString(pkgName);
 
             sIOnePlusCameraProvider.transact(TRANSACTION_setPackageName, data, reply, 0);
 
