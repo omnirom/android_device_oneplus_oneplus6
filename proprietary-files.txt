@@ -422,12 +422,12 @@ etc/voicemail-conf.xml
 etc/nfc_card_config.conf
 etc/clatd.conf
 etc/sysconfig/google.xml
-etc/sysconfig/qti_whitelist.xml
 etc/cdma_call_conf.xml
 
 lib/libCalibrationJNI.so
 lib64/libCalibrationJNI.so
 
+lib/libnl.so
 lib/libwfduibcsrcinterface.so
 lib/libwfdmmsink.so
 lib/libwfduibcsinkinterface.so
