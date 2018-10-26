@@ -32,7 +32,7 @@ qcom.hw.aac.encoder=true
 #
 # system props for the cne module
 #
-persist.vendor.cne.feature=1
+persist.vendor.cne.feature=0
 
 #system props for the MM modules
 media.stagefright.enable-player=true
@@ -230,7 +230,7 @@ persist.radio.enhance_ecall=true
 # 2 Enable Connection Tracking (CT)
 # 4 Enable Network Socket Request Manager (NSRM)
 # 8 Enable TCP Connection Manager (TCM)
-persist.vendor.dpm.feature=9
+persist.vendor.dpm.feature=7
 #endif
 
 #ifdef VENDOR_EDIT
