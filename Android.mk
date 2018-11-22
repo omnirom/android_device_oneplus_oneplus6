@@ -44,6 +44,17 @@ $(IMS_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	$(hide) ln -sf /system/lib64/$(notdir $@) $@
 
 ALL_DEFAULT_INSTALLED_MODULES += $(IMS_SYMLINKS)
+
+NXP_LIB := libnxpnfc_nci_jni.so
+NXP_SYMLINKS := $(addprefix $(TARGET_OUT_APPS)/NxpNfcNci/lib/arm64/,$(notdir $(NXP_LIB)))
+$(NXP_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
+	@echo "NXP lib link: $@"
+	@mkdir -p $(dir $@)
+	@rm -rf $@
+	$(hide) ln -sf /system/lib64/$(notdir $@) $@
+
+ALL_DEFAULT_INSTALLED_MODULES += $(NXP_SYMLINKS)
+
 #
 #WCNSS_INI_SYMLINK := $(TARGET_OUT_VENDOR)/firmware/wlan/qca_cld/WCNSS_qcom_cfg.ini
 #$(WCNSS_INI_SYMLINK): $(LOCAL_INSTALLED_MODULE)
