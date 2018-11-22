@@ -1,0 +1,2 @@
+allow nfc nfc_data_omni:dir add_name;
+allow nfc nfc_data_omni:file { create getattr };

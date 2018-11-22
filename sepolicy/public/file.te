@@ -4,3 +4,6 @@ type proc_fingerprint, fs_type;
 type sysfs_fpc_proximity, sysfs_type, fs_type;
 
 type perfd_socket, file_type;
+
+type nfc_data_omni, file_type, data_file_type;
+

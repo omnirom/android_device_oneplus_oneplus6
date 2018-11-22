@@ -476,4 +476,3 @@ lib/rfsa/adsp/libsns_low_lat_stream_skel.so
 lib/libqvr_cam_cdsp_driver_stub.so
 lib/libqvr_eyetracking_plugin.so
 lib/libqvr_cdsp_driver_stub.so
-

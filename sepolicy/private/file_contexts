@@ -6,6 +6,7 @@
 /firmware/firmware_mnt  u:object_r:rootfs:s0
 
 
+/system/etc/libnfc-nci.conf    u:object_r:vendor_configs_file:s0
 /system/etc/media_profiles_vendor.xml    u:object_r:vendor_configs_file:s0
 /system/etc/audio_policy_configuration_omni.xml    u:object_r:vendor_configs_file:s0
 /system/etc/WCNSS_qcom_cfg.ini    u:object_r:vendor_configs_file:s0

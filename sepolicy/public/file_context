@@ -1,0 +1,3 @@
+/data/vendor/nfc/libnfc-nxpTransitConfigState.bin u:object_r:nfc_data_omni:s0
+/data/vendor/nfc/libnfc-nxpRFConfigState.bin u:object_r:nfc_data_omni:s0
+/data/vendor/nfc/libnfc-nxpConfigState.bin u:object_r:nfc_data_omni:s0
