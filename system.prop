@@ -317,7 +317,7 @@ persist.sys.camera.preview.size=1920x1080
 
 persist.radio.aosp_usr_pref_sel=true
 persist.vendor.radio.add_power_save=true
-persist.rcs.supported=true
+vendor.qti.nfc.chipid=pn80t
 
 dalvik.vm.heapstartsize=16m
 dalvik.vm.heapgrowthlimit=256m
