@@ -477,3 +477,20 @@ lib/libqvr_cam_cdsp_driver_stub.so
 lib/libqvr_eyetracking_plugin.so
 lib/libqvr_cdsp_driver_stub.so
 
+
+lib64/android.hardware.secure_element@1.0.so
+lib/android.hardware.secure_element@1.0.so
+lib64/ese_spi_nxp.so
+lib/ese_spi_nxp.so
+lib64/vendor.nxp.nxpese@1.0.so
+lib/vendor.nxp.nxpese@1.0.so
+-app/NxpNfcNci/NxpNfcNci.apk|698ff1fab2a6e9843310713763533ed11d39f47e
+-app/NxpSecureElement/NxpSecureElement.apk
+-framework/com.nxp.nfc.jar
+etc/permissions/com.nxp.nfc.xml
+lib64/libnxpnfc_nci_jni.so
+lib64/libnxpnfc-nci.so
+lib/libnxpnfc-nci.so
+lib64/vendor.nxp.nxpnfc@1.0.so
+lib/vendor.nxp.nxpnfc@1.0.so
+etc/nfcee_access.xml
