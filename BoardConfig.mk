@@ -20,7 +20,7 @@
 #
 BOARD_PATH := device/oneplus/oneplus6
 
-PRODUCT_FULL_TREBLE := true
+PRODUCT_FULL_TREBLE := false
 BOARD_VNDK_VERSION := current
 BOARD_VNDK_RUNTIME_DISABLE := false
 ifeq (,$(filter oneplus6, $(PRODUCT_DEVICE)))
@@ -33,7 +33,7 @@ BOARD_USES_VENDORIMAGE := true
 SELINUX_IGNORE_NEVERALLOWS := false
 
 # Split selinux policy
-PRODUCT_FULL_TREBLE_OVERRIDE := true
+PRODUCT_SEPOLICY_SPLIT := true
 
 # Android generic system image always create metadata partition
 BOARD_USES_METADATA_PARTITION := true
