@@ -4,3 +4,10 @@ service bugreport /system/bin/dumpstate -d -p -B -z -o /data/user_de/0/com.andro
     oneshot
     override
 
+service health-hal-2-0 /vendor/bin/hw/android.hardware.health@2.0-service
+    class hal
+    disabled
+    user system
+    group system
+    file /dev/kmsg w
+
