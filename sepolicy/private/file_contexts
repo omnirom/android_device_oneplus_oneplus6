@@ -37,7 +37,8 @@
 /sys/devices/platform/soc/c440000\.qcom,spmi/spmi-0/spmi0-02/c440000\.qcom,spmi:qcom,pmi8998@2:qcom,usb-pdphy@1700/usbpd/usbpd0/otg_default/power_role u:object_r:sysfs_batteryinfo:s0
 /sys/devices/platform/soc/c440000\.qcom,spmi/spmi-0/spmi0-02/c440000\.qcom,spmi:qcom,pmi8998@2:qcom,usb-pdphy@1700/usbpd/usbpd0/otg_default/supported_modes u:object_r:sysfs_batteryinfo:s0
 /sys/devices/platform/soc/1d84000\.ufshc/host0/target0:0:0/0:0:0:0/block/sda/stat u:object_r:sysfs_batteryinfo:s0
-
+/sys/class/power_supply/bms/device/power_supply/bms/cycle_counts u:object_r:sysfs_batteryinfo:s0
+/persist/battery/qcom_cycle_counts_bins u:object_r:sysfs_batteryinfo:s0
 
 /data/vendor/omni/client_package_name                u:object_r:vendor_data_file:s0
 
