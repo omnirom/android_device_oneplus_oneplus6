@@ -262,6 +262,9 @@ PRODUCT_PACKAGES += android.hardware.health@2.0-service.oneplus6
 DEVICE_FRAMEWORK_MANIFEST_FILE += \
     system/libhidl/vintfdata/manifest_healthd_exclude.xml
 
+PRODUCT_PACKAGES += \
+    OmniDisplayManager
+
 # Temporary handling
 #
 # Include config.fs get only if legacy device/qcom/<target>/android_filesystem_config.h
