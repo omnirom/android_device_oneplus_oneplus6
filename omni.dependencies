@@ -22,5 +22,11 @@
     "repository": "android_kernel_oneplus_sdm845",
     "target_path": "kernel/oneplus/sdm845",
     "revision": "android-9.0"
+  },
+  {
+    "remote": "omnirom",
+    "repository": "android_packages_apps_OmniDisplayManager",
+    "target_path": "packages/apps/OmniDisplayManager",
+    "revision": "android-9.0"
   }
 ]
