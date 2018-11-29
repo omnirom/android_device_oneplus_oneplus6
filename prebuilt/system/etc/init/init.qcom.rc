@@ -135,6 +135,7 @@ on boot
     chmod 0644 /data/vendor/omni/client_package_name
 
     setprop vendor.camera.aux.packagelist org.omnirom.snap,com.oneplus.camera
+    setprop persist.vendor.dpm.feature 11
 
 on post-fs
     # Vibrator
