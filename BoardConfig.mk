@@ -213,7 +213,8 @@ DEVICE_MANIFEST_FILE := $(BOARD_PATH)/manifest.xml
 DEVICE_MATRIX_FILE := $(BOARD_PATH)/compatibility_matrix.xml
 
 # Crypto
-#TARGET_HW_DISK_ENCRYPTION := true
+TARGET_HW_DISK_ENCRYPTION := true
+TARGET_HW_DISK_ENCRYPTION_PERF := true
 #TARGET_CRYPTFS_HW_PATH := $(BOARD_PATH)/cryptfs_hw
 
 #vold
