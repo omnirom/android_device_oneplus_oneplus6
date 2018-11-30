@@ -153,11 +153,6 @@ PRODUCT_CHARACTERISTICS := nosdcard
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
 
-# Keylayouts
-PRODUCT_COPY_FILES += \
-    device/oneplus/oneplus6/keylayout/fpc1020.kl:system/usr/keylayout/fpc1020.kl \
-    device/oneplus/oneplus6/keylayout/gf_input.kl:system/usr/keylayout/gf_input.kl
-
 # Lights
 PRODUCT_PACKAGES += \
     lights.oneplus6
@@ -293,3 +288,5 @@ else
   $(warning TODO: Need to replace legacy $(DEVICE_CONFIG_DIR)android_filesystem_config.h with config.fs)
   $(warning **********)
 endif
+
+include device/oneplus/oneplus6/keylayout/keylayout.mk
