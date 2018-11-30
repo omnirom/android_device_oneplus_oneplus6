@@ -271,6 +271,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vr_hwc
 
+PRODUCT_PACKAGES += \
+    DeskClock
+
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/media_codecs_google_telephony.xml \
