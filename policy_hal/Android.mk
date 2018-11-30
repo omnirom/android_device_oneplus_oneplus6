@@ -1,4 +1,4 @@
-ifeq ($(TARGET_DEVICE),$(filter $(TARGET_DEVICE),oneplus6))
+ifeq ($(TARGET_DEVICE),$(filter $(TARGET_DEVICE),oneplus6 oneplus6t))
 ifeq ($(USE_CUSTOM_AUDIO_POLICY), 1)
 LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
