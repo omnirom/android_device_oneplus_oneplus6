@@ -251,6 +251,7 @@ BOARD_SECCOMP_POLICY += $(BOARD_PATH)/seccomp_policy
 
 # for offmode charging
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
+TARGET_RECOVERY_FSTAB := $(BOARD_PATH)/recovery.fstab
 
 # Recovery:Start
 BOARD_HAS_LARGE_FILESYSTEM := true
