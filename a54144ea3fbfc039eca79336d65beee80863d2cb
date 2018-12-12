@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "144e18b5_1b7ba99e",
+        "filename": "BoardConfig.mk",
+        "patchSetId": 4
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 1000026
+      },
+      "writtenOn": "2018-12-12T11:34:16Z",
+      "side": 1,
+      "message": "we dont build recovery - so whats the point?",
+      "revId": "a54144ea3fbfc039eca79336d65beee80863d2cb",
+      "serverId": "56841c99-7c94-43d4-bf0b-cb4707e66d55",
+      "unresolved": true
+    }
+  ]
+}
