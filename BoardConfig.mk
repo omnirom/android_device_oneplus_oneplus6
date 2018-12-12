@@ -23,7 +23,7 @@ BOARD_PATH := device/oneplus/oneplus6
 PRODUCT_FULL_TREBLE := true
 BOARD_VNDK_VERSION := current
 BOARD_VNDK_RUNTIME_DISABLE := false
-ifeq (,$(filter oneplus6, $(PRODUCT_DEVICE)))
+ifneq (,$(filter oneplus6, $(PRODUCT_DEVICE)))
 PRODUCT_SHIPPING_API_LEVEL := 27
 endif
 TARGET_NO_KERNEL := false
@@ -44,7 +44,7 @@ BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 BOARD_USES_RECOVERY_AS_BOOT := true
 
 TARGET_NO_BOOTLOADER := true
-ifeq (,$(filter oneplus6, $(PRODUCT_DEVICE)))
+ifneq (,$(filter oneplus6, $(PRODUCT_DEVICE)))
 TARGET_OTA_ASSERT_DEVICE := OnePlus6
 endif
 TARGET_KERNEL_VERSION := 4.9
@@ -163,7 +163,7 @@ BOARD_HAVE_BLUETOOTH_QCOM := true
 QCOM_BT_USE_BTNV := true
 
 #SEPERATE FROM OP6T
-ifeq (,$(filter oneplus6, $(PRODUCT_DEVICE)))
+ifneq (,$(filter oneplus6, $(PRODUCT_DEVICE)))
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(BOARD_PATH)/bluetooth
 endif
 
@@ -233,7 +233,7 @@ TARGET_KERNEL_HAVE_EXFAT := true
 #TARGET_LDPRELOAD := libNimsWrap.so
 BOARD_USES_QCNE := true
 
-ifeq (,$(filter oneplus6, $(PRODUCT_DEVICE)))
+ifneq (,$(filter oneplus6, $(PRODUCT_DEVICE)))
 TARGET_SYSTEM_PROP := $(BOARD_PATH)/system.prop
 endif
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
