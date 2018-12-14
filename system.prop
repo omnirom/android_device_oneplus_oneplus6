@@ -165,7 +165,7 @@ config.disable_rtt=true
 persist.sys.force_sw_gles=1
 persist.vendor.radio.atfwd.start=true
 ro.kernel.qemu.gles=0
-qemu.hw.mainkeys=0
+#qemu.hw.mainkeys=0
 
 #ifdef VENDOR_EDIT
 #lifei@OnLineRD.MultiMediaService, 2015/12/23, Modify for support offload Is greater than 30s Audio source
