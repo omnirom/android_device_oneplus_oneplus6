@@ -102,6 +102,7 @@ public class GestureSettings extends PreferenceFragment implements
     private AppSelectListPreference mFPLongPressApp;
     private PreferenceCategory fpGestures;
     private boolean mFpDownSwipe;
+    private static final boolean sIsOnePlus6 = android.os.Build.MODEL.equals("ONEPLUS A6003");
     private List<AppSelectListPreference.PackageItem> mInstalledPackages = new LinkedList<AppSelectListPreference.PackageItem>();
     private PackageManager mPm;
 
@@ -174,11 +175,18 @@ public class GestureSettings extends PreferenceFragment implements
         mRightSwipeApp.setValue(value);
         mRightSwipeApp.setOnPreferenceChangeListener(this);
 
-        mFPLongPressApp = (AppSelectListPreference) findPreference(FP_GESTURE_LONG_PRESS_APP);
-        mFPLongPressApp.setEnabled(true);
-        value = Settings.System.getString(getContext().getContentResolver(), DEVICE_GESTURE_MAPPING_10);
-        mFPLongPressApp.setValue(value);
-        mFPLongPressApp.setOnPreferenceChangeListener(this);
+        if (sIsOnePlus6) {
+            mFPLongPressApp = (AppSelectListPreference) findPreference(FP_GESTURE_LONG_PRESS_APP);
+            mFPLongPressApp.setEnabled(true);
+            value = Settings.System.getString(getContext().getContentResolver(), DEVICE_GESTURE_MAPPING_10);
+            mFPLongPressApp.setValue(value);
+            mFPLongPressApp.setOnPreferenceChangeListener(this);
+        } else {
+            Preference fpGestures = findPreference(KEY_FP_GESTURE_CATEGORY);
+            Preference fpGesturesDefault = findPreference(KEY_FP_GESTURE_DEFAULT_CATEGORY);
+            getPreferenceScreen().removePreference(fpGestures);
+            getPreferenceScreen().removePreference(fpGesturesDefault);
+        }
 
         new FetchPackageInformationTask().execute();
     }
@@ -359,7 +367,9 @@ public class GestureSettings extends PreferenceFragment implements
             mUpSwipeApp.setPackageList(mInstalledPackages);
             mLeftSwipeApp.setPackageList(mInstalledPackages);
             mRightSwipeApp.setPackageList(mInstalledPackages);
-            mFPLongPressApp.setPackageList(mInstalledPackages);
+            if (sIsOnePlus6) {
+                mFPLongPressApp.setPackageList(mInstalledPackages);
+            }
         }
     }
 }
