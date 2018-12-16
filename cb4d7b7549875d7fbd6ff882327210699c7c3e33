@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "03a2f174_acbb57b6",
+        "filename": "DeviceParts/src/org/omnirom/device/GestureSettings.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 1001070
+      },
+      "writtenOn": "2018-12-16T12:24:54Z",
+      "side": 1,
+      "message": "all of this should depend on this. changing this overlay should be enough.",
+      "revId": "cb4d7b7549875d7fbd6ff882327210699c7c3e33",
+      "serverId": "56841c99-7c94-43d4-bf0b-cb4707e66d55",
+      "unresolved": false
+    }
+  ]
+}
