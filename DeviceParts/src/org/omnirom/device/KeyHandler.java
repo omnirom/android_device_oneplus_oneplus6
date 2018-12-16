@@ -102,10 +102,12 @@ public class KeyHandler implements DeviceKeyHandler {
     private static final int POCKET_MIN_DELTA_MS = 5000;
     private static final int FP_GESTURE_LONG_PRESS = 305;
 
+    private static final boolean sIsOnePlus6 = android.os.Build.MODEL.equals("ONEPLUS A6003");
+
     public static final String CLIENT_PACKAGE_NAME = "com.oneplus.camera";
     public static final String CLIENT_PACKAGE_PATH = "/data/vendor/omni/client_package_name";
 
-    private static final int[] sSupportedGestures = new int[]{
+    private static final int[] sSupportedGestures6 = new int[]{
         GESTURE_II_SCANCODE,
         GESTURE_CIRCLE_SCANCODE,
         GESTURE_V_SCANCODE,
@@ -121,6 +123,23 @@ public class KeyHandler implements DeviceKeyHandler {
         KEY_SLIDER_CENTER,
         KEY_SLIDER_BOTTOM,
         FP_GESTURE_LONG_PRESS,
+    };
+
+    private static final int[] sSupportedGestures = new int[]{
+        GESTURE_II_SCANCODE,
+        GESTURE_CIRCLE_SCANCODE,
+        GESTURE_V_SCANCODE,
+        GESTURE_A_SCANCODE,
+        GESTURE_LEFT_V_SCANCODE,
+        GESTURE_RIGHT_V_SCANCODE,
+        GESTURE_DOWN_SWIPE_SCANCODE,
+        GESTURE_UP_SWIPE_SCANCODE,
+        GESTURE_LEFT_SWIPE_SCANCODE,
+        GESTURE_RIGHT_SWIPE_SCANCODE,
+        KEY_DOUBLE_TAP,
+        KEY_SLIDER_TOP,
+        KEY_SLIDER_CENTER,
+        KEY_SLIDER_BOTTOM
     };
 
     private static final int[] sProxiCheckedGestures = new int[]{
@@ -335,7 +354,11 @@ public class KeyHandler implements DeviceKeyHandler {
 
     @Override
     public boolean canHandleKeyEvent(KeyEvent event) {
-        return ArrayUtils.contains(sSupportedGestures, event.getScanCode());
+        if (sIsOnePlus6) {
+            return ArrayUtils.contains(sSupportedGestures6, event.getScanCode());
+        } else {
+            return ArrayUtils.contains(sSupportedGestures, event.getScanCode());
+        }
     }
 
     @Override
