@@ -25,7 +25,6 @@ etc/permissions/privapp-permissions-com.qualcomm.location.xml
 etc/permissions/privapp-permissions-qti.xml
 etc/permissions/privapp-permissions-oem.xml
 etc/permissions/qcrilhook.xml
-etc/permissions/qti_libpermissions.xml
 etc/permissions/qti_permissions.xml
 etc/permissions/LteDirectDiscovery.xml
 etc/permissions/RemoteSimlock.xml
@@ -37,7 +36,6 @@ etc/permissions/com.oem.feature.xml
 etc/permissions/com.oem.features_secrecy.xml
 etc/permissions/com.oneplus.software.xml
 etc/permissions/com.qrd.wappush.xml
-etc/permissions/qti_libpermissions.xml
 etc/permissions/qti_permissions.xml
 etc/public.libraries-qti.txt
 #etc/scve/facereco/gModel.dat
@@ -132,15 +130,15 @@ framework/embmslibrary.jar
 framework/izat.xt.srv.jar
 framework/qtiNetworkLib.jar
 framework/vendor.qti.data.factory-V1.0-java.jar
-framework/vendor.qti.hardware.alarm-V1.0-java.jar
-framework/vendor.qti.hardware.data.dynamicdds-V1.0-java.jar
+-framework/vendor.qti.hardware.alarm-V1.0-java.jar
+-framework/vendor.qti.hardware.data.dynamicdds-V1.0-java.jar
 -framework/vendor.qti.hardware.data.latency-V1.0-java.jar
 framework/vendor.qti.hardware.data.qmi-V1.0-java.jar
 -framework/vendor.qti.hardware.sensorscalibrate-V1.0-java.jar
-framework/vendor.qti.hardware.soter-V1.0-java.jar
-framework/vendor.qti.ims.callinfo-V1.0-java.jar
+-framework/vendor.qti.hardware.soter-V1.0-java.jar
+-framework/vendor.qti.ims.callinfo-V1.0-java.jar
 -framework/vendor.qti.ims.rcsconfig-V1.0-java.jar
-framework/vendor.qti.voiceprint-V1.0-java.jar
+-framework/vendor.qti.voiceprint-V1.0-java.jar
 -framework/vendor.oneplus.camera.CameraHIDL-V1.0-java.jar
 lib64/android.hardware.light@2.0.so
 lib64/com.qualcomm.qti.ant@1.0.so
