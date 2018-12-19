@@ -284,6 +284,7 @@ persist.qua.op=0
 #endif
 
 #omni
+persist.vendor.cne.feature=1
 ro.hardware.lights=oneplus6
 ro.hardware.power=oneplus6
 ro.config.ringtone=omni_ringtone1.ogg
