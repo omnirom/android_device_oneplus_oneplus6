@@ -473,9 +473,9 @@ public class KeyHandler implements DeviceKeyHandler {
         if (DEBUG) Log.i(TAG, "Display off");
         if (enableProxiSensor()) {
             mProxyWasNear = false;
+            mProxySensorTimestamp = SystemClock.elapsedRealtime();
             mSensorManager.registerListener(mProximitySensor, mPocketSensor,
                     SensorManager.SENSOR_DELAY_NORMAL);
-            mProxySensorTimestamp = SystemClock.elapsedRealtime();
         }
         if (mUseTiltCheck) {
             mSensorManager.registerListener(mTiltSensorListener, mTiltSensor,
