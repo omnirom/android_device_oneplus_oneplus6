@@ -173,6 +173,7 @@ public class KeyHandler implements DeviceKeyHandler {
     private boolean mProxyWasNear;
     private long mProxySensorTimestamp;
     private boolean mUseWaveCheck;
+    private Sensor mSensor;
     private Sensor mPocketSensor;
     private boolean mUsePocketCheck;
     private boolean mFPcheck;
@@ -289,6 +290,7 @@ public class KeyHandler implements DeviceKeyHandler {
         mNoMan = (NotificationManager) mContext.getSystemService(Context.NOTIFICATION_SERVICE);
         mAudioManager = (AudioManager) mContext.getSystemService(Context.AUDIO_SERVICE);
         mSensorManager = (SensorManager) mContext.getSystemService(Context.SENSOR_SERVICE);
+        mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
         mTiltSensor = getSensor(mSensorManager, "oneplus.sensor.pickup");
         mPocketSensor = getSensor(mSensorManager, "oneplus.sensor.pocket");
         IntentFilter screenStateFilter = new IntentFilter(Intent.ACTION_SCREEN_ON);
@@ -450,8 +452,11 @@ public class KeyHandler implements DeviceKeyHandler {
 
     private void onDisplayOn() {
         if (DEBUG) Log.i(TAG, "Display on");
-        if (enableProxiSensor()) {
+        if (enableProxiSensor() && sIsOnePlus6) {
             mSensorManager.unregisterListener(mProximitySensor, mPocketSensor);
+            enableGoodix();
+        } else if (enableProxiSensor()) {
+            mSensorManager.unregisterListener(mProximitySensor, mSensor);
             enableGoodix();
         }
         if (mUseTiltCheck) {
@@ -471,9 +476,14 @@ public class KeyHandler implements DeviceKeyHandler {
 
     private void onDisplayOff() {
         if (DEBUG) Log.i(TAG, "Display off");
-        if (enableProxiSensor()) {
+        if (enableProxiSensor() && sIsOnePlus6) {
             mProxyWasNear = false;
             mSensorManager.registerListener(mProximitySensor, mPocketSensor,
+                    SensorManager.SENSOR_DELAY_NORMAL);
+            mProxySensorTimestamp = SystemClock.elapsedRealtime();
+        } else if (enableProxiSensor()) {
+            mProxyWasNear = false;
+            mSensorManager.registerListener(mProximitySensor, mSensor,
                     SensorManager.SENSOR_DELAY_NORMAL);
             mProxySensorTimestamp = SystemClock.elapsedRealtime();
         }
