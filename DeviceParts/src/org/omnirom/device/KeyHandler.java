@@ -290,7 +290,11 @@ public class KeyHandler implements DeviceKeyHandler {
         mAudioManager = (AudioManager) mContext.getSystemService(Context.AUDIO_SERVICE);
         mSensorManager = (SensorManager) mContext.getSystemService(Context.SENSOR_SERVICE);
         mTiltSensor = getSensor(mSensorManager, "oneplus.sensor.pickup");
-        mPocketSensor = getSensor(mSensorManager, "oneplus.sensor.pocket");
+        if (sIsOnePlus6) {
+             mPocketSensor = getSensor(mSensorManager, "oneplus.sensor.pocket");
+        } else {
+             mPocketSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
+        }
         IntentFilter screenStateFilter = new IntentFilter(Intent.ACTION_SCREEN_ON);
         screenStateFilter.addAction(Intent.ACTION_SCREEN_OFF);
         mContext.registerReceiver(mScreenStateReceiver, screenStateFilter);
