@@ -173,6 +173,7 @@ public class KeyHandler implements DeviceKeyHandler {
     private boolean mProxyWasNear;
     private long mProxySensorTimestamp;
     private boolean mUseWaveCheck;
+    private Sensor mSensor;
     private Sensor mPocketSensor;
     private boolean mUsePocketCheck;
     private boolean mFPcheck;
@@ -290,7 +291,11 @@ public class KeyHandler implements DeviceKeyHandler {
         mAudioManager = (AudioManager) mContext.getSystemService(Context.AUDIO_SERVICE);
         mSensorManager = (SensorManager) mContext.getSystemService(Context.SENSOR_SERVICE);
         mTiltSensor = getSensor(mSensorManager, "oneplus.sensor.pickup");
-        mPocketSensor = getSensor(mSensorManager, "oneplus.sensor.pocket");
+        if (sIsOnePlus6) {
+             mPocketSensor = getSensor(mSensorManager, "oneplus.sensor.pocket");
+        } else {
+             mPocketSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
+        }
         IntentFilter screenStateFilter = new IntentFilter(Intent.ACTION_SCREEN_ON);
         screenStateFilter.addAction(Intent.ACTION_SCREEN_OFF);
         mContext.registerReceiver(mScreenStateReceiver, screenStateFilter);
@@ -453,7 +458,6 @@ public class KeyHandler implements DeviceKeyHandler {
         if (enableProxiSensor()) {
             mSensorManager.unregisterListener(mProximitySensor, mPocketSensor);
             enableGoodix();
-        }
         if (mUseTiltCheck) {
             mSensorManager.unregisterListener(mTiltSensorListener, mTiltSensor);
         }
@@ -476,7 +480,6 @@ public class KeyHandler implements DeviceKeyHandler {
             mSensorManager.registerListener(mProximitySensor, mPocketSensor,
                     SensorManager.SENSOR_DELAY_NORMAL);
             mProxySensorTimestamp = SystemClock.elapsedRealtime();
-        }
         if (mUseTiltCheck) {
             mSensorManager.registerListener(mTiltSensorListener, mTiltSensor,
                     SensorManager.SENSOR_DELAY_NORMAL);
