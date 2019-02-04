@@ -1,0 +1,8 @@
+vendor.debug.egl.swapinterval  u:object_r:exported_system_prop:s0
+vendor.debug.prerotation.disable  u:object_r:exported_system_prop:s0
+vendor.debug.egl.profiler  u:object_r:exported_system_prop:s0
+#vendor.camera.aux.packagelist  u:object_r:exported_system_prop:s0
+vendor.debug.egl.changepixelformat  u:object_r:exported_system_prop:s0
+persist.sys.assert.panic  u:object_r:exported_system_prop:s0
+ro.vendor.graphics.memory  u:object_r:exported_system_prop:s0
+
