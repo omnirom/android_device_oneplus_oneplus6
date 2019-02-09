@@ -22,12 +22,6 @@
         android:persistent="false"
         android:defaultValue="true" />
 
-    <SwitchPreference
-        android:key="off_screen_gesture_feedback"
-        android:summary="@string/off_screen_gesture_feedback_summary_head"
-        android:title="@string/off_screen_gesture_feedback_title_head"
-        android:persistent="false" />
-
     <PreferenceCategory
         android:title="@string/fp_gesture_title"
         android:key="key_fp_gesture_category" >

@@ -84,7 +84,6 @@ public class GestureSettings extends PreferenceFragment implements
 
     private TwoStatePreference mProxiSwitch;
     private TwoStatePreference mFpSwipeDownSwitch;
-    private TwoStatePreference mOffscreenGestureFeedbackSwitch;
     private AppSelectListPreference mDoubleSwipeApp;
     private AppSelectListPreference mCircleApp;
     private AppSelectListPreference mDownArrowApp;
