@@ -9,8 +9,6 @@ on init
     mount none /system/lib/hw/power.oneplus6.so /vendor/lib/hw/power.qcom.so bind
     mount none /system/lib64/hw/power.oneplus6.so /vendor/lib64/hw/power.qcom.so bind
     mount none /dev/null /vendor/etc/init/android.hardware.health@2.0-service.rc bind
-    mount none /system/lib64/hw/hwcomposer.sdm845.so /vendor/lib64/hw/hwcomposer.sdm845.so bind
-    mount none /system/lib/hw/hwcomposer.sdm845.so /vendor/lib/hw/hwcomposer.sdm845.so bind
 
 on boot
     # default country code
