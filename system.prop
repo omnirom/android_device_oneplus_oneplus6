@@ -314,3 +314,6 @@ dalvik.vm.heapmaxfree=8m
 
 sdm.debug.disable_inline_rotator=1
 sdm.debug.disable_inline_rotator_secure=1
+
+#HWC
+persist.vendor.color.matrix=2
