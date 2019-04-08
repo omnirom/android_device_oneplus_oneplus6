@@ -701,7 +701,7 @@ public class KeyHandler implements DeviceKeyHandler {
             if (event == FileObserver.MODIFY) {
                 try {
                     Log.d(TAG, "client_package" + file + " and " + pkgName);
-                    mProvider = new IOnePlusCameraProvider();
+                    mProvider = IOnePlusCameraProvider.getService();
                     mProvider.setPackageName(pkgName);
                 } catch (RemoteException e) {
                     Log.e(TAG, "setPackageName error", e);
