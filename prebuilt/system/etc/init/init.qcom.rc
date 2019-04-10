@@ -1,6 +1,7 @@
 on init
     mount none /system/etc/media_profiles_vendor.xml /vendor/etc/media_profiles_vendor.xml bind
     mount none /system/etc/audio_policy_configuration_omni.xml /vendor/etc/audio/audio_policy_configuration.xml bind
+    mount none /system/etc/mixer_paths_tavil.xml /vendor/etc/mixer_paths_tavil.xml bind
     mount none /system/lib/modules/wlan.ko /vendor/lib/modules/qca_cld3_wlan.ko bind
     mount none /system/etc/WCNSS_qcom_cfg.ini /vendor/etc/wifi/WCNSS_qcom_cfg.ini bind
     mount none /system/lib/hw/lights.oneplus6.so /vendor/lib/hw/lights.sdm845.so bind
@@ -9,6 +10,7 @@ on init
     mount none /system/lib/hw/power.oneplus6.so /vendor/lib/hw/power.qcom.so bind
     mount none /system/lib64/hw/power.oneplus6.so /vendor/lib64/hw/power.qcom.so bind
     mount none /dev/null /vendor/etc/init/android.hardware.health@2.0-service.rc bind
+    mount none /system/lib/hw/audio.primary.sdm845.so /vendor/lib/hw/audio.primary.sdm845.so bind
 
 on boot
     # default country code
