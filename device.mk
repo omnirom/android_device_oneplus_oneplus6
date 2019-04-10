@@ -183,7 +183,7 @@ PRODUCT_PACKAGES += \
     com.android.nfc_extras
 
 PRODUCT_PACKAGES += \
-    libwifi-hal-qcom \
+    android.hardware.wifi@1.2 \
     wificond \
     wifilogd \
     libwpa_client \
