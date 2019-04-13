@@ -22,6 +22,7 @@ import static android.provider.Settings.Global.ZEN_MODE_IMPORTANT_INTERRUPTIONS;
 
 import android.app.ActivityManagerNative;
 import android.app.NotificationManager;
+import android.app.KeyguardManager;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
@@ -50,6 +51,7 @@ import android.os.UEventObserver;
 import android.os.UserHandle;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
+import android.provider.MediaStore;
 import android.provider.Settings;
 import android.provider.Settings.Global;
 import android.telecom.PhoneAccountHandle;
@@ -184,6 +186,7 @@ public class KeyHandler implements DeviceKeyHandler {
     private ClientPackageNameObserver mClientObserver;
     private IOnePlusCameraProvider mProvider;
     private boolean isOPCameraAvail;
+    private KeyguardManager mKeyguardManager;
 
     private SensorEventListener mProximitySensor = new SensorEventListener() {
         @Override
@@ -413,8 +416,15 @@ public class KeyHandler implements DeviceKeyHandler {
             if (DEBUG) Log.i(TAG, "isActivityLaunchEvent " + event.getScanCode() + value);
             if (!launchSpecialActions(value)) {
                 OmniVibe.performHapticFeedbackLw(HapticFeedbackConstants.LONG_PRESS, false, mContext);
-                Intent intent = createIntent(value);
-                return intent;
+                if (value.equals(AppSelectListPreference.CAMERA_ENTRY) && mKeyguardManager.isDeviceSecure()) {
+                    Intent SECURE_CAMERA_INTENT =
+                        new Intent(MediaStore.INTENT_ACTION_STILL_IMAGE_CAMERA_SECURE)
+                        .addFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
+                return SECURE_CAMERA_INTENT;
+                } else {
+                    Intent intent = createIntent(value);
+                    return intent;
+                }
             }
         }
         return null;
@@ -701,7 +711,7 @@ public class KeyHandler implements DeviceKeyHandler {
             if (event == FileObserver.MODIFY) {
                 try {
                     Log.d(TAG, "client_package" + file + " and " + pkgName);
-                    mProvider = new IOnePlusCameraProvider();
+                    mProvider = IOnePlusCameraProvider.getService();
                     mProvider.setPackageName(pkgName);
                 } catch (RemoteException e) {
                     Log.e(TAG, "setPackageName error", e);
