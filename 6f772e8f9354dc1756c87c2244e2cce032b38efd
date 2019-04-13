@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "82c4144a_ac60c9c7",
+        "filename": "DeviceParts/src/org/omnirom/device/KeyHandler.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 421,
+      "author": {
+        "id": 1000026
+      },
+      "writtenOn": "2019-04-13T12:06:08Z",
+      "side": 1,
+      "message": "also wrong - line continue is two indent",
+      "revId": "6f772e8f9354dc1756c87c2244e2cce032b38efd",
+      "serverId": "56841c99-7c94-43d4-bf0b-cb4707e66d55",
+      "unresolved": false
+    }
+  ]
+}
