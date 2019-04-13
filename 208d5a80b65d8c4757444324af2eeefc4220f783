@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "855f7018_fd3e3f4e",
+        "filename": "DeviceParts/src/org/omnirom/device/KeyHandler.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 423,
+      "author": {
+        "id": 1000026
+      },
+      "writtenOn": "2019-04-13T11:34:23Z",
+      "side": 1,
+      "message": "wrong indentation",
+      "revId": "208d5a80b65d8c4757444324af2eeefc4220f783",
+      "serverId": "56841c99-7c94-43d4-bf0b-cb4707e66d55",
+      "unresolved": false
+    }
+  ]
+}
