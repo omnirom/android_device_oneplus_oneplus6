@@ -139,7 +139,6 @@ framework/vendor.qti.hardware.data.qmi-V1.0-java.jar
 -framework/vendor.qti.ims.callinfo-V1.0-java.jar
 -framework/vendor.qti.ims.rcsconfig-V1.0-java.jar
 -framework/vendor.qti.voiceprint-V1.0-java.jar
--framework/vendor.oneplus.camera.CameraHIDL-V1.0-java.jar
 lib64/android.hardware.light@2.0.so
 lib64/com.qualcomm.qti.ant@1.0.so
 lib64/com.qualcomm.qti.bluetooth_audio@1.0.so
