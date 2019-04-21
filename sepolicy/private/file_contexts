@@ -43,3 +43,6 @@
 
 /data/vendor/omni/client_package_name                u:object_r:vendor_data_file:s0
 
+/sys/class/power_supply/usb/otg_switch  u:object_r:sysfs_usb_supply_omni:s0
+/sys/class/leds/vibrator/vmax_mv_user u:object_r:sysfs_vibrator_omni:s0
+
