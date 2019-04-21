@@ -11,3 +11,9 @@ allow system_app storaged:binder call;
 
 allow system_app fs_bpf:dir search;
 allow system_app proc_pagetypeinfo:file read;
+
+allow system_app sysfs_vibrator_omni:file rw_file_perms;
+allow system_app sysfs_vibrator_omni:dir search;
+
+allow system_app sysfs_usb_supply_omni:file rw_file_perms;
+allow system_app sysfs_usb_supply_omni:dir search;
