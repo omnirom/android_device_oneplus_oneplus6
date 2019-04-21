@@ -10,5 +10,7 @@ type oem_data_file, file_type, data_file_type;
 type sysfs_graphics_omni, sysfs_type, fs_type;
 type sysfs_fp, sysfs_type, fs_type;
 type sysfs_oem, sysfs_type, fs_type;
+type sysfs_usb_supply_omni, sysfs_type, fs_type;
+type sysfs_vibrator_omni, sysfs_type, fs_type;
 
 type oem_audio_device, dev_type;

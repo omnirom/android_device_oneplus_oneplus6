@@ -43,3 +43,5 @@
 
 /data/vendor/omni/client_package_name                u:object_r:vendor_data_file:s0
 
+/sys/devices/platform/soc/c440000\.qcom,spmi/spmi-0/spmi0-03/c440000\.qcom,spmi:qcom,pmi8998@3:qcom,haptics@c000/leds/vibrator/vmax_mv_user  u:object_r:sysfs_vibrator_omni:s0
+/sys/devices/platform/soc/c440000\.qcom,spmi/spmi-0/spmi0-02/c440000\.qcom,spmi:qcom,pmi8998@2:qcom,qpnp-smb2/power_supply/usb/otg_switch   u:object_r:sysfs_usb_supply_omni:s0
