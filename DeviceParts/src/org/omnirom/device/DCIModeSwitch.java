@@ -25,9 +25,11 @@ import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v7.preference.PreferenceManager;
 import org.omnirom.device.DeviceSettings;
 
-public class DCIModeSwitch implements OnPreferenceChangeListener {
+public class DCIModeSwitch {
 
     private static final String FILE = "/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/DCI_P3";
+
+    public static final String SETTINGS_KEY = DeviceSettings.KEY_SETTINGS_PREFIX + DeviceSettings.KEY_DCI_SWITCH;
 
     public static String getFile() {
         if (Utils.fileWritable(FILE)) {
@@ -42,12 +44,5 @@ public class DCIModeSwitch implements OnPreferenceChangeListener {
 
     public static boolean isCurrentlyEnabled(Context context) {
         return Utils.getFileValueAsBoolean(getFile(), false);
-    }
-
-    @Override
-    public boolean onPreferenceChange(Preference preference, Object newValue) {
-        Boolean enabled = (Boolean) newValue;
-        Utils.writeValue(getFile(), enabled ? "1" : "0");
-        return true;
     }
 }

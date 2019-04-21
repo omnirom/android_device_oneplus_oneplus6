@@ -26,9 +26,11 @@ import android.support.v7.preference.PreferenceManager;
 
 import org.omnirom.device.DeviceSettings;
 
-public class OnePlusModeSwitch implements OnPreferenceChangeListener {
+public class OnePlusModeSwitch {
 
     private static final String FILE = "/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/oneplus_mode";
+
+    public static final String SETTINGS_KEY = DeviceSettings.KEY_SETTINGS_PREFIX + DeviceSettings.KEY_ONEPLUS_SWITCH;
 
     public static String getFile() {
         if (Utils.fileWritable(FILE)) {
@@ -43,12 +45,5 @@ public class OnePlusModeSwitch implements OnPreferenceChangeListener {
 
     public static boolean isCurrentlyEnabled(Context context) {
         return Utils.getFileValueAsBoolean(getFile(), false);
-    }
-
-    @Override
-    public boolean onPreferenceChange(Preference preference, Object newValue) {
-        Boolean enabled = (Boolean) newValue;
-        Utils.writeValue(getFile(), enabled ? "1" : "0");
-        return true;
     }
 }
