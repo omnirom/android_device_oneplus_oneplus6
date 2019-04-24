@@ -238,8 +238,7 @@ PRODUCT_PACKAGES += \
     android.hidl.base@1.0
 
 PRODUCT_PACKAGES += \
-    vendor.display.config@1.0 \
-    vendor.display.config@1.1
+    vendor.display.config@1.7
 
 # Display
 PRODUCT_PACKAGES += \
