@@ -40,5 +40,11 @@
     "repository": "android_packages_apps_OmniDisplayManager",
     "target_path": "packages/apps/OmniDisplayManager",
     "revision": "android-9.0"
+  },
+  {
+    "remote": "gitlab",
+    "repository": "android_vendor_image_oneplus",
+    "target_path": "vendor/image/oneplus",
+    "revision": "android-9.0"
   }
 ]
