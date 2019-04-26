@@ -301,7 +301,7 @@ public class KeyHandler implements DeviceKeyHandler {
         mNoMan = (NotificationManager) mContext.getSystemService(Context.NOTIFICATION_SERVICE);
         mAudioManager = (AudioManager) mContext.getSystemService(Context.AUDIO_SERVICE);
         mSensorManager = (SensorManager) mContext.getSystemService(Context.SENSOR_SERVICE);
-        mTiltSensor = getSensor(mSensorManager, "oneplus.sensor.pickup");
+        mTiltSensor = getSensor(mSensorManager, "oneplus.sensor.op_motion_detect");
         mPocketSensor = getSensor(mSensorManager, "oneplus.sensor.pocket");
         IntentFilter systemStateFilter = new IntentFilter(Intent.ACTION_SCREEN_ON);
         systemStateFilter.addAction(Intent.ACTION_SCREEN_OFF);
