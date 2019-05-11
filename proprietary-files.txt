@@ -36,6 +36,7 @@ etc/permissions/com.oem.feature.xml
 etc/permissions/com.oem.features_secrecy.xml
 etc/permissions/com.oneplus.software.xml
 etc/permissions/com.qrd.wappush.xml
+etc/permissions/telephonyservice.xml
 etc/permissions/qti_permissions.xml
 etc/public.libraries-qti.txt
 #etc/scve/facereco/gModel.dat
