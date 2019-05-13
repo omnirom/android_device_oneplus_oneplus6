@@ -488,3 +488,5 @@ lib/libnxpnfc-nci.so
 lib64/vendor.nxp.nxpnfc@1.0.so
 lib/vendor.nxp.nxpnfc@1.0.so
 etc/nfcee_access.xml
+
+-priv-app/OPNetworkSetting/OPNetworkSetting.apk
