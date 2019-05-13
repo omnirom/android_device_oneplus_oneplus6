@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:sharedUserId="android.uid.phone" android:versionCode="28" android:versionName="0.0.1.180831143455.f1ea99c" package="com.qualcomm.qti.networksetting" platformBuildVersionCode="23" platformBuildVersionName="6.0-2438415">
+    <uses-sdk android:minSdkVersion="28" android:targetSdkVersion="28"/>
+    <application android:label="@string/networks" android:icon="@drawable/abc_ab_share_pack_mtrl_alpha" android:process="com.android.phone" android:supportsRtl="true">
+        <uses-library android:name="com.qualcomm.qcrilhook"/>
+        <activity android:theme="@android:style/Theme.DeviceDefault.Settings" android:label="@string/settings_label" android:name="MobileNetworkSettings" android:configChanges="orientation|screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.settings.DATA_ROAMING_SETTINGS"/>
+                <action android:name="codeaurora.intent.action.MOBILE_NETWORK_SETTINGS"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity-alias android:name="Settings" android:targetActivity="MobileNetworkSettings"/>
+        <activity android:theme="@android:style/Theme.DeviceDefault.Settings" android:name=".NetworkSetting" android:launchMode="singleInstance" android:configChanges="keyboardHidden|orientation|screenSize" android:uiOptions="splitActionBarWhenNarrow">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.settings.NETWORK_OPERATOR_SETTINGS"/>
+                <action android:name="org.codeaurora.settings.NETWORK_OPERATOR_SETTINGS_ASYNC"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:theme="@android:style/Theme.DeviceDefault.Settings" android:label="@string/gsm_umts_options" android:name="GsmUmtsOptions">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity android:theme="@android:style/Theme.DeviceDefault.Settings" android:label="@string/cdma_options" android:name="CdmaOptions">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity android:theme="@android:style/Theme.Translucent.NoTitleBar" android:name=".ManagedRoaming" android:configChanges="keyboardHidden|orientation|screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="codeaurora.intent.action.ACTION_MANAGED_ROAMING_IND"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <receiver android:name="SimAlertNotification"/>
+        <service android:name="NetworkQueryService"/>
+        <activity android:theme="@android:style/Theme.DeviceDefault.Settings" android:name=".uplmn.UserPLMNListPreference" android:configChanges="keyboardHidden|orientation|screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity android:theme="@android:style/Theme.DeviceDefault.Settings" android:name=".uplmn.UPLMNEditor" android:configChanges="keyboardHidden|orientation|screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>
