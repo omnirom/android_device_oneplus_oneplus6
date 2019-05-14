@@ -212,7 +212,8 @@ PRODUCT_PACKAGES += \
     libjson
 
 PRODUCT_PACKAGES += \
-    ims-ext-common
+    ims-ext-common \
+    tcmiface
 
 PRODUCT_PACKAGES += \
     com.android.ims.rcsmanager \
@@ -221,7 +222,14 @@ PRODUCT_PACKAGES += \
     PresencePolling
 
 PRODUCT_BOOT_JARS += \
-    WfdCommon
+    qtiNetworkLib \
+    com.qualcomm.qti.camera \
+    com.nxp.nfc \
+    tcmiface \
+    WfdCommon \
+    com.qti.snapdragon.sdk.display \
+    qcnvitems \
+    qcrilhook
 
 # Netutils
 PRODUCT_PACKAGES += \
