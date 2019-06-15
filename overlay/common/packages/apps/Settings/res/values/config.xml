@@ -19,4 +19,7 @@
     <bool name="config_enableManualSubProvisioning">true</bool>
 
     <bool name="config_show_color_mode">false</bool>
+    <!-- Whether to show Connected MAC Randomization in Developer Options -->
+    <bool name="config_wifi_support_connected_mac_randomization">true</bool>
+
 </resources>
