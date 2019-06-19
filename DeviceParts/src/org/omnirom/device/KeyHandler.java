@@ -185,6 +185,7 @@ public class KeyHandler implements DeviceKeyHandler {
     private IOnePlusCameraProvider mProvider;
     private boolean isOPCameraAvail;
     private boolean mRestoreUser;
+    private boolean mToggleTorch = false;
 
     private SensorEventListener mProximitySensor = new SensorEventListener() {
         @Override
@@ -526,13 +527,39 @@ public class KeyHandler implements DeviceKeyHandler {
         if ( action == 0) {
             mNoMan.setZenMode(ZEN_MODE_OFF, null, TAG);
             mAudioManager.setRingerModeInternal(AudioManager.RINGER_MODE_NORMAL);
+            toggleTorch(false);
         } else if (action == 1) {
             mNoMan.setZenMode(ZEN_MODE_OFF, null, TAG);
             mAudioManager.setRingerModeInternal(AudioManager.RINGER_MODE_VIBRATE);
+            toggleTorch(false);
         } else if (action == 2) {
             mNoMan.setZenMode(ZEN_MODE_IMPORTANT_INTERRUPTIONS, null, TAG);
             mAudioManager.setRingerModeInternal(AudioManager.RINGER_MODE_NORMAL);
+            toggleTorch(false);
+        } else if (action == 3) {
+            boolean allowTorch = true;
+            if (mProxyIsNear && mUseProxiCheck) {
+                return;
+            } else {
+                mToggleTorch = true;
+                toggleTorch(true);
+            }
         }
+
+    }
+
+    private void toggleTorch(boolean value) {
+        if (mToggleTorch) {
+            IStatusBarService service = getStatusBarService();
+            if (service != null) {
+                try {
+                    service.toggleCameraFlashState(value);
+                    mToggleTorch = value;
+                } catch (RemoteException e) {
+                    // do nothing.
+                }
+            }
+       }
     }
 
     private Intent createIntent(String value) {
