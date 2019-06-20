@@ -198,6 +198,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     SnapdragonCamera2
 
+# Cutout
+PRODUCT_PACKAGES += \
+    NoCutoutOverlay \
+    NotchBarKiller
+
 # power
 PRODUCT_PACKAGES += \
     power.oneplus6
