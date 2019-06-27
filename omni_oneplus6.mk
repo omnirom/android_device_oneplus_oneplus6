@@ -67,6 +67,3 @@ TARGET_VENDOR := oneplus
 
 #PRODUCT_SYSTEM_PROPERTY_BLACKLIST += \
     ro.product.model
-
-$(call inherit-product, vendor/oneplus/oneplus6/device-vendor.mk)
-
