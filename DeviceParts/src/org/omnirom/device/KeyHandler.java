@@ -185,7 +185,7 @@ public class KeyHandler implements DeviceKeyHandler {
     private IOnePlusCameraProvider mProvider;
     private boolean isOPCameraAvail;
     private boolean mRestoreUser;
-    private boolean mToggleTorch = false;
+    private boolean mUseSliderTorch = false;
     private boolean mTorchState = false;
 
     private SensorEventListener mProximitySensor = new SensorEventListener() {
@@ -528,51 +528,29 @@ public class KeyHandler implements DeviceKeyHandler {
         if ( action == 0) {
             mNoMan.setZenMode(ZEN_MODE_OFF, null, TAG);
             mAudioManager.setRingerModeInternal(AudioManager.RINGER_MODE_NORMAL);
-            disableTorch();
+            mTorchState = false;
         } else if (action == 1) {
             mNoMan.setZenMode(ZEN_MODE_OFF, null, TAG);
             mAudioManager.setRingerModeInternal(AudioManager.RINGER_MODE_VIBRATE);
-            disableTorch();
+            mTorchState = false;
         } else if (action == 2) {
             mNoMan.setZenMode(ZEN_MODE_IMPORTANT_INTERRUPTIONS, null, TAG);
             mAudioManager.setRingerModeInternal(AudioManager.RINGER_MODE_NORMAL);
-            disableTorch();
+            mTorchState = false;
         } else if (action == 3) {
             mNoMan.setZenMode(ZEN_MODE_OFF, null, TAG);
             mAudioManager.setRingerModeInternal(AudioManager.RINGER_MODE_NORMAL);
-            if (mProxyIsNear && mUseProxiCheck) {
-                return;
-            } else {
-                mToggleTorch = true;
-                mTorchState = true;
-                toggleTorch();
-            }
+            mUseSliderTorch = true;
+            mTorchState = true;
         }
 
-    }
-
-    private void disableTorch() {
-        if (mTorchState) {
-            mToggleTorch = true;
-            mTorchState = false;
-            toggleTorch();
+        if (((!mProxyIsNear && mUseProxiCheck) || !mUseProxiCheck) && mUseSliderTorch && action < 3) {
+            launchSpecialActions(AppSelectListPreference.TORCH_ENTRY);
+            mUseSliderTorch = false;
+        } else if (((!mProxyIsNear && mUseProxiCheck) || !mUseProxiCheck) && mUseSliderTorch) {
+            launchSpecialActions(AppSelectListPreference.TORCH_ENTRY);
         }
-    }
 
-    private void toggleTorch() {
-        IStatusBarService service = getStatusBarService();
-        if (service != null) {
-            try {
-                if (mToggleTorch) {
-                    service.toggleCameraFlashState(mTorchState);
-                    mToggleTorch = false;
-                } else {
-                    service.toggleCameraFlash();
-                }
-            } catch (RemoteException e) {
-                // do nothing.
-            }
-        }
     }
 
     private Intent createIntent(String value) {
@@ -588,9 +566,21 @@ public class KeyHandler implements DeviceKeyHandler {
     private boolean launchSpecialActions(String value) {
         if (value.equals(AppSelectListPreference.TORCH_ENTRY)) {
             mGestureWakeLock.acquire(GESTURE_WAKELOCK_DURATION);
-            toggleTorch();
-            OmniVibe.performHapticFeedbackLw(HapticFeedbackConstants.LONG_PRESS, false, mContext);
-            return true;
+            IStatusBarService service = getStatusBarService();
+            if (service != null) {
+                try {
+                    if (mUseSliderTorch) {
+                        service.toggleCameraFlashState(mTorchState);
+                        return true;
+                    } else {
+                        service.toggleCameraFlash();
+                        OmniVibe.performHapticFeedbackLw(HapticFeedbackConstants.LONG_PRESS, false, mContext);
+                        return true;
+                    }
+                } catch (RemoteException e) {
+                // do nothing.
+               }
+           }
         } else if (value.equals(AppSelectListPreference.MUSIC_PLAY_ENTRY)) {
             mGestureWakeLock.acquire(GESTURE_WAKELOCK_DURATION);
             OmniVibe.performHapticFeedbackLw(HapticFeedbackConstants.LONG_PRESS, false, mContext);
