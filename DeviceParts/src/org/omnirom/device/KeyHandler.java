@@ -534,10 +534,14 @@ public class KeyHandler implements DeviceKeyHandler {
             mAudioManager.setRingerModeInternal(AudioManager.RINGER_MODE_VIBRATE);
             disableTorch();
         } else if (action == 2) {
+            mNoMan.setZenMode(ZEN_MODE_OFF, null, TAG);
+            mAudioManager.setRingerModeInternal(AudioManager.RINGER_MODE_SILENT);
+            disableTorch();
+        } else if (action == 3) {
             mNoMan.setZenMode(ZEN_MODE_IMPORTANT_INTERRUPTIONS, null, TAG);
             mAudioManager.setRingerModeInternal(AudioManager.RINGER_MODE_NORMAL);
             disableTorch();
-        } else if (action == 3) {
+        } else if (action == 4) {
             mNoMan.setZenMode(ZEN_MODE_OFF, null, TAG);
             mAudioManager.setRingerModeInternal(AudioManager.RINGER_MODE_NORMAL);
             if (mProxyIsNear && mUseProxiCheck) {
