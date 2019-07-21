@@ -73,6 +73,8 @@ on boot
     chmod 0666 /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/DCI_P3
     chown system graphics /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/night_mode
     chmod 0666 /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/night_mode
+    chown system graphics /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/oneplus_mode
+    chmod 0666 /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/oneplus_mode
 
     # RGB light
     chown system system /sys/class/leds/red/pause_lo

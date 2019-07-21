@@ -140,9 +140,9 @@ public class PanelSettings extends PreferenceFragment implements RadioGroup.OnCh
             Settings.System.putInt(getContext().getContentResolver(), NightModeSwitch.SETTINGS_KEY, 0);
             Utils.writeValue(AdaptiveModeSwitch.getFile(), "0");
             Settings.System.putInt(getContext().getContentResolver(), AdaptiveModeSwitch.SETTINGS_KEY, 0);
-            Utils.writeValue(OnePlusModeSwitch.getFile(), "0");
+            Utils.writeValue(OnePlusModeSwitch.getFile(), "1");
             Settings.System.putInt(getContext().getContentResolver(), OnePlusModeSwitch.SETTINGS_KEY, 0);
-            Utils.writeValue(SRGBModeSwitch.getFile(), "1");
+            Utils.writeValue(SRGBModeSwitch.getFile(), "0");
             Settings.System.putInt(getContext().getContentResolver(), SRGBModeSwitch.SETTINGS_KEY, 1);
         }
     }
