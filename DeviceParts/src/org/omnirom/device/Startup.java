@@ -54,6 +54,9 @@ public class Startup extends BroadcastReceiver {
             enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_HBM_SWITCH, false);
             Settings.System.putInt(context.getContentResolver(), HBMModeSwitch.SETTINGS_KEY, enabled ? 1 : 0);
 
+            enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_DCD_SWITCH, false);
+            Settings.System.putInt(context.getContentResolver(), DCDModeSwitch.SETTINGS_KEY, enabled ? 1 : 0);
+
             enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_DCI_SWITCH, false);
             Settings.System.putInt(context.getContentResolver(), DCIModeSwitch.SETTINGS_KEY, enabled ? 1 : 0);
 
@@ -165,6 +168,9 @@ public class Startup extends BroadcastReceiver {
 
         enabled = Settings.System.getInt(context.getContentResolver(), SRGBModeSwitch.SETTINGS_KEY, 0) != 0;
         restore(SRGBModeSwitch.getFile(), enabled);
+
+        enabled = Settings.System.getInt(context.getContentResolver(), DCDModeSwitch.SETTINGS_KEY, 0) != 0;
+        restore(DCDModeSwitch.getFile(), enabled);
 
         enabled = Settings.System.getInt(context.getContentResolver(), DCIModeSwitch.SETTINGS_KEY, 0) != 0;
         restore(DCIModeSwitch.getFile(), enabled);

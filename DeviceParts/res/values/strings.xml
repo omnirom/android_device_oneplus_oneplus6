@@ -30,6 +30,8 @@
     <string name="graphics_title">Graphics</string>
     <string name="srgb_mode_summary"></string>
     <string name="srgb_mode_title">sRGB mode</string>
+    <string name="dcd_mode_title">DC Dimming</string>
+    <string name="dcd_mode_summary">Reduce screen flickers at low brightness</string>
     <string name="hbm_mode_summary"></string>
     <string name="hbm_mode_title">High brightness mode</string>
     <string name="adaptive_mode_title">Adaptive mode</string>
