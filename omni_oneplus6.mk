@@ -58,15 +58,15 @@ PRODUCT_MODEL := ONEPLUS A6003
 PRODUCT_BUILD_PROP_OVERRIDES += TARGET_DEVICE=OnePlus6 PRODUCT_NAME=OnePlus6
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BUILD_FINGERPRINT=OnePlus/OnePlus6/OnePlus6:9/PKQ1.180716.001/1905281230:user/release-keys \
-    PRIVATE_BUILD_DESC="OnePlus6-user 9 PKQ1.180716.001 1905281230 release-keys"
+    BUILD_FINGERPRINT=OnePlus/OnePlus6/OnePlus6:9/PKQ1.180716.001/1908012000:user/release-keys \
+    PRIVATE_BUILD_DESC="OnePlus6-user 9 PKQ1.180716.001 1908012000 release-keys"
 
-PLATFORM_SECURITY_PATCH_OVERRIDE := 2019-05-01
+PLATFORM_SECURITY_PATCH_OVERRIDE := 2019-08-01
 
 TARGET_VENDOR := oneplus
 
 #PRODUCT_SYSTEM_PROPERTY_BLACKLIST += \
     ro.product.model
 
-$(call inherit-product, vendor/oneplus/oneplus6/device-vendor.mk)
+$(call inherit-product, vendor/oneplus/oneplus6/oneplus6-vendor.mk)
 
