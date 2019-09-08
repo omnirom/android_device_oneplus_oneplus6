@@ -20,7 +20,7 @@
 #
 BOARD_PATH := device/oneplus/oneplus6
 
-TARGET_USE_SDCLANG:= true
+#TARGET_USE_SDCLANG:= true
 PRODUCT_FULL_TREBLE := false
 BOARD_VNDK_VERSION := current
 BOARD_VNDK_RUNTIME_DISABLE := false
@@ -51,7 +51,7 @@ endif
 TARGET_KERNEL_VERSION := 4.9
 TARGET_KERNEL_CLANG_COMPILE := true
 #TARGET_KERNEL_CLANG_VERSION := 6.0.9
-TARGET_KERNEL_CLANG_PATH := "./vendor/qcom/sdclang/8.0/prebuilt/linux-x86_64"
+#TARGET_KERNEL_CLANG_PATH := "./vendor/qcom/sdclang/8.0/prebuilt/linux-x86_64"
 TARGET_BOOTLOADER_BOARD_NAME := sdm845
 #TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
 
@@ -90,14 +90,13 @@ BOARD_ROOT_EXTRA_FOLDERS := odm op1 op2
 BOARD_ROOT_EXTRA_SYMLINKS := /vendor/dsp:/dsp /vendor/firmware_mnt:/firmware /vendor/bt_firmware:/bt_firmware /mnt/vendor/persist:/persist
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
+#TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 #TARGET_KERNEL_APPEND_DTB := true
 TARGET_KERNEL_SOURCE := kernel/oneplus/sdm845
 ifeq ($(TARGET_DEVICE),oneplus6)
 TARGET_KERNEL_CONFIG := omni_oneplus6_defconfig
 endif
-BOARD_KERNEL_SEPARATED_DTBO := true
 
 # partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
@@ -176,7 +175,7 @@ AUDIO_FEATURE_ENABLED_SND_MONITOR := false
 BOARD_USES_ALSA_AUDIO := true
 BOARD_USES_GENERIC_AUDIO := true
 TARGET_USES_QCOM_MM_AUDIO := true
-USE_CUSTOM_AUDIO_POLICY := 1
+#USE_CUSTOM_AUDIO_POLICY := 1
 
 #effects
 TARGET_SYSTEM_AUDIO_EFFECTS := true
@@ -304,3 +303,5 @@ TW_MAX_BRIGHTNESS := 255
 TW_NO_USB_STORAGE := false
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_THEME := portrait_hdpi
+
+#-include vendor/omni/config/BoardConfigKernel.mk
