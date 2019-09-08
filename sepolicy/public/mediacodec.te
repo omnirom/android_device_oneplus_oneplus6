@@ -1,2 +1,0 @@
-allow mediacodec oem_vendor_props:file r_file_perms;
-allow mediacodec boottime_prop:file open;
