@@ -15,6 +15,7 @@ LOCAL_PACKAGE_NAME := DeviceParts
 LOCAL_CERTIFICATE := platform
 LOCAL_PRIVILEGED_MODULE := true
 LOCAL_RESOURCE_DIR := $(LOCAL_PATH)/res
+LOCAL_SDK_VERSION := 29
 LOCAL_USE_AAPT2 := true
 
 package_resource_overlays := $(strip \

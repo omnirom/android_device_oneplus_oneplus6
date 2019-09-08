@@ -44,6 +44,7 @@ $(call inherit-product, vendor/omni/config/common.mk)
 $(call inherit-product, device/oneplus/oneplus6/device.mk)
 
 ALLOW_MISSING_DEPENDENCIES := true
+PRODUCT_SHIPPING_API_LEVEL := 27
 
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-service

@@ -1,1 +1,1 @@
-type oem_vendor_props, property_type;
+#type oem_vendor_props, property_type;
