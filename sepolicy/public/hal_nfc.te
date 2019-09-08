@@ -1,2 +1,2 @@
-allow hal_nfc hal_secure_element_hwservice:hwservice_manager find;
+#allow hal_nfc hal_secure_element_hwservice:hwservice_manager find;
 

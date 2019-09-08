@@ -1,2 +1,2 @@
-allow webview_zygote oem_vendor_props:file { open read };
+#allow webview_zygote oem_vendor_props:file { open read };
 

@@ -1,2 +1,0 @@
-#allow vold persist_file:dir r_dir_perms;
-
