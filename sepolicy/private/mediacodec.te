@@ -1,4 +1,0 @@
-allow mediacodec oem_prop:file { getattr open };
-allow mediacodec boottime_prop:file { getattr open };
-
-
