@@ -31,10 +31,10 @@ user: AID_ROOT
 group: AID_SYSTEM
 caps: 0
 
-[bt_firmware/]
+[/vendor/bt_firmware/]
 mode: 0771
-user: AID_SYSTEM
-group: AID_SYSTEM
+user: AID_BLUETOOTH
+group: AID_NET_BT
 caps: 0
 
 [persist/]
