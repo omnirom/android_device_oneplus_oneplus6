@@ -142,6 +142,8 @@ on boot
 
     setprop vendor.camera.aux.packagelist org.omnirom.snap,com.oneplus.camera
     setprop persist.vendor.dpm.feature 11
+    setprop ro.bionic.cpu_variant kryo
+    setprop dalvik.vm.isa.arm64.variant kryo
 
 on post-fs
     # Vibrator
