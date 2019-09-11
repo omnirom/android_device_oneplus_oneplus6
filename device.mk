@@ -22,6 +22,25 @@
 $(call inherit-product-if-exists, vendor/gapps/arm64/arm64-vendor.mk)
 $(call inherit-product, vendor/omni/config/phone-xxhdpi-4096-dalvik-heap.mk)
 $(call inherit-product, vendor/omni/config/phone-xxhdpi-2048-hwui-memory.mk)
+# Enable updating of APEXes
+$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
+
+# Binaries
+PRODUCT_PACKAGES += llkd
+
+# For ringtones that rely on forward lock encryption
+PRODUCT_PACKAGES += libfwdlockengine
+
+# Camera service uses 'libdepthphoto' for adding dynamic depth
+# metadata inside depth jpegs.
+PRODUCT_PACKAGES += \
+    libdepthphoto \
+
+# Enable stats logging in LMKD
+TARGET_LMKD_STATS_LOG := true
+
+# Enable dynamic partition size
+#PRODUCT_USE_DYNAMIC_PARTITION_SIZE := true
 
 #from build treble includes
 PRODUCT_COPY_FILES += \
@@ -118,7 +137,7 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/media_codecs_google_video.xml
 
 # NFC - NCI
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     NfcNci \
     libnfc_nci_jni \
     Tag \
@@ -183,7 +202,7 @@ PRODUCT_PACKAGES += \
 #PRODUCT_PACKAGES += \
     DeviceParts
 
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     vndk_package
 
 PRODUCT_PACKAGES += \
