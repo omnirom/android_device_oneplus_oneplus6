@@ -71,7 +71,6 @@ product/lib64/vendor.qti.gnss@2.0.so
 product/lib64/vendor.qti.gnss@2.1.so
 product/lib64/vendor.qti.gnss@3.0.so
 product/lib64/vendor.qti.hardware.alarm@1.0.so
-product/lib64/vendor.qti.hardware.bluetooth_audio@2.0.so
 product/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so
 product/lib64/vendor.qti.hardware.btconfigstore@1.0.so
 product/lib64/vendor.qti.hardware.camera.device@1.0.so
@@ -135,12 +134,10 @@ product/etc/sysconfig/oneplus.xml
 product/etc/init/dpmd.rc
 product/etc/dpm/dpm.conf
 product/etc/permissions/com.qualcomm.qti.imscmservice-V2.1-java.xml
-product/etc/permissions/qti_telephony_hidl_wrapper.xml
 product/etc/permissions/com.qualcomm.qti.imscmservice-V2.0-java.xml
 #product/etc/permissions/vendor.qti.hardware.data.connection-V1.1-java.xml
 product/etc/permissions/RemoteSimlock.xml
 product/etc/permissions/uimremoteserver.xml
-product/etc/permissions/qti_telephony_utils.xml
 product/etc/permissions/LteDirectDiscovery.xml
 product/etc/permissions/lpa.xml
 product/etc/permissions/UimGbaManager.xml
@@ -149,7 +146,6 @@ product/etc/permissions/qcrilhook.xml
 product/etc/permissions/telephonyservice.xml
 product/etc/permissions/telephony_product_privapp-permissions-qti.xml
 product/etc/permissions/uimremoteclient.xml
-product/etc/permissions/ims_ext_common.xml
 product/etc/permissions/dpmapi.xml
 #product/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml
 product/etc/permissions/UimService.xml
@@ -168,11 +164,9 @@ product/framework/com.quicinc.cne.api-V1.1-java.jar
 product/framework/embmslibrary.jar
 product/framework/vendor.qti.data.factory-V1.0-java.jar
 product/framework/vendor.qti.hardware.wigig.netperftuner-V1.0-java.jar
-product/framework/ims-ext-common.jar
 product/framework/op-telephony-common.jar
 product/framework/remotesimlockmanagerlibrary.jar
 product/framework/vendor.qti.data.factory-V2.0-java.jar
-product/framework/qti-telephony-utils.jar
 product/framework/vendor.qti.hardware.data.dynamicdds-V1.0-java.jar
 product/framework/com.qualcomm.qti.imscmservice-V2.2-java.jar
 product/framework/vendor.qti.hardware.data.cne.internal.api-V1.0-java.jar
@@ -194,7 +188,6 @@ product/framework/qcrilhook.jar
 product/framework/com.quicinc.cne.constants-V2.0-java.jar
 product/framework/vendor.qti.hardware.data.cne.internal.constants-V1.0-java.jar
 product/framework/uimremotesimlocklibrary.jar
-product/framework/qti-telephony-hidl-wrapper.jar
 product/framework/com.qualcomm.qti.uceservice-V2.1-java.jar
 product/framework/vendor.qti.ims.callinfo-V1.0-java.jar
 product/framework/uimservicelibrary.jar
@@ -261,7 +254,6 @@ product/lib/vendor.qti.gnss@2.0.so
 product/lib/vendor.qti.gnss@2.1.so
 product/lib/vendor.qti.gnss@3.0.so
 product/lib/vendor.qti.hardware.alarm@1.0.so
-product/lib/vendor.qti.hardware.bluetooth_audio@2.0.so
 product/lib/vendor.qti.hardware.bluetooth_sar@1.0.so
 product/lib/vendor.qti.hardware.btconfigstore@1.0.so
 product/lib/vendor.qti.hardware.camera.device@1.0.so
