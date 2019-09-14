@@ -210,12 +210,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     ld.config.txt
 
-# Support for the O-MR1 devices
-#PRODUCT_COPY_FILES += \
-    build/make/target/product/vndk/init.gsi.rc:system/etc/init/init.gsi.rc \
-    build/make/target/product/vndk/init.vndk-27.rc:system/etc/init/gsi/init.vndk-27.rc
-
-#PRODUCT_EXTRA_VNDK_VERSIONS := 27
+PRODUCT_EXTRA_VNDK_VERSIONS := 28
 
 # TODO(b/78308559): includes vr_hwc into GSI before vr_hwc move to vendor
 PRODUCT_PACKAGES += \
