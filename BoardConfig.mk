@@ -273,7 +273,7 @@ endif
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 
 # selinux
-#include device/qcom/sepolicy/sepolicy.mk
+include device/qcom/sepolicy/sepolicy.mk
 include vendor/omni/sepolicy/sepolicy.mk
 #BOARD_SEPOLICY_DIRS += $(BOARD_PATH)/sepolicy/qcom
 BOARD_SEPOLICY_DIRS += build/target/board/generic_arm64_ab/sepolicy
