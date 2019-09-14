@@ -100,10 +100,6 @@ PRODUCT_AAPT_CONFIG := xxhdpi
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 PRODUCT_CHARACTERISTICS := nosdcard
 
-# audio
-PRODUCT_PACKAGES += \
-    audio.a2dp.default \
-
 # Lights
 PRODUCT_PACKAGES += \
     lights.oneplus6
@@ -116,34 +112,6 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/media_codecs_google_video.xml
-
-# NFC - NCI
-#PRODUCT_PACKAGES += \
-    NfcNci \
-    libnfc_nci_jni \
-    Tag \
-    com.android.nfc_extras
-
-PRODUCT_PACKAGES += \
-    android.hardware.nfc@1.1 \
-    android.hardware.nfc@1.0
-
-# NFC - NQ (NXP)
-PRODUCT_PACKAGES += \
-    Tag \
-    com.android.nfc_extras
-
-PRODUCT_PACKAGES += \
-    wificond \
-    wifilogd \
-    libwpa_client \
-    hostapd \
-    wpa_supplicant \
-    wpa_supplicant.conf
-
-PRODUCT_PACKAGES += \
-    libcld80211 \
-    lib_driver_cmd_qcwcn
 
 # Camera
 PRODUCT_PACKAGES += \
