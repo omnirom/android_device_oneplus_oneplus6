@@ -23,6 +23,11 @@ $(call inherit-product-if-exists, vendor/gapps/arm64/arm64-vendor.mk)
 $(call inherit-product, vendor/omni/config/phone-xxhdpi-4096-dalvik-heap.mk)
 $(call inherit-product, vendor/omni/config/phone-xxhdpi-2048-hwui-memory.mk)
 
+#Apex
+#PRODUCT_PROPERTY_OVERRIDES := ro.apex.updatable=true
+PRODUCT_PACKAGES := com.android.apex.cts.shim.v1_prebuilt
+TARGET_FLATTEN_APEX := false
+
 #from build treble includes
 PRODUCT_COPY_FILES += \
     system/core/rootdir/init.zygote64_32.rc:root/init.zygote64_32.rc \
