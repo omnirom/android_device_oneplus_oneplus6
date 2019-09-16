@@ -7,6 +7,12 @@
   },
   {
     "remote": "omnirom",
+    "repository": "android_device_qcom_caf-sepolicy",
+    "target_path": "device/qcom/sepolicy",
+    "revision": "android-10"
+  },
+  {
+    "remote": "omnirom",
     "repository": "android_kernel_oneplus_sdm845",
     "target_path": "kernel/oneplus/sdm845",
     "revision": "android-9.0"

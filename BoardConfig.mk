@@ -126,9 +126,6 @@ TARGET_COPY_OUT_VENDOR := vendor
 #Enable DRM plugins 64 bit compilation
 TARGET_ENABLE_MEDIADRM_64 := true
 
-TARGET_QCOM_DISPLAY_VARIANT := caf-sdm845
-TARGET_QCOM_MEDIA_VARIANT := caf-sdm845
-TARGET_QCOM_AUDIO_VARIANT := caf-sdm845
 # Generic AOSP image does NOT support HWC1
 TARGET_USES_HWC2 := true
 # Set emulator framebuffer display device buffer count to 3
@@ -249,22 +246,11 @@ TARGET_USES_NQ_NFC := true
 TARGET_USES_PREBUILT_ANT := true
 BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
 
-# GPS
-TARGET_NO_RPC := true
-USE_DEVICE_SPECIFIC_GPS := true
-BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := $(TARGET_BOARD_PLATFORM)
-BOARD_VENDOR_QCOM_LOC_PDK_FEATURE_SET := true
-
-# Crypto
-#TARGET_HW_DISK_ENCRYPTION := true
-#TARGET_CRYPTFS_HW_PATH := $(BOARD_PATH)/cryptfs_hw
-
 #vold
 TARGET_KERNEL_HAVE_NTFS := true
 TARGET_KERNEL_HAVE_EXFAT := true
 
 # CNE and DPM
-#TARGET_LDPRELOAD := libNimsWrap.so
 BOARD_USES_QCNE := true
 
 ifeq ($(TARGET_DEVICE),oneplus6)
@@ -310,4 +296,3 @@ TW_NO_USB_STORAGE := false
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_THEME := portrait_hdpi
 
-#-include vendor/omni/config/BoardConfigKernel.mk
