@@ -12,10 +12,10 @@ BOARD_USES_SYSTEM_OTHER_ODEX :=
 # system.img is always ext4 with sparse option
 # GSI also includes make_f2fs to support userdata parition in f2fs
 # for some devices
-TARGET_USERIMAGES_USE_F2FS := true
+TARGET_USERIMAGES_USE_F2FS := false
 
 # Enable dynamic system image size and reserved 64MB in it.
-BOARD_SYSTEMIMAGE_PARTITION_RESERVED_SIZE := 67108864
+#BOARD_SYSTEMIMAGE_PARTITION_RESERVED_SIZE := 67108864
 
 # GSI forces product packages to /system for now.
 TARGET_COPY_OUT_PRODUCT := system/product
