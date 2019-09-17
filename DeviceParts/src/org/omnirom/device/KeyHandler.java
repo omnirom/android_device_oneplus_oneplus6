@@ -584,7 +584,7 @@ public class KeyHandler implements DeviceKeyHandler {
                 } catch (RemoteException e) {
                 // do nothing.
                }
-           }
+            }
         } else if (value.equals(AppSelectListPreference.MUSIC_PLAY_ENTRY)) {
             mGestureWakeLock.acquire(GESTURE_WAKELOCK_DURATION);
             OmniVibe.performHapticFeedbackLw(HapticFeedbackConstants.LONG_PRESS, false, mContext);
