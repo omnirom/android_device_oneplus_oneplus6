@@ -571,20 +571,20 @@ public class KeyHandler implements DeviceKeyHandler {
         if (value.equals(AppSelectListPreference.TORCH_ENTRY)) {
             mGestureWakeLock.acquire(GESTURE_WAKELOCK_DURATION);
             IStatusBarService service = getStatusBarService();
-            if (service != null) {
-                try {
-                    if (mUseSliderTorch) {
-                        service.toggleCameraFlashState(mTorchState);
-                        return true;
-                    } else {
-                        service.toggleCameraFlash();
-                        OmniVibe.performHapticFeedbackLw(HapticFeedbackConstants.LONG_PRESS, false, mContext);
-                        return true;
-                    }
-                } catch (RemoteException e) {
-                // do nothing.
-               }
-           }
+            //if (service != null) {
+            //    try {
+            //        if (mUseSliderTorch) {
+            //            service.toggleCameraFlashState(mTorchState);
+            //            return true;
+            //        } else {
+            //            service.toggleCameraFlash();
+            //            OmniVibe.performHapticFeedbackLw(HapticFeedbackConstants.LONG_PRESS, false, mContext);
+            //            return true;
+            //        }
+            //    } catch (RemoteException e) {
+            //    // do nothing.
+            //   }
+            //}
         } else if (value.equals(AppSelectListPreference.MUSIC_PLAY_ENTRY)) {
             mGestureWakeLock.acquire(GESTURE_WAKELOCK_DURATION);
             OmniVibe.performHapticFeedbackLw(HapticFeedbackConstants.LONG_PRESS, false, mContext);

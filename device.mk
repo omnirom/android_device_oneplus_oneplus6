@@ -129,7 +129,7 @@ PRODUCT_PACKAGES += \
     qcnvitems \
     qcrilhook
 
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     DeviceParts
 
 PRODUCT_PACKAGES += \
