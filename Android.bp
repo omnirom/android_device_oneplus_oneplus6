@@ -1,5 +1,0 @@
-subdirs = [
-    "health",
-    "bootctrl",
-    "gpt-utils",
-]
