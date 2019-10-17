@@ -21,10 +21,6 @@ TARGET_USERIMAGES_USE_F2FS := false
 TARGET_COPY_OUT_PRODUCT := system/product
 BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE :=
 
-# Creates metadata partition mount point under root for
-# the devices with metadata parition
-BOARD_USES_METADATA_PARTITION := true
-
 # Android Verified Boot (AVB):
 #   Set the rollback index to zero, to prevent the device bootloader from
 #   updating the last seen rollback index in the tamper-evident storage.

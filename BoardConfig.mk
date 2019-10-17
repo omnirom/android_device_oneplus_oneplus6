@@ -37,9 +37,6 @@ DEXPREOPT_USE_APEX_IMAGE := true
 # Split selinux policy
 PRODUCT_SEPOLICY_SPLIT := true
 
-# Android generic system image always create metadata partition
-BOARD_USES_METADATA_PARTITION := true
-
 # Enable A/B update
 TARGET_NO_RECOVERY := true
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
