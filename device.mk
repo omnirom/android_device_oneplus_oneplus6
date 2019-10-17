@@ -21,10 +21,8 @@
 #
 $(call inherit-product-if-exists, vendor/gapps/arm64/arm64-vendor.mk)
 
-#Apex
-#PRODUCT_PROPERTY_OVERRIDES := ro.apex.updatable=true
-PRODUCT_PACKAGES := com.android.apex.cts.shim.v1_prebuilt
-TARGET_FLATTEN_APEX := false
+# Apex
+$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.build.version.all_codenames=$(PLATFORM_VERSION_ALL_CODENAMES) \

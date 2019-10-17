@@ -293,7 +293,6 @@ ro.location.osnlp.region.package=com.amap.android.location
 ro.vendor.qti.va_aosp.support=1
 
 #omni
-ro.apex.updatable=true
 persist.vendor.cne.feature=1
 ro.hardware.lights=oneplus6
 ro.hardware.power=oneplus6
