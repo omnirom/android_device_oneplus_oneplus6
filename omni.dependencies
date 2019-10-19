@@ -15,6 +15,12 @@
     "remote": "omnirom",
     "repository": "android_kernel_oneplus_sdm845",
     "target_path": "kernel/oneplus/sdm845",
-    "revision": "android-9.0"
+    "revision": "android-10"
+  },
+  {
+    "remote": "omnirom",
+    "repository": "android_vendor_qcom_opensource_commonsys",
+    "target_path": "vendor/qcom/opensource/commonsys",
+    "revision": "android-10"
   }
 ]
