@@ -12,7 +12,7 @@ BOARD_USES_SYSTEM_OTHER_ODEX :=
 # system.img is always ext4 with sparse option
 # GSI also includes make_f2fs to support userdata parition in f2fs
 # for some devices
-TARGET_USERIMAGES_USE_F2FS := false
+TARGET_USERIMAGES_USE_F2FS := true
 
 # Enable dynamic system image size and reserved 64MB in it.
 #BOARD_SYSTEMIMAGE_PARTITION_RESERVED_SIZE := 67108864
@@ -50,6 +50,3 @@ endif
 
 # Setup a vendor image to let PRODUCT_PROPERTY_OVERRIDES does not affect GSI
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
-
-# Disable 64 bit mediadrmserver
-TARGET_ENABLE_MEDIADRM_64 :=
