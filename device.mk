@@ -26,6 +26,7 @@ $(call inherit-product-if-exists, vendor/gapps/arm64/arm64-vendor.mk)
 PRODUCT_PACKAGES := com.android.apex.cts.shim.v1_prebuilt
 TARGET_FLATTEN_APEX := false
 
+
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.build.version.all_codenames=$(PLATFORM_VERSION_ALL_CODENAMES) \
     ro.build.version.codename=$(PLATFORM_VERSION_CODENAME) \
@@ -49,11 +50,6 @@ PRODUCT_PACKAGES += \
     update_engine \
     update_engine_sideload \
     update_verifier
-
-# Boot control
-PRODUCT_PACKAGES += \
-    android.hardware.boot@1.0-impl.recovery \
-    bootctrl.sdm845.recovery
 
 PRODUCT_PACKAGES_DEBUG += \
     bootctl
