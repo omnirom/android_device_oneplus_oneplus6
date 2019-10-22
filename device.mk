@@ -113,6 +113,11 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     ims-ext-common \
+    ims_ext_common.xml \
+    qti-telephony-hidl-wrapper \
+    qti_telephony_hidl_wrapper.xml \
+    qti-telephony-utils \
+    qti_telephony_utils.xml \
     tcmiface
 
 #PRODUCT_BOOT_JARS += \
@@ -122,8 +127,7 @@ PRODUCT_PACKAGES += \
     tcmiface \
     WfdCommon \
     com.qti.snapdragon.sdk.display \
-    qcnvitems \
-    qcrilhook
+    qcnvitems
 
 PRODUCT_PACKAGES += \
     DeviceParts
@@ -137,12 +141,16 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.display.config@1.10 \
     libdisplayconfig \
+    libqdMetaData \
     libqdMetaData.system \
     vendor.nxp.nxpese@1.0 \
     vendor.nxp.nxpnfc@1.0 \
     vendor.oneplus.camera.CameraHIDL@1.0 \
     vendor.oneplus.fingerprint.extension@1.0 \
-    vendor.qti.hardware.camera.device@1.0
+    vendor.qti.hardware.camera.device@1.0 \
+    vendor.qti.hardware.camera.postproc@1.0 \
+    vendor.qti.hardware.systemhelper@1.1 \
+    vendor.qti.hardware.bluetooth_dun@1.0
 
 # Display
 PRODUCT_PACKAGES += \
@@ -162,7 +170,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     RemovePackages
 
-PRODUCT_EXTRA_VNDK_VERSIONS := 28
+#PRODUCT_EXTRA_VNDK_VERSIONS := 28
 
 # TODO(b/78308559): includes vr_hwc into GSI before vr_hwc move to vendor
 PRODUCT_PACKAGES += \

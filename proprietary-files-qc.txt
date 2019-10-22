@@ -1,21 +1,10 @@
 -priv-app/WfdService/WfdService.apk
 -framework/WfdCommon.jar
-#-framework/qcrilhook.jar
 -framework/qcnvitems.jar
-#-priv-app/dpmserviceapp/dpmserviceapp.apk
 -app/AntHalService/AntHalService.apk
-#-priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
-#-priv-app/com.qualcomm.location/com.qualcomm.location.apk
-#-app/QtiSystemService/QtiSystemService.apk
-#-app/QtiTelephonyService/QtiTelephonyService.apk
-#-framework/QtiTelephonyServicelibrary.jar
-#-app/embms/embms.apk
-#-priv-app/CNEService/CNEService.apk
-#-framework/com.qti.dpmframework.jar
-#-app/datastatusnotification/datastatusnotification.apk
 
 
-#PRODUCT
+
 product/bin/dpmd
 product/lib64/com.qualcomm.qti.ant@1.0.so
 product/lib64/com.qualcomm.qti.bluetooth_audio@1.0.so
@@ -71,7 +60,6 @@ product/lib64/vendor.qti.gnss@2.0.so
 product/lib64/vendor.qti.gnss@2.1.so
 product/lib64/vendor.qti.gnss@3.0.so
 product/lib64/vendor.qti.hardware.alarm@1.0.so
-product/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so
 product/lib64/vendor.qti.hardware.btconfigstore@1.0.so
 product/lib64/vendor.qti.hardware.camera.device@1.0.so
 product/lib64/vendor.qti.hardware.capabilityconfigstore@1.0.so
@@ -120,7 +108,6 @@ product/lib64/vendor.qti.hardware.sensorscalibrate@1.0.so
 product/lib64/vendor.qti.hardware.soter@1.0.so
 product/lib64/vendor.qti.hardware.tui_comm@1.0.so
 product/lib64/vendor.qti.hardware.vpp@1.1.so
-product/lib64/vendor.qti.hardware.vpp@1.2.so
 product/lib64/vendor.qti.hardware.wifi.keystore@1.0.so
 product/lib64/vendor.qti.hardware.wifidisplaysession@1.0.so
 product/lib64/vendor.qti.hardware.wigig.netperftuner@1.0.so
@@ -128,6 +115,7 @@ product/lib64/vendor.qti.hardware.wigig.supptunnel@1.0.so
 product/lib64/vendor.qti.ims.callinfo@1.0.so
 product/lib64/vendor.qti.ims.rcsconfig@1.0.so
 product/lib64/vendor.qti.imsrtpservice@2.0.so
+product/lib64/vendor.qti.imsrtpservice@2.1.so
 product/lib64/vendor.qti.latency@2.0.so
 product/lib64/vendor.qti.voiceprint@1.0.so
 product/etc/sysconfig/oneplus.xml
@@ -154,7 +142,7 @@ product/etc/permissions/com.qualcomm.qti.imscmservice-V2.2-java.xml
 product/etc/permissions/embms.xml
 product/etc/permissions/com.qti.dpmframework.xml
 -product/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
--product/priv-app/ims/ims.apk
+-product/priv-app/ims/ims.apk|dc485154a51f48e90ee88511cd9931cd5a991621
 product/framework/vendor.qti.hardware.data.iwlan-V1.0-java.jar
 product/framework/uimremoteclientlibrary.jar
 product/framework/uimgbalibrary.jar
@@ -195,7 +183,7 @@ product/framework/vendor.qti.ims.rcsconfig-V1.0-java.jar
 product/framework/vendor.qti.hardware.data.qmi-V1.0-java.jar
 product/framework/com.qti.dpmframework.jar
 product/framework/uimgbamanagerlibrary.jar
-product/framework/qti-telephony-common.jar
+product/framework/qti-telephony-common.jar|0276ff16476d85eac9b0b5e1d600ce94ac91b8da
 product/framework/vendor.qti.hardware.sensorscalibrate-V1.0-java.jar
 product/framework/com.quicinc.cne.constants-V2.1-java.jar
 product/framework/com.qualcomm.qti.uceservice-V2.0-java.jar
@@ -254,7 +242,6 @@ product/lib/vendor.qti.gnss@2.0.so
 product/lib/vendor.qti.gnss@2.1.so
 product/lib/vendor.qti.gnss@3.0.so
 product/lib/vendor.qti.hardware.alarm@1.0.so
-product/lib/vendor.qti.hardware.bluetooth_sar@1.0.so
 product/lib/vendor.qti.hardware.btconfigstore@1.0.so
 product/lib/vendor.qti.hardware.camera.device@1.0.so
 product/lib/vendor.qti.hardware.capabilityconfigstore@1.0.so
@@ -303,13 +290,13 @@ product/lib/vendor.qti.hardware.sensorscalibrate@1.0.so
 product/lib/vendor.qti.hardware.soter@1.0.so
 product/lib/vendor.qti.hardware.tui_comm@1.0.so
 product/lib/vendor.qti.hardware.vpp@1.1.so
-product/lib/vendor.qti.hardware.vpp@1.2.so
 product/lib/vendor.qti.hardware.wifidisplaysession@1.0.so
 product/lib/vendor.qti.hardware.wigig.netperftuner@1.0.so
 product/lib/vendor.qti.hardware.wigig.supptunnel@1.0.so
 product/lib/vendor.qti.ims.callinfo@1.0.so
 product/lib/vendor.qti.ims.rcsconfig@1.0.so
 product/lib/vendor.qti.imsrtpservice@2.0.so
+product/lib/vendor.qti.imsrtpservice@2.1.so
 product/lib/vendor.qti.latency@2.0.so
 product/lib/vendor.qti.voiceprint@1.0.so
 -product/app/QtiTelephonyService/QtiTelephonyService.apk
