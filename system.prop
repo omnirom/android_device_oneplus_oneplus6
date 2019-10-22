@@ -36,6 +36,7 @@ media.stagefright.enable-qcp=true
 media.stagefright.enable-fma2dp=true
 media.stagefright.enable-scan=true
 media.stagefright.audio.deep=true
+media.stagefright.thumbnail.prefer_hw_codecs=true
 mmp.enable.3g2=true
 media.aac_51_output_enabled=true
 mm.enable.smoothstreaming=true
@@ -50,8 +51,15 @@ media.settings.xml=/vendor/etc/media_profiles_vendor.xml
 #vendor.mm.enable.qcom_parser=16777215
 
 #sohailhoque@Multimedia,[EIDQ-475] 2019/06/12 ,add codec for XVID files
-vendor.mm.enable.qcom_parser= 50331647
+#vendor.mm.enable.qcom_parser= 50331647
 #endif /*VENDOR_EDIT*/
+
+#Dodda@Multimedia,[EIDQ-4020][EIDQ-4474] 2019/08/23 , Disable QCOM Parser and let FLAC-8 play with Google Parser.PARSER_FLAC[0x00020000]
+vendor.mm.enable.qcom_parser= 50200575
+#endif /*VENDOR_EDIT*/
+
+
+
 persist.mm.enable.prefetch=true
 
 #Netflix custom property
@@ -70,10 +78,8 @@ persist.timed.enable=true
 bt.max.hfpclient.connections=1
 
 
-# vendor_edit modify by zhouhanxin@20180528
-# System props for telephony
 # System prop to turn on CdmaLTEPhone always
-telephony.lteOnCdmaDevice=1,1
+telephony.lteOnCdmaDevice=1
 
 #Simulate sdcard on /data/media
 #
@@ -84,10 +90,11 @@ persist.fuse_sdcard=true
 vendor.bluetooth.soc=cherokee
 persist.vendor.btstack.enable.splita2dp=true
 persist.vendor.btstack.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac
+persist.vendor.btstack.enable.twsplus=true
 
 #system prop for wipower support
-ro.bluetooth.emb_wp_mode=true
-ro.bluetooth.wipower=true
+ro.bluetooth.emb_wp_mode=false
+ro.bluetooth.wipower=false
 
 #
 #snapdragon value add features
@@ -259,7 +266,7 @@ persist.rcs.supported=0
 #VENDOR_EDIT BillZhang 2018/5/4 end
 
 #Expose aux camera for below packages
-vendor.camera.aux.packagelist=org.codeaurora.snapcam
+vendor.camera.aux.packagelist=com.google.android.GoogleCamera,org.codeaurora.snapcam,com.oneplus.camera
 
 #ifdef VENDOR_EDIT
 persist.vendor.camera.privapp.list=com.oneplus.camera
@@ -268,6 +275,11 @@ persist.vendor.camera.privapp.list=com.oneplus.camera
 #ifdef VENDOR_EDIT
 #angela.wu@oneplus.net,2018/06/08,SIM card will not be powered down in Airplane Mode
 persist.vendor.radio.apm_sim_not_pwdn=1
+#endif VENDOR_EDIT
+
+#ifdef VENDOR_EDIT
+#brandon@connectivity 2019/09/07,sdm845 need delay init ese
+persist.vendor.nfc.delayese=false
 #endif VENDOR_EDIT
 
 #ifdef VENDOR_EDIT
@@ -288,11 +300,15 @@ persist.qua.op=0
 # network location provider is not functional
 ro.location.osnlp.region.package=com.amap.android.location
 #endif
-# end of vendor/oneplus/config/sdm845/system.prop
 
-ro.vendor.qti.va_aosp.support=1
+#ifdef VENDOR_EDIT
+#siddharth.telang@oneplus.com, add default property
+persist.netmon.linger=5000
+persist.vendor.ims.disableADBLogs=1
+#endif VENDOR_EDIT
 
 #omni
+ro.vendor.qti.va_aosp.support=1
 ro.apex.updatable=true
 persist.vendor.cne.feature=1
 ro.hardware.lights=oneplus6
