@@ -134,8 +134,8 @@ framework/izat.xt.srv.jar
 lib64/libadsprpc_system.so
 lib64/libmdsprpc_system.so
 lib64/libantradio.so
-#lib64/libaptX_encoder.so
-#lib64/libaptXHD_encoder.so
+product/lib64/libaptX_encoder.so|df1c89d7af1bb35808d5fe3496b04ba066c10cbc
+product/lib64/libaptXHD_encoder.so|e13fa70c97caaa24d061678bdee608eb8850a69e
 lib64/libcdsprpc_system.so
 #lib64/libConnor_oneplus.so
 lib64/libdiag_system.so
@@ -233,7 +233,7 @@ lib/libqvr_cdsp_driver_stub.so
 
 #lib64/ese_spi_nxp.so
 #lib/ese_spi_nxp.so
--app/NxpNfcNci/NxpNfcNci.apk
+-app/NxpNfcNci/NxpNfcNci.apk|9a32dcf8d46010691bf169e55755e0cd45a41c9b
 -app/NxpSecureElement/NxpSecureElement.apk
 -framework/com.nxp.nfc.jar
 etc/permissions/com.nxp.nfc.xml

@@ -71,7 +71,7 @@ product/lib64/vendor.qti.gnss@2.0.so
 product/lib64/vendor.qti.gnss@2.1.so
 product/lib64/vendor.qti.gnss@3.0.so
 product/lib64/vendor.qti.hardware.alarm@1.0.so
-product/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so
+product/lib64/vendor.qti.hardware.bluetooth_audio@2.0.so
 product/lib64/vendor.qti.hardware.btconfigstore@1.0.so
 product/lib64/vendor.qti.hardware.camera.device@1.0.so
 product/lib64/vendor.qti.hardware.capabilityconfigstore@1.0.so
@@ -117,10 +117,10 @@ product/lib64/vendor.qti.hardware.scve.panorama@1.0-adapter-helper.so
 product/lib64/vendor.qti.hardware.scve.panorama@1.0.so
 product/lib64/vendor.qti.hardware.seccam@1.0.so
 product/lib64/vendor.qti.hardware.sensorscalibrate@1.0.so
+product/lib64/vendor.qti.hardware.sigma_miracast@1.0.so
 product/lib64/vendor.qti.hardware.soter@1.0.so
 product/lib64/vendor.qti.hardware.tui_comm@1.0.so
 product/lib64/vendor.qti.hardware.vpp@1.1.so
-product/lib64/vendor.qti.hardware.vpp@1.2.so
 product/lib64/vendor.qti.hardware.wifi.keystore@1.0.so
 product/lib64/vendor.qti.hardware.wifidisplaysession@1.0.so
 product/lib64/vendor.qti.hardware.wigig.netperftuner@1.0.so
@@ -195,7 +195,7 @@ product/framework/vendor.qti.ims.rcsconfig-V1.0-java.jar
 product/framework/vendor.qti.hardware.data.qmi-V1.0-java.jar
 product/framework/com.qti.dpmframework.jar
 product/framework/uimgbamanagerlibrary.jar
-product/framework/qti-telephony-common.jar
+product/framework/qti-telephony-common.jar|40dbe32b941a6ab1aa6980c6bec3594fd9e0fd6d
 product/framework/vendor.qti.hardware.sensorscalibrate-V1.0-java.jar
 product/framework/com.quicinc.cne.constants-V2.1-java.jar
 product/framework/com.qualcomm.qti.uceservice-V2.0-java.jar
@@ -254,7 +254,7 @@ product/lib/vendor.qti.gnss@2.0.so
 product/lib/vendor.qti.gnss@2.1.so
 product/lib/vendor.qti.gnss@3.0.so
 product/lib/vendor.qti.hardware.alarm@1.0.so
-product/lib/vendor.qti.hardware.bluetooth_sar@1.0.so
+product/lib/vendor.qti.hardware.bluetooth_audio@2.0.so
 product/lib/vendor.qti.hardware.btconfigstore@1.0.so
 product/lib/vendor.qti.hardware.camera.device@1.0.so
 product/lib/vendor.qti.hardware.capabilityconfigstore@1.0.so
@@ -300,10 +300,10 @@ product/lib/vendor.qti.hardware.scve.panorama@1.0-adapter-helper.so
 product/lib/vendor.qti.hardware.scve.panorama@1.0.so
 product/lib/vendor.qti.hardware.seccam@1.0.so
 product/lib/vendor.qti.hardware.sensorscalibrate@1.0.so
+product/lib/vendor.qti.hardware.sigma_miracast@1.0.so
 product/lib/vendor.qti.hardware.soter@1.0.so
 product/lib/vendor.qti.hardware.tui_comm@1.0.so
 product/lib/vendor.qti.hardware.vpp@1.1.so
-product/lib/vendor.qti.hardware.vpp@1.2.so
 product/lib/vendor.qti.hardware.wifidisplaysession@1.0.so
 product/lib/vendor.qti.hardware.wigig.netperftuner@1.0.so
 product/lib/vendor.qti.hardware.wigig.supptunnel@1.0.so
