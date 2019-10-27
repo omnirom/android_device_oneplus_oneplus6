@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c3b3591e_e9cbc8c3",
+        "filename": "omni_oneplus6.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1002322
+      },
+      "writtenOn": "2019-10-27T06:00:10Z",
+      "side": 1,
+      "message": "it\u0027s not 10/QKQ1.190716.003/1910050400:user/release-keys instead ??",
+      "revId": "b038eacf01d31ffe769e48770acea25e43aa0b94",
+      "serverId": "56841c99-7c94-43d4-bf0b-cb4707e66d55",
+      "unresolved": false
+    }
+  ]
+}
