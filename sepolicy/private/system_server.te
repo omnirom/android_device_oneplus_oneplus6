@@ -16,3 +16,6 @@ allow system_server sysfs_vibrator_omni:dir search;
 
 allow system_server sysfs_usb_supply_omni:file rw_file_perms;
 allow system_server sysfs_usb_supply_omni:dir search;
+
+# allow system server to get vendor_camera_prop
+get_prop(system_server, vendor_camera_prop)
