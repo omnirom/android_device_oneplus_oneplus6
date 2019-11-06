@@ -1,4 +1,4 @@
 allow hal_audio boottime_prop:property_service set;
 allow hal_audio boottime_prop:file { open read };
 
-
+allow hal_audio system_suspend_hwservice:hwservice_manager find;

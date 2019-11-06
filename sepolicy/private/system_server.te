@@ -8,8 +8,7 @@ allow system_server hal_audio:file write;
 
 allow system_server sysfs_fp:file { getattr open write };
 
-allow system_server vendor_data_file:dir search;
-allow system_server vendor_data_file:file { read open getattr };
+allow system_server omni_data_file:file r_file_perms;
 
 allow system_server sysfs_vibrator_omni:file rw_file_perms;
 allow system_server sysfs_vibrator_omni:dir search;
@@ -19,3 +18,6 @@ allow system_server sysfs_usb_supply_omni:dir search;
 
 # allow system server to get vendor_camera_prop
 get_prop(system_server, vendor_camera_prop)
+
+allow system_server hal_cameraHIDL_hwservice:hwservice_manager find;
+allow system_server hal_cameraHIDL_default:binder call;
