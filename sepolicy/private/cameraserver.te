@@ -1,4 +1,5 @@
 #allow cameraserver camera_data_file:file w_file_perms;
 
-allow cameraserver vendor_data_file:file { getattr open write };
+allow cameraserver omni_data_file:file rw_file_perms;
+allow cameraserver omni_data_file:dir write;
 
