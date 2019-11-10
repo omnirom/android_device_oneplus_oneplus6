@@ -1,5 +1,6 @@
 cc_binary {
     name: "android.hardware.health@2.0-service.oneplus6",
+    defaults: ["android.hardware.health@2.0-service_defaults"],
     init_rc: ["android.hardware.health@2.0-service.oneplus6.rc"],
     vendor: false,
     relative_install_path: "hw",
@@ -8,33 +9,6 @@ cc_binary {
         "CycleCountBackupRestore.cpp",
         "LearnedCapacityBackupRestore.cpp",
     ],
-
-    cflags: [
-        "-Wall",
-        "-Werror",
-    ],
-
-    static_libs: [
-        "android.hardware.health@2.0-impl",
-        "android.hardware.health@1.0-convert",
-        "libhealthservice",
-        "libhealthstoragedefault",
-        "libbatterymonitor",
-    ],
-
-    shared_libs: [
-        "libbase",
-        "libcutils",
-        "libhidlbase",
-        "libhidltransport",
-        "libhwbinder",
-        "liblog",
-        "libutils",
-        "android.hardware.health@2.0",
-    ],
-
-    header_libs: ["libhealthd_headers"],
-
     overrides: [
         "healthd",
     ],
