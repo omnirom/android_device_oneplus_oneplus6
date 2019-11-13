@@ -152,16 +152,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libtinyalsa
 
-#Nfc
-PRODUCT_PACKAGES += \
-    android.hardware.nfc@1.0 \
-    android.hardware.nfc@1.1 \
-    android.hardware.nfc@1.2
-
-# Remove unwanted packages
-PRODUCT_PACKAGES += \
-    RemovePackages
-
 PRODUCT_EXTRA_VNDK_VERSIONS := 28
 
 # TODO(b/78308559): includes vr_hwc into GSI before vr_hwc move to vendor
