@@ -1,6 +1,6 @@
 -priv-app/WfdService/WfdService.apk
--framework/WfdCommon.jar
--framework/qcnvitems.jar
+framework/WfdCommon.jar
+framework/qcnvitems.jar
 -app/AntHalService/AntHalService.apk
 
 
