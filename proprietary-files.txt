@@ -210,7 +210,7 @@ product/lib64/vendor.qti.hardware.wifidisplaysession@1.0.so
 product/lib/vendor.qti.hardware.wifidisplaysession@1.0.so
 lib64/libmiracastsystem.so
 lib/libmiracastsystem.so
-system/bin/sigma_miracasthalservice
+bin/sigma_miracasthalservice
 product/lib64/vendor.qti.hardware.sigma_miracast@1.0.so
 product/lib/vendor.qti.hardware.sigma_miracast@1.0.so
 lib64/hw/vendor.qti.hardware.sigma_miracast@1.0-impl.so
@@ -266,7 +266,6 @@ lib/libqvr_cdsp_driver_stub.so
 -app/NxpNfcNci/NxpNfcNci.apk|7d3b30a28d224623d3abe2b489dfc0deff3f7889
 -app/NxpSecureElement/NxpSecureElement.apk
 -framework/com.nxp.nfc.jar
-etc/permissions/com.nxp.nfc.xml
 lib64/libnxpnfc_nci_jni.so
 lib64/libnxpnfc-nci.so
 lib/libnxpnfc-nci.so
