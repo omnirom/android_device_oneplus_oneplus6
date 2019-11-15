@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "308aebb8_91d750ed",
+        "filename": "proprietary-files-qc.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1001070
+      },
+      "writtenOn": "2019-11-15T21:28:44Z",
+      "side": 1,
+      "message": "same",
+      "revId": "c3389c1658491ba6ae15794a240f47340c9cca6b",
+      "serverId": "56841c99-7c94-43d4-bf0b-cb4707e66d55",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d83e2471_9583b87d",
+        "filename": "proprietary-files-qc.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1001070
+      },
+      "writtenOn": "2019-11-15T21:28:44Z",
+      "side": 1,
+      "message": "same",
+      "revId": "c3389c1658491ba6ae15794a240f47340c9cca6b",
+      "serverId": "56841c99-7c94-43d4-bf0b-cb4707e66d55",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a6f2ff1c_543f53f7",
+        "filename": "proprietary-files.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 1001070
+      },
+      "writtenOn": "2019-11-15T21:28:44Z",
+      "side": 1,
+      "message": "should be boot jar so - is needed",
+      "revId": "c3389c1658491ba6ae15794a240f47340c9cca6b",
+      "serverId": "56841c99-7c94-43d4-bf0b-cb4707e66d55",
+      "unresolved": false
+    }
+  ]
+}
