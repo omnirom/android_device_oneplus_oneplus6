@@ -118,13 +118,10 @@ PRODUCT_PACKAGES += \
     qti_telephony_utils.xml \
     tcmiface
 
-#PRODUCT_BOOT_JARS += \
-    qtiNetworkLib \
-    com.qualcomm.qti.camera \
+PRODUCT_BOOT_JARS += \
     com.nxp.nfc \
     tcmiface \
     WfdCommon \
-    com.qti.snapdragon.sdk.display \
     qcnvitems
 
 PRODUCT_PACKAGES += \

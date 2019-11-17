@@ -22,6 +22,8 @@
 BOARD_PATH := device/oneplus/oneplus6
 include $(BOARD_PATH)/BoardConfigGsi.mk
 
+PRODUCT_SOONG_NAMESPACES := $(BOARD_PATH)
+
 #TARGET_USE_SDCLANG:= true
 PRODUCT_FULL_TREBLE := false
 BOARD_VNDK_VERSION := current
