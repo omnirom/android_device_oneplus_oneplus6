@@ -51,16 +51,12 @@ public class PanelSettings extends PreferenceFragment implements RadioGroup.OnCh
         super.onViewCreated(view, savedInstanceState);
         mRadioGroup = (RadioGroup) view.findViewById(R.id.radio_group);
         int checkedButtonId = R.id.off_mode;
-        if (NightModeSwitch.isCurrentlyEnabled(getContext())) {
-            checkedButtonId = R.id.night_mode;
+        if (WideModeSwitch.isCurrentlyEnabled(getContext())) {
+            checkedButtonId = R.id.wide_mode;
         } else if (DCIModeSwitch.isCurrentlyEnabled(getContext())) {
             checkedButtonId = R.id.dci_mode;
         } else if (SRGBModeSwitch.isCurrentlyEnabled(getContext())) {
             checkedButtonId = R.id.srgb_mode;
-        } else if (AdaptiveModeSwitch.isCurrentlyEnabled(getContext())) {
-            checkedButtonId = R.id.adaptive_mode;
-        } else if (OnePlusModeSwitch.isCurrentlyEnabled(getContext())) {
-            checkedButtonId = R.id.oneplus_mode;
         }
         mRadioGroup.check(checkedButtonId);
         mRadioGroup.setOnCheckedChangeListener(this);
@@ -81,69 +77,31 @@ public class PanelSettings extends PreferenceFragment implements RadioGroup.OnCh
         if (checkedId == R.id.srgb_mode) {
             Utils.writeValue(DCIModeSwitch.getFile(), "0");
             Settings.System.putInt(getContext().getContentResolver(), DCIModeSwitch.SETTINGS_KEY, 0);
-            Utils.writeValue(NightModeSwitch.getFile(), "0");
-            Settings.System.putInt(getContext().getContentResolver(), NightModeSwitch.SETTINGS_KEY, 0);
-            Utils.writeValue(AdaptiveModeSwitch.getFile(), "0");
-            Settings.System.putInt(getContext().getContentResolver(), AdaptiveModeSwitch.SETTINGS_KEY, 0);
-            Utils.writeValue(OnePlusModeSwitch.getFile(), "0");
-            Settings.System.putInt(getContext().getContentResolver(), OnePlusModeSwitch.SETTINGS_KEY, 0);
+            Utils.writeValue(WideModeSwitch.getFile(), "0");
+            Settings.System.putInt(getContext().getContentResolver(), WideModeSwitch.SETTINGS_KEY, 0);
             Utils.writeValue(SRGBModeSwitch.getFile(), "1");
             Settings.System.putInt(getContext().getContentResolver(), SRGBModeSwitch.SETTINGS_KEY, 1);
         } else if (checkedId == R.id.dci_mode) {
             Utils.writeValue(DCIModeSwitch.getFile(), "1");
             Settings.System.putInt(getContext().getContentResolver(), DCIModeSwitch.SETTINGS_KEY, 1);
-            Utils.writeValue(NightModeSwitch.getFile(), "0");
-            Settings.System.putInt(getContext().getContentResolver(), NightModeSwitch.SETTINGS_KEY, 0);
-            Utils.writeValue(AdaptiveModeSwitch.getFile(), "0");
-            Settings.System.putInt(getContext().getContentResolver(), AdaptiveModeSwitch.SETTINGS_KEY, 0);
-            Utils.writeValue(OnePlusModeSwitch.getFile(), "0");
-            Settings.System.putInt(getContext().getContentResolver(), OnePlusModeSwitch.SETTINGS_KEY, 0);
+            Utils.writeValue(WideModeSwitch.getFile(), "0");
+            Settings.System.putInt(getContext().getContentResolver(), WideModeSwitch.SETTINGS_KEY, 0);
             Utils.writeValue(SRGBModeSwitch.getFile(), "0");
             Settings.System.putInt(getContext().getContentResolver(), SRGBModeSwitch.SETTINGS_KEY, 0);
-        } else if (checkedId == R.id.night_mode) {
+        } else if (checkedId == R.id.wide_mode) {
             Utils.writeValue(DCIModeSwitch.getFile(), "0");
             Settings.System.putInt(getContext().getContentResolver(), DCIModeSwitch.SETTINGS_KEY, 0);
-            Utils.writeValue(NightModeSwitch.getFile(), "1");
-            Settings.System.putInt(getContext().getContentResolver(), NightModeSwitch.SETTINGS_KEY, 1);
-            Utils.writeValue(AdaptiveModeSwitch.getFile(), "0");
-            Settings.System.putInt(getContext().getContentResolver(), AdaptiveModeSwitch.SETTINGS_KEY, 0);
-            Utils.writeValue(OnePlusModeSwitch.getFile(), "0");
-            Settings.System.putInt(getContext().getContentResolver(), OnePlusModeSwitch.SETTINGS_KEY, 0);
+            Utils.writeValue(WideModeSwitch.getFile(), "1");
+            Settings.System.putInt(getContext().getContentResolver(), WideModeSwitch.SETTINGS_KEY, 1);;
             Utils.writeValue(SRGBModeSwitch.getFile(), "0");
             Settings.System.putInt(getContext().getContentResolver(), SRGBModeSwitch.SETTINGS_KEY, 0);
         } else if (checkedId == R.id.off_mode) {
             Utils.writeValue(DCIModeSwitch.getFile(), "0");
             Settings.System.putInt(getContext().getContentResolver(), DCIModeSwitch.SETTINGS_KEY, 0);
-            Utils.writeValue(NightModeSwitch.getFile(), "0");
-            Settings.System.putInt(getContext().getContentResolver(), NightModeSwitch.SETTINGS_KEY, 0);
-            Utils.writeValue(AdaptiveModeSwitch.getFile(), "0");
-            Settings.System.putInt(getContext().getContentResolver(), AdaptiveModeSwitch.SETTINGS_KEY, 0);
-            Utils.writeValue(OnePlusModeSwitch.getFile(), "0");
-            Settings.System.putInt(getContext().getContentResolver(), OnePlusModeSwitch.SETTINGS_KEY, 0);
+            Utils.writeValue(WideModeSwitch.getFile(), "0");
+            Settings.System.putInt(getContext().getContentResolver(), WideModeSwitch.SETTINGS_KEY, 0);
             Utils.writeValue(SRGBModeSwitch.getFile(), "0");
             Settings.System.putInt(getContext().getContentResolver(), SRGBModeSwitch.SETTINGS_KEY, 0);
-        } else if (checkedId == R.id.adaptive_mode) {
-            Utils.writeValue(DCIModeSwitch.getFile(), "0");
-            Settings.System.putInt(getContext().getContentResolver(), DCIModeSwitch.SETTINGS_KEY, 0);
-            Utils.writeValue(NightModeSwitch.getFile(), "0");
-            Settings.System.putInt(getContext().getContentResolver(), NightModeSwitch.SETTINGS_KEY, 0);
-            Utils.writeValue(AdaptiveModeSwitch.getFile(), "1");
-            Settings.System.putInt(getContext().getContentResolver(), AdaptiveModeSwitch.SETTINGS_KEY, 1);
-            Utils.writeValue(OnePlusModeSwitch.getFile(), "0");
-            Settings.System.putInt(getContext().getContentResolver(), OnePlusModeSwitch.SETTINGS_KEY, 0);
-            Utils.writeValue(SRGBModeSwitch.getFile(), "0");
-            Settings.System.putInt(getContext().getContentResolver(), SRGBModeSwitch.SETTINGS_KEY, 0);
-        } else if (checkedId == R.id.oneplus_mode) {
-            Utils.writeValue(DCIModeSwitch.getFile(), "0");
-            Settings.System.putInt(getContext().getContentResolver(), DCIModeSwitch.SETTINGS_KEY, 0);
-            Utils.writeValue(NightModeSwitch.getFile(), "0");
-            Settings.System.putInt(getContext().getContentResolver(), NightModeSwitch.SETTINGS_KEY, 0);
-            Utils.writeValue(AdaptiveModeSwitch.getFile(), "0");
-            Settings.System.putInt(getContext().getContentResolver(), AdaptiveModeSwitch.SETTINGS_KEY, 0);
-            Utils.writeValue(OnePlusModeSwitch.getFile(), "1");
-            Settings.System.putInt(getContext().getContentResolver(), OnePlusModeSwitch.SETTINGS_KEY, 0);
-            Utils.writeValue(SRGBModeSwitch.getFile(), "0");
-            Settings.System.putInt(getContext().getContentResolver(), SRGBModeSwitch.SETTINGS_KEY, 1);
         }
     }
 }
