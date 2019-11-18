@@ -23,6 +23,7 @@ BOARD_PATH := device/oneplus/oneplus6
 include $(BOARD_PATH)/BoardConfigGsi.mk
 
 PRODUCT_SOONG_NAMESPACES := $(BOARD_PATH)
+PRODUCT_SOONG_NAMESPACES += vendor/oneplus/oneplus6
 
 #TARGET_USE_SDCLANG:= true
 PRODUCT_FULL_TREBLE := false
