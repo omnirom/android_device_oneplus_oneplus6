@@ -17,8 +17,8 @@
 
 set -e
 
-DEVICE=oneplus6
-VENDOR=oneplus
+export DEVICE=oneplus6
+export VENDOR=oneplus
 
 # Load extractutils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
@@ -56,10 +56,9 @@ if [ -z "$SRC" ]; then
 fi
 
 # Initialize the helper
-setup_vendor "$DEVICE" "$VENDOR" "$CM_ROOT" false "$CLEAN_VENDOR"
+setup_vendor "$DEVICE" "$VENDOR" "$CM_ROOT" true "$CLEAN_VENDOR"
 
 extract "$MY_DIR"/proprietary-files-qc.txt "$SRC" "$SECTION"
-extract "$MY_DIR"/proprietary-files-qc-perf.txt "$SRC" "$SECTION"
 extract "$MY_DIR"/proprietary-files.txt "$SRC" "$SECTION"
 
 "$MY_DIR"/setup-makefiles.sh
