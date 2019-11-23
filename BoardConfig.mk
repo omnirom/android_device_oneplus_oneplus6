@@ -244,9 +244,7 @@ TARGET_KERNEL_HAVE_EXFAT := true
 # CNE and DPM
 BOARD_USES_QCNE := true
 
-ifeq ($(TARGET_DEVICE),oneplus6)
 TARGET_SYSTEM_PROP += $(BOARD_PATH)/system.prop
-endif
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 
 # selinux
