@@ -1,12 +1,6 @@
 [
   {
     "remote": "omnirom",
-    "repository": "android_packages_apps_SnapdragonCamera2",
-    "target_path": "packages/apps/SnapdragonCamera2",
-    "revision": "android-10"
-  },
-  {
-    "remote": "omnirom",
     "repository": "android_device_qcom_caf-sepolicy",
     "target_path": "device/qcom/sepolicy",
     "revision": "android-10"

@@ -93,10 +93,6 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/media_codecs_google_video.xml
 
-# Camera
-PRODUCT_PACKAGES += \
-    SnapdragonCamera2
-
 # power
 PRODUCT_PACKAGES += \
     power.oneplus6
@@ -163,7 +159,9 @@ PRODUCT_PACKAGES += \
 
 # Remove unwanted packages
 PRODUCT_PACKAGES += \
-    RemovePackages
+    RemovePackages \
+    RemovePackages_camera \
+    RemovePackages_gallery
 
 #PRODUCT_EXTRA_VNDK_VERSIONS := 28
 
