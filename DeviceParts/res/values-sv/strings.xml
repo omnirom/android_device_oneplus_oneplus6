@@ -15,24 +15,23 @@
      limitations under the License.
 -->
 <resources>
-  <string name="category_vibrator">Vibrator</string>
-  <string name="vib_strength_title_head">Styrka</string>
-  <string name="vib_strength_summary_head">Definiera styrkan på vibratorn</string>
-  <string name="vib_test">Test</string>
-  <string name="advanced_settings">Avancerad</string>
-  <string name="buttons_title">Knappar</string>
-  <string name="swap_back_recents_title">Växla tillbaka och senaste-knappar</string>
-  <string name="graphics_title">Grafik</string>
-  <string name="srgb_mode_title">sRGB-läge</string>
-  <string name="slider_mode_off">Av</string>
-  <string name="slider_mode_vibrate">Vibrera</string>
-  <string name="slider_mode_silent">Tyst</string>
-  <string name="slider_mode_alarm">Endast alarm</string>
-  <string name="slider_mode_dnd">Total tystnad</string>
-  <string name="slider_mode_title_top">Topp-placering</string>
-  <string name="slider_mode_title_bottom">Bottenläget</string>
-  <string name="choose_app">Välj app</string>
-  <string name="category_up_arrow_gesture">En gest</string>
-  <string name="category_left_arrow_gesture">&lt; gest</string>
-  <string name="category_right_arrow_gesture">&gt; gest</string>
+    <string name="category_vibrator">Vibrator</string>
+    <string name="vib_strength_title_head">Styrka</string>
+    <string name="vib_strength_summary_head">Definiera styrkan på vibratorn</string>
+    <string name="vib_test">Test</string>
+    <string name="advanced_settings">Avancerad</string>
+    <string name="buttons_title">Knappar</string>
+    <string name="swap_back_recents_title">Växla tillbaka och senaste-knappar</string>
+    <string name="graphics_title">Grafik</string>
+    <string name="srgb_mode_title">sRGB-läge</string>
+    <string name="slider_mode_off">Av</string>
+    <string name="slider_mode_vibrate">Vibrera</string>
+    <string name="slider_mode_silent">Tyst</string>
+    <string name="slider_mode_alarm">Endast alarm</string>
+    <string name="slider_mode_title_top">Topp-placering</string>
+    <string name="slider_mode_title_bottom">Bottenläget</string>
+    <string name="choose_app">Välj app</string>
+    <string name="category_up_arrow_gesture">En gest</string>
+    <string name="category_left_arrow_gesture">&lt; gest</string>
+    <string name="category_right_arrow_gesture">&gt; gest</string>
 </resources>

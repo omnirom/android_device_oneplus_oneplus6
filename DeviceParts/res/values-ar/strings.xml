@@ -14,4 +14,12 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<resources></resources>
+<resources>
+    <string name="slider_mode_off">مغلق</string>
+    <string name="slider_mode_vibrate">إهتزاز</string>
+    <string name="slider_mode_silent">صامت</string>
+    <string name="slider_mode_priority">الأولوية فقط</string>
+    <string name="slider_mode_alarm">التنبيهات فقط</string>
+    <string name="otg_switch_title">دعم جهاز OTG</string>
+    <string name="choose_app">اختيار تطبيق</string>
+</resources>

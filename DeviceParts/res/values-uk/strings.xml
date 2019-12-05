@@ -14,4 +14,37 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<resources></resources>
+<resources>
+    <string name="category_gestures_title">Жести пристрою</string>
+    <string name="fp_gesture_title">Жести сканера відбитків пальців</string>
+    <string name="category_vibrator">Вібрація</string>
+    <string name="vib_strength_title_head">Сила</string>
+    <string name="vib_test">Тест</string>
+    <string name="advanced_settings">Додатково</string>
+    <string name="category_slider">Повзунок</string>
+    <string name="slider_mode_title">Режим слайдера</string>
+    <string name="buttons_title">Кнопки</string>
+    <string name="graphics_title">Графіка</string>
+    <string name="srgb_mode_title">режим sRGB</string>
+    <string name="off_screen_gesture_feedback_title_head">Реакція на натиск</string>
+    <string name="slider_mode_off">Вимкнено</string>
+    <string name="slider_mode_vibrate">Вібрація</string>
+    <string name="slider_mode_silent">Беззвучний</string>
+    <string name="slider_mode_priority">Тільки головне</string>
+    <string name="slider_mode_alarm">Тільки сигнали тривоги</string>
+    <string name="slider_mode_title_top">Верхнє положення</string>
+    <string name="slider_mode_title_center">Середнє положення</string>
+    <string name="slider_mode_title_bottom">Нижнє положення</string>
+    <string name="dci_mode_title">Режим розширеного кольору</string>
+    <string name="Night_mode_title">Нічний режим</string>
+    <string name="otg_switch_summary">Увімкнути/Вимкнути підтримку USB-OTG</string>
+    <string name="otg_switch_title">Підтримка USB-OTG</string>
+    <string name="choose_app">Вибрати додаток</string>
+    <string name="torch_entry">Ліхтарик</string>
+    <string name="disabled_entry">Вимкнено</string>
+    <string name="camera_entry">Камера</string>
+    <string name="music_play_entry">Відтворити/Призупинити музику</string>
+    <string name="music_prev_entry">Попередня композиція</string>
+    <string name="music_next_entry">Наступна композиція</string>
+    <string name="volume_up">Гучність при розмові</string>
+</resources>
