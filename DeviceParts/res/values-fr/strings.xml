@@ -15,6 +15,7 @@
      limitations under the License.
 -->
 <resources>
+    <string name="app_name">Oneplus 5</string>
     <string name="category_gestures_title">Mouvements du terminal</string>
     <string name="fp_gesture_title">Mouvement du lecteur d\'empreintes digitales</string>
     <string name="category_vibrator">Vibreur</string>
@@ -28,16 +29,22 @@
     <string name="swap_back_recents_title">Permuter le bouton retour et le bouton app. récents</string>
     <string name="graphics_title">Graphiques</string>
     <string name="srgb_mode_title">mode sRGB</string>
+    <string name="dcd_mode_title">DC Dimming</string>
+    <string name="dcd_mode_summary">Réduire les scintillements de l\'écran à faible luminosité</string>
     <string name="hbm_mode_title">Mode haute luminosité</string>
+    <string name="adaptive_mode_title">Mode Adaptatif</string>
+    <string name="oneplus_mode_title">Mode OnePlus</string>
     <string name="proxi_summary_head">Vérifier le capteur de proximité pour les gestes tactiles et le capteur d\'empreinte</string>
     <string name="proxi_title_head">Contrôle de proximité</string>
     <string name="off_screen_gesture_feedback_summary_head">Activez les retours haptiques pour les gestes</string>
     <string name="off_screen_gesture_feedback_title_head">Retour haptique</string>
     <string name="slider_mode_off">Désactivé</string>
+    <string name="slider_mode_flashlight">Lampe de poche</string>
     <string name="slider_mode_vibrate">Vibreur</string>
     <string name="slider_mode_silent">Mode silencieux</string>
     <string name="slider_mode_priority">Priorité seulement</string>
     <string name="slider_mode_alarm">Alarmes seulement</string>
+    <string name="slider_mode_zen">Ne pas déranger</string>
     <string name="slider_mode_title_top">Position supérieure</string>
     <string name="slider_mode_title_center">Position centrale</string>
     <string name="slider_mode_title_bottom">Position inférieure</string>

@@ -15,6 +15,7 @@
      limitations under the License.
 -->
 <resources>
+    <string name="app_name">OnePlus 5</string>
     <string name="category_vibrator">Vibração</string>
     <string name="vib_strength_title_head">Intensidade</string>
     <string name="vib_strength_summary_head">Definir a intensidade da vibração</string>

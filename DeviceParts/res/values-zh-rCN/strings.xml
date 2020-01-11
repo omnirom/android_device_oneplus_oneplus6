@@ -15,6 +15,7 @@
      limitations under the License.
 -->
 <resources>
+    <string name="app_name">Oneplus 5</string>
     <string name="category_gestures_title">设备手势</string>
     <string name="fp_gesture_title">指纹扫描手势</string>
     <string name="category_vibrator">振动</string>

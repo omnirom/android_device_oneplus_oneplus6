@@ -15,6 +15,7 @@
      limitations under the License.
 -->
 <resources>
+    <string name="app_name">Oneplus 5</string>
     <string name="category_gestures_title">Gesture del dispositivo</string>
     <string name="fp_gesture_title">Gesture sul sensore d\'impronte</string>
     <string name="category_vibrator">Vibrazione</string>
