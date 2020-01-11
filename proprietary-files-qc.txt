@@ -303,7 +303,6 @@ product/lib/vendor.qti.voiceprint@1.0.so
 -product/app/uceShimService/uceShimService.apk
 -product/app/com.qualcomm.qti.services.secureui/com.qualcomm.qti.services.secureui.apk
 -product/app/QtiSystemService/QtiSystemService.apk
--product/app/PerformanceMode/PerformanceMode.apk
 -product/app/colorservice/colorservice.apk
 -product/app/atfwd/atfwd.apk
 -product/app/CallFeaturesSetting/CallFeaturesSetting.apk

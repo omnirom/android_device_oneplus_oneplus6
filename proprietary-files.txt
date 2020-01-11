@@ -157,7 +157,6 @@ lib64/libOpenCL_system.so
 lib64/libqmi_cci_system.so
 lib64/libqti-at.so
 lib64/libqti-perfd-client_system.so
-lib64/libqti_performance.so
 lib64/libqti-util_system.so
 lib64/libqvrcamera_client.qti.so
 lib64/libqvrservice_client.qti.so
@@ -185,7 +184,6 @@ lib/libOpenCL_system.so
 lib/libqmi_cci_system.so
 lib/libqti-at.so
 lib/libqti-perfd-client_system.so
-lib/libqti_performance.so
 lib/libqti-util_system.so
 lib/libqvrcamera_client.qti.so
 lib/libqvrservice_client.qti.so
