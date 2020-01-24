@@ -29,7 +29,7 @@
     <string name="swap_back_recents_title">Permuter le bouton retour et le bouton app. récents</string>
     <string name="graphics_title">Graphiques</string>
     <string name="srgb_mode_title">mode sRGB</string>
-    <string name="dcd_mode_title">DC Dimming</string>
+    <string name="dcd_mode_title">Variation du CC</string>
     <string name="dcd_mode_summary">Réduire les scintillements de l\'écran à faible luminosité</string>
     <string name="hbm_mode_title">Mode haute luminosité</string>
     <string name="adaptive_mode_title">Mode Adaptatif</string>
@@ -39,7 +39,7 @@
     <string name="off_screen_gesture_feedback_summary_head">Activez les retours haptiques pour les gestes</string>
     <string name="off_screen_gesture_feedback_title_head">Retour haptique</string>
     <string name="slider_mode_off">Désactivé</string>
-    <string name="slider_mode_flashlight">Lampe de poche</string>
+    <string name="slider_mode_flashlight">Lampe</string>
     <string name="slider_mode_vibrate">Vibreur</string>
     <string name="slider_mode_silent">Mode silencieux</string>
     <string name="slider_mode_priority">Priorité seulement</string>
