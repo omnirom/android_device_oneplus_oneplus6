@@ -336,3 +336,5 @@ sdm.debug.disable_inline_rotator_secure=1
 
 #HWC
 persist.vendor.color.matrix=2
+
+ro.boot.vendor.overlay.static=false
