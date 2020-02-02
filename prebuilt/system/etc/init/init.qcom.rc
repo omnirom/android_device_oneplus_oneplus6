@@ -1,11 +1,8 @@
 on init
-#    mount none /system/lib/modules/wlan.ko /vendor/lib/modules/qca_cld3_wlan.ko bind
     mount none /system/lib/hw/lights.oneplus6.so /vendor/lib/hw/lights.sdm845.so bind
     mount none /system/lib64/hw/lights.oneplus6.so /vendor/lib64/hw/lights.sdm845.so bind
     mount none /system/lib/hw/power.oneplus6.so /vendor/lib/hw/power.qcom.so bind
     mount none /system/lib64/hw/power.oneplus6.so /vendor/lib64/hw/power.qcom.so bind
-    mount none /dev/null /vendor/etc/init/android.hardware.health@2.0-service.rc bind
-    #mount none /system/lib/hw/audio.primary.sdm845.so /vendor/lib/hw/audio.primary.sdm845.so bind
     mount none /dev/null /vendor/overlay/SysuiDarkTheme/SysuiDarkThemeOverlay.apk bind
     mount none /dev/null /vendor/overlay/BluetoothResCommon.apk bind
     mount none /dev/null /vendor/overlay/SystemUIResCommon.apk bind
@@ -171,3 +168,4 @@ service factory-hal-1-0 /system/bin/true
 
 service oneplus_brain_service /system/bin/true
     disabled
+
