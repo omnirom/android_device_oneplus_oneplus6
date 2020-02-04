@@ -11,9 +11,11 @@
 /system/etc/mixer_paths_tavil.xml    u:object_r:vendor_configs_file:s0
 /system/etc/WCNSS_qcom_cfg.ini    u:object_r:vendor_configs_file:s0
 /system/lib/modules/wlan.ko    u:object_r:vendor_file:s0
-/system/bin/hw/android.hardware.health@2.0-service.oneplus6 u:object_r:hal_health_omni_exec:s0
 
-#/system/bin/hw/android\.hardware\.power@1\.1-service\.oneplus6             u:object_r:hal_power_omni_exec:s0
+# Lights - vendor overlay
+/(product|system/product)/vendor_overlay/[0-9]+/bin/hw/android\.hardware\.light@2\.0-service    u:object_r:hal_light_default_exec:s0
+# Health - vendor overlay
+/(product|system/product)/vendor_overlay/[0-9]+/bin/hw/android\.hardware\.health@2\.0-service    u:object_r:hal_health_default_exec:s0
 
 /sys/kernel/debug/wlan0/power_stats u:object_r:debugfs_wifi:s0
 
