@@ -6,7 +6,6 @@ allow system_app selinuxfs:file r_file_perms;
 
 allow system_app wificond:binder call;
 
-
 allow system_app storaged:binder call;
 
 allow system_app fs_bpf:dir search;
@@ -19,3 +18,6 @@ allow system_app sysfs_usb_supply_omni:file rw_file_perms;
 allow system_app sysfs_usb_supply_omni:dir search;
 
 allow system_app proc_pagetypeinfo:file getattr;
+
+allow system_app proc_touchpanel:dir search;
+allow system_app proc_touchpanel:file { open write };

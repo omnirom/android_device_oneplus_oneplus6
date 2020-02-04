@@ -174,9 +174,6 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += android.hardware.health@2.0-service.oneplus6
 
-#DEVICE_FRAMEWORK_MANIFEST_FILE += \
-    system/libhidl/vintfdata/manifest_healthd_exclude.xml
-
 TARGET_FS_CONFIG_GEN := device/oneplus/oneplus6/config.fs
 
 # Permissions
