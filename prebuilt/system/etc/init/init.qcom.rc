@@ -1,6 +1,4 @@
 on init
-    mount none /system/lib/hw/lights.oneplus6.so /vendor/lib/hw/lights.sdm845.so bind
-    mount none /system/lib64/hw/lights.oneplus6.so /vendor/lib64/hw/lights.sdm845.so bind
     mount none /system/lib/hw/power.oneplus6.so /vendor/lib/hw/power.qcom.so bind
     mount none /system/lib64/hw/power.oneplus6.so /vendor/lib64/hw/power.qcom.so bind
     mount none /dev/null /vendor/overlay/oneplus_shape_squircle/OnePlusIconShapeSquircleOverlay.apk bind
