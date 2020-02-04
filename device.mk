@@ -82,7 +82,7 @@ PRODUCT_CHARACTERISTICS := nosdcard
 
 # Lights
 PRODUCT_PACKAGES += \
-    lights.oneplus6
+    android.hardware.light@2.0-service.oneplus6
 
 PRODUCT_PACKAGES += \
     android.hardware.light-V2.0-java \
@@ -177,6 +177,7 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/media_codecs_google_video.xml
 
 PRODUCT_PACKAGES += android.hardware.health@2.0-service.oneplus6
+
 #DEVICE_FRAMEWORK_MANIFEST_FILE += \
     system/libhidl/vintfdata/manifest_healthd_exclude.xml
 
