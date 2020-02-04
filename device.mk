@@ -97,10 +97,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     SnapdragonCamera2
 
-# power
-PRODUCT_PACKAGES += \
-    power.oneplus6
-
 # ANT+
 PRODUCT_PACKAGES += \
     AntHalService

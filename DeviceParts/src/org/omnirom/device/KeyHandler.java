@@ -79,6 +79,7 @@ public class KeyHandler implements DeviceKeyHandler {
     protected static final int GESTURE_REQUEST = 1;
     private static final int GESTURE_WAKELOCK_DURATION = 2000;
     private static final String GOODIX_CONTROL_PATH = "/sys/devices/platform/soc/soc:goodix_fp/proximity_state";
+    private static final String DT2W_CONTROL_PATH = "/proc/touchpanel/double_tap_enable";
 
     private static final int GESTURE_CIRCLE_SCANCODE = 250;
     private static final int GESTURE_V_SCANCODE = 252;
@@ -187,6 +188,7 @@ public class KeyHandler implements DeviceKeyHandler {
     private boolean mRestoreUser;
     private boolean mUseSliderTorch = false;
     private boolean mTorchState = false;
+    private boolean mDoubleTapToWake;
 
     private SensorEventListener mProximitySensor = new SensorEventListener() {
         @Override
@@ -244,6 +246,9 @@ public class KeyHandler implements DeviceKeyHandler {
             mContext.getContentResolver().registerContentObserver(Settings.System.getUriFor(
                     Settings.System.OMNI_DEVICE_FEATURE_SETTINGS),
                     false, this);
+            mContext.getContentResolver().registerContentObserver(Settings.Secure.getUriFor(
+                    Settings.Secure.DOUBLE_TAP_TO_WAKE),
+                    false, this);
             update();
             updateDozeSettings();
         }
@@ -267,6 +272,10 @@ public class KeyHandler implements DeviceKeyHandler {
             mUseProxiCheck = Settings.System.getIntForUser(
                     mContext.getContentResolver(), Settings.System.OMNI_DEVICE_PROXI_CHECK_ENABLED, 1,
                     UserHandle.USER_CURRENT) == 1;
+            mDoubleTapToWake = Settings.Secure.getIntForUser(
+                    mContext.getContentResolver(), Settings.Secure.DOUBLE_TAP_TO_WAKE, 0,
+                    UserHandle.USER_CURRENT) == 1;
+            updateDoubleTapToWake();
         }
     }
 
@@ -744,6 +753,13 @@ public class KeyHandler implements DeviceKeyHandler {
                     Log.e(TAG, "setPackageName error", e);
                 }
             }
+        }
+    }
+
+    private void updateDoubleTapToWake() {
+        Log.i(TAG, "udateDoubleTapToWake " + mDoubleTapToWake);
+        if (Utils.fileWritable(DT2W_CONTROL_PATH)) {
+            Utils.writeValue(DT2W_CONTROL_PATH, mDoubleTapToWake ? "1" : "0");
         }
     }
 }
