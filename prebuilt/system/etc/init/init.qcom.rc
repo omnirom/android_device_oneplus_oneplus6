@@ -3,11 +3,22 @@ on init
     mount none /system/lib64/hw/lights.oneplus6.so /vendor/lib64/hw/lights.sdm845.so bind
     mount none /system/lib/hw/power.oneplus6.so /vendor/lib/hw/power.qcom.so bind
     mount none /system/lib64/hw/power.oneplus6.so /vendor/lib64/hw/power.qcom.so bind
+    mount none /dev/null /vendor/overlay/SysuiDarkTheme/SysuiDarkThemeOverlay.apk bind
+    mount none /dev/null /vendor/overlay/BluetoothResCommon.apk bind
+    mount none /dev/null /vendor/overlay/SystemUIResCommon.apk bind
+    mount none /dev/null /vendor/overlay/FrameworksResCommon.apk bind
+    mount none /dev/null /vendor/overlay/FrameworksResTarget.apk bind
+    mount none /dev/null /vendor/overlay/OPFrameworkConfigOverlay.apk bind
+    mount none /dev/null /vendor/overlay/SystemUIResCommon.apk bind
+    mount none /dev/null /vendor/overlay/TelecommResCommon.apk bind
+    mount none /dev/null /vendor/overlay/TelephonyResCommon.apk bind
+    mount none /dev/null /vendor/overlay/CellBroadcastReceiverResCommon.apk bind
     mount none /dev/null /vendor/overlay/oneplus_shape_squircle/OnePlusIconShapeSquircleOverlay.apk bind
     mount none /dev/null /vendor/overlay/oneplus_shape_circle/OnePlusIconShapeCircleOverlay.apk bind
     mount none /dev/null /vendor/overlay/oneplus_shape_teardrop/OnePlusIconShapeTeardropOverlay.apk bind
     mount none /dev/null /vendor/overlay/oneplus_shape_square/OnePlusIconShapeSquareOverlay.apk bind
     mount none /dev/null /vendor/overlay/oneplus_shape_roundedrect/OnePlusIconShapeRoundedRectOverlay.apk bind
+
 
 on boot
     # default country code
