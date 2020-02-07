@@ -161,5 +161,3 @@ service factory-hal-1-0 /system/bin/true
 service oneplus_brain_service /system/bin/true
     disabled
 
-service health-hal-2-0 /system/bin/true
-    disabled
