@@ -3,8 +3,6 @@
 /dev/block/platform/soc/1d84000.ufshc/by-name/op1               u:object_r:op1_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/op2               u:object_r:op2_block_device:s0
 
-/firmware/firmware_mnt  u:object_r:rootfs:s0
-
 
 /system/etc/media_profiles_vendor.xml    u:object_r:vendor_configs_file:s0
 /system/etc/audio_policy_configuration_omni.xml    u:object_r:vendor_configs_file:s0

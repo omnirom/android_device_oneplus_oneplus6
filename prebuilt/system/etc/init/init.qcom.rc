@@ -155,8 +155,8 @@ service dashd /sbin/dashd
     seclabel u:r:dashd:s0
     group root system
 
-service factory-hal-1-0 /system/bin/true
-    disabled
+#service factory-hal-1-0 /system/bin/true
+#    disabled
 
 service oneplus_brain_service /system/bin/true
     disabled

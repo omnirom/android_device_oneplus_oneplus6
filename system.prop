@@ -318,6 +318,7 @@ persist.vendor.radio.add_power_save=false
 
 sdm.debug.disable_inline_rotator=1
 sdm.debug.disable_inline_rotator_secure=1
+ro.surface_flinger.support_kernel_idle_timer=60
 
 #HWC
 persist.vendor.color.matrix=2
