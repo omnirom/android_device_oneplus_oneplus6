@@ -52,6 +52,11 @@ PRODUCT_PACKAGES += \
     update_verifier \
     update_engine_client
 
+# Boot control
+PRODUCT_PACKAGES += \
+    android.hardware.boot@1.0-impl.recovery \
+    bootctrl.sdm845.recovery
+
 PRODUCT_PACKAGES_DEBUG += \
     bootctl
 
