@@ -3,5 +3,6 @@
     "pageUrl":"https://dl.omnirom.org/oneplus6",
     "make": "OnePlus",
     "image": "meta/device_image.jpg",
-    "state": "official"
+    "state": "official",
+    "device": "oneplus6"
 }
