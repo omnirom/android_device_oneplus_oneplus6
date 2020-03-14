@@ -261,7 +261,7 @@ lib/libqvr_cdsp_driver_stub.so
 
 #lib64/ese_spi_nxp.so
 #lib/ese_spi_nxp.so
--app/NxpNfcNci/NxpNfcNci.apk|7d3b30a28d224623d3abe2b489dfc0deff3f7889
+-app/NxpNfcNci/NxpNfcNci.apk|88df5ea34fa5f915eb0779d56dcb48e52510fbc6
 -app/NxpSecureElement/NxpSecureElement.apk
 -framework/com.nxp.nfc.jar
 lib64/libnxpnfc_nci_jni.so

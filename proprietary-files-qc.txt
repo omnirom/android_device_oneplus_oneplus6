@@ -183,7 +183,7 @@ product/framework/vendor.qti.ims.rcsconfig-V1.0-java.jar
 product/framework/vendor.qti.hardware.data.qmi-V1.0-java.jar
 product/framework/com.qti.dpmframework.jar
 product/framework/uimgbamanagerlibrary.jar
-product/framework/qti-telephony-common.jar|0276ff16476d85eac9b0b5e1d600ce94ac91b8da
+product/framework/qti-telephony-common.jar|1826d1f45cbb6ce2f269eee828a8c7e8556cec84
 product/framework/vendor.qti.hardware.sensorscalibrate-V1.0-java.jar
 product/framework/com.quicinc.cne.constants-V2.1-java.jar
 product/framework/com.qualcomm.qti.uceservice-V2.0-java.jar
