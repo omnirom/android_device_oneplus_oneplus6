@@ -321,3 +321,7 @@ sdm.debug.disable_inline_rotator_secure=1
 
 #HWC
 persist.vendor.color.matrix=2
+
+# our kernel does no longer have xt_qtaguid but all needed for BPF
+# and we have ro.product.first_api_level=27
+ro.omni.device_bpf_ready=1
