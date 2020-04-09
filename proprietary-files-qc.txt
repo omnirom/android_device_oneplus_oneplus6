@@ -318,3 +318,11 @@ product/lib/vendor.qti.voiceprint@1.0.so
 -product/app/imssettings/imssettings.apk
 -product/app/uimremoteclient/uimremoteclient.apk
 -product/app/uimgbaservice/uimgbaservice.apk
+
+product/lib64/com.qualcomm.qti.bluetooth_audio@1.0.so
+product/lib64/vendor.qti.hardware.bluetooth_audio@2.0.so
+product/lib/com.qualcomm.qti.bluetooth_audio@1.0.so
+product/lib/vendor.qti.hardware.bluetooth_audio@2.0.so
+product/lib64/vendor.qti.hardware.btconfigstore@1.0.so
+product/lib/vendor.qti.hardware.btconfigstore@1.0.so
+

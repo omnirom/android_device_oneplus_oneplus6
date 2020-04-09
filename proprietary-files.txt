@@ -289,6 +289,9 @@ lib/libwfduibcsrcinterface.so
 
 -priv-app/com.qualcomm.location/com.qualcomm.location.apk
 
-
+lib64/libbluetooth_qti.so
+lib/libbluetooth_qti.so
+lib64/libbtconfigstore.so
+lib/libbtconfigstore.so
 
 
