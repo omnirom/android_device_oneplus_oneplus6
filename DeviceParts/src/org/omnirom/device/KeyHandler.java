@@ -104,7 +104,7 @@ public class KeyHandler implements DeviceKeyHandler {
     private static final String DOZE_INTENT = "com.android.systemui.doze.pulse";
     private static final int HANDWAVE_MAX_DELTA_MS = 1000;
     private static final int POCKET_MIN_DELTA_MS = 5000;
-    private static final int FP_GESTURE_LONG_PRESS = 305;
+    private static final int FP_GESTURE_LONG_PRESS = 414;
 
     private static final boolean sIsOnePlus6 = android.os.Build.MODEL.equals("ONEPLUS A6003");
 
