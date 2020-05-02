@@ -80,6 +80,7 @@ public class KeyHandler implements DeviceKeyHandler {
     private static final int GESTURE_WAKELOCK_DURATION = 2000;
     private static final String GOODIX_CONTROL_PATH = "/sys/devices/platform/soc/soc:goodix_fp/proximity_state";
     private static final String DT2W_CONTROL_PATH = "/proc/touchpanel/double_tap_enable";
+    private static final String SINGLE_TAP_CONTROL_PATH = "/proc/touchpanel/single_tap_enable";
 
     private static final int GESTURE_CIRCLE_SCANCODE = 250;
     private static final int GESTURE_V_SCANCODE = 252;
@@ -92,6 +93,7 @@ public class KeyHandler implements DeviceKeyHandler {
     private static final int GESTURE_DOWN_SWIPE_SCANCODE = 65;
     private static final int GESTURE_UP_SWIPE_SCANCODE = 66;
 
+    private static final int KEY_SINGLE_TAP = 67;
     private static final int KEY_DOUBLE_TAP = 143;
     private static final int KEY_HOME = 102;
     private static final int KEY_BACK = 158;
@@ -189,6 +191,7 @@ public class KeyHandler implements DeviceKeyHandler {
     private boolean mUseSliderTorch = false;
     private boolean mTorchState = false;
     private boolean mDoubleTapToWake;
+    private boolean mUseSingleTap;
 
     private SensorEventListener mProximitySensor = new SensorEventListener() {
         @Override
@@ -421,6 +424,7 @@ public class KeyHandler implements DeviceKeyHandler {
             if (DEBUG) Log.i(TAG, "isWakeEvent " + event.getScanCode() + value);
             return true;
         }
+        if (event.getScanCode() == KEY_SINGLE_TAP) launchDozePulse();
         return event.getScanCode() == KEY_DOUBLE_TAP;
     }
 
@@ -696,7 +700,7 @@ public class KeyHandler implements DeviceKeyHandler {
     }
 
     private boolean enableProxiSensor() {
-        return mUsePocketCheck || mUseWaveCheck || mUseProxiCheck;
+        return mUsePocketCheck || mUseWaveCheck || mUseProxiCheck || mUseSingleTap;
     }
 
     private void updateDozeSettings() {
@@ -709,6 +713,8 @@ public class KeyHandler implements DeviceKeyHandler {
             mUseWaveCheck = Boolean.valueOf(parts[0]);
             mUsePocketCheck = Boolean.valueOf(parts[1]);
             mUseTiltCheck = Boolean.valueOf(parts[2]);
+            mUseSingleTap = Boolean.valueOf(parts[3]);
+            updateSingleTap();
         }
     }
 
@@ -760,6 +766,13 @@ public class KeyHandler implements DeviceKeyHandler {
         Log.i(TAG, "udateDoubleTapToWake " + mDoubleTapToWake);
         if (Utils.fileWritable(DT2W_CONTROL_PATH)) {
             Utils.writeValue(DT2W_CONTROL_PATH, mDoubleTapToWake ? "1" : "0");
+        }
+    }
+
+    private void updateSingleTap() {
+        Log.i(TAG, "udateSingleTap " + mUseSingleTap);
+        if (Utils.fileWritable(SINGLE_TAP_CONTROL_PATH)) {
+            Utils.writeValue(SINGLE_TAP_CONTROL_PATH, mUseSingleTap ? "1" : "0");
         }
     }
 }
