@@ -42,11 +42,13 @@ public class DozeSettings extends PreferenceFragment  {
     private static final String KEY_WAVE_CHECK = "wave_check";
     private static final String KEY_POCKET_CHECK = "pocket_check";
     private static final String KEY_TILT_CHECK = "tilt_check";
+    private static final String KEY_SINGLE_TAP = "single_tap";
     private static final String KEY_FOOTER = "footer";
 
     private boolean mUseTiltCheck;
     private boolean mUseWaveCheck;
     private boolean mUsePocketCheck;
+    private boolean mUseSingleTap;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -84,6 +86,16 @@ public class DozeSettings extends PreferenceFragment  {
                 return true;
             }
         });
+        TwoStatePreference singleTapSwitch = (TwoStatePreference) findPreference(KEY_SINGLE_TAP);
+        singleTapSwitch.setChecked(mUseSingleTap);
+        singleTapSwitch.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+            @Override
+            public boolean onPreferenceChange(Preference preference, Object newValue) {
+                mUseSingleTap = (Boolean) newValue;
+                setDozeSettings();
+                return true;
+            }
+        });
         Preference footer = findPreference(KEY_FOOTER);
         if (isAmbientDisplayEnabled()) {
             getPreferenceScreen().removePreference(footer);
@@ -98,11 +110,12 @@ public class DozeSettings extends PreferenceFragment  {
             mUseWaveCheck = Boolean.valueOf(parts[0]);
             mUsePocketCheck = Boolean.valueOf(parts[1]);
             mUseTiltCheck = Boolean.valueOf(parts[2]);
+            mUseSingleTap = Boolean.valueOf(parts[3]);
         }
     }
 
     private void setDozeSettings() {
-        String newValue = String.valueOf(mUseWaveCheck) + ":" + String.valueOf(mUsePocketCheck) + ":" + String.valueOf(mUseTiltCheck);
+        String newValue = String.valueOf(mUseWaveCheck) + ":" + String.valueOf(mUsePocketCheck) + ":" + String.valueOf(mUseTiltCheck) + ":" + String.valueOf(mUseSingleTap);
         Settings.System.putString(getContext().getContentResolver(), Settings.System.OMNI_DEVICE_FEATURE_SETTINGS, newValue);
     }
 

@@ -17,6 +17,9 @@ on boot
     setprop ro.boot.wificountrycode 00
 
     # Touchscreen
+    chown system system /proc/touchpanel/single_tap_enable
+    chmod 0660 /proc/touchpanel/single_tap_enable
+
     chown system system /proc/touchpanel/double_tap_enable
     chmod 0660 /proc/touchpanel/double_tap_enable
 

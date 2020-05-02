@@ -29,6 +29,11 @@
         android:summary="@string/tilt_check_summary"
         android:title="@string/tilt_check_title"
         android:persistent="false" />
+    <SwitchPreference
+        android:key="single_tap"
+        android:summary="@string/single_tap_summary"
+        android:title="@string/single_tap_title"
+        android:persistent="false" />
     <Preference
         android:key="footer"
         android:summary="@string/ambient_display_enable"
