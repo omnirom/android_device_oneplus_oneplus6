@@ -1,0 +1,3 @@
+Hackery to fix a derp in op vendor image files init.qcom.usb.sh
+where they put the ro.product.brand into /config/usb_gadget/g1/strings/0x409/product
+instead of ro.product.model
