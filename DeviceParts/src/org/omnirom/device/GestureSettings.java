@@ -101,7 +101,7 @@ public class GestureSettings extends PreferenceFragment implements
     private AppSelectListPreference mFPLongPressApp;
     private PreferenceCategory fpGestures;
     private boolean mFpDownSwipe;
-    private static final boolean sIsOnePlus6 = android.os.Build.MODEL.equals("ONEPLUS A6003");
+    private static final boolean sIsOnePlus6 = android.os.Build.MODEL.equals("A6003");
     private List<AppSelectListPreference.PackageItem> mInstalledPackages = new LinkedList<AppSelectListPreference.PackageItem>();
     private PackageManager mPm;
 
