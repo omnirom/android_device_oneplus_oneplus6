@@ -98,4 +98,6 @@
     <string name="tile_panel_mode">Režimy panelu</string>
     <string name="tile_hbm_mode">Režimy s vysokým jasem</string>
     <string name="wake_entry">Probuzení</string>
+    <string name="single_tap_title">Jedno klepnutí</string>
+    <string name="single_tap_summary">Zobrazit ambientní displej jedním klepnutím</string>
 </resources>

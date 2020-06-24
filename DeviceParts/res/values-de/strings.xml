@@ -98,4 +98,6 @@
     <string name="tile_panel_mode">Panel-Modi</string>
     <string name="tile_hbm_mode">Modus für max. Helligkeit</string>
     <string name="wake_entry">Aufwachen</string>
+    <string name="single_tap_title">Einmaliges tippen</string>
+    <string name="single_tap_summary">Inaktivitätsdisplay bei einmaligem Tippen anzeigen</string>
 </resources>
