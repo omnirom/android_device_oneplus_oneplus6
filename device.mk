@@ -148,7 +148,8 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.camera.device@1.0 \
     vendor.qti.hardware.camera.postproc@1.0 \
     vendor.qti.hardware.systemhelper@1.1 \
-    vendor.qti.hardware.bluetooth_dun@1.0
+    vendor.qti.hardware.bluetooth_dun@1.0 \
+    vendor.qti.hardware.bluetooth_audio@2.0
 
 # Display
 PRODUCT_PACKAGES += \
