@@ -99,7 +99,7 @@ etc/sensors/proto/sns_ultra_violet.proto
 etc/wfdconfigsink.xml
 framework/audiosphere.jar
 #framework/com.qti.dpmframework.jar
-#-framework/com.qti.location.sdk.jar
+-framework/com.qti.location.sdk.jar
 #-framework/com.qti.snapdragon.sdk.display.jar
 #-framework/com.qualcomm.qti.camera.jar
 #-framework/com.qualcomm.qti.imscmservice-V2.0-java.jar
@@ -134,6 +134,8 @@ framework/izat.xt.srv.jar
 lib64/libadsprpc_system.so
 lib64/libmdsprpc_system.so
 lib64/libantradio.so
+lib64/libbluetooth_qti.so
+lib64/libbtconfigstore.so
 #lib64/libaptX_encoder.so
 #lib64/libaptXHD_encoder.so
 lib64/libcdsprpc_system.so
@@ -170,6 +172,8 @@ lib/com.qualcomm.qti.wifidisplayhal@1.0.so
 lib/libadsprpc_system.so
 lib/libmdsprpc_system.so
 lib/libantradio.so
+lib/libbluetooth_qti.so
+lib/libbtconfigstore.so
 lib/libcdsprpc_system.so
 lib/libdiag_system.so
 lib/libFileMux.so
@@ -325,4 +329,5 @@ lib/libwfduibcsrcinterface.so
 -priv-app/OnePlusCamera/OnePlusCamera.apk
 -priv-app/OnePlusCameraService/OnePlusCameraService.apk
 -priv-app/OnePlusGallery/OnePlusGallery.apk
+-priv-app/com.qualcomm.location/com.qualcomm.location.apk
 
